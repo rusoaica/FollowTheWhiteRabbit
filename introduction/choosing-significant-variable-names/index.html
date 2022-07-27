@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="best programming practices, variable names, variable naming conventions, variables" />
+		<meta name="description" content="You will sooner or later come to understand that choosing significant variable names is a very good programming practice." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Choosing significant variable names - Follow the white rabbit" />
+		<meta property="og:description" content="You will sooner or later come to understand that choosing significant variable names is a very good programming practice." />
+		<meta property="og:url" content="./introduction/choosing-significant-variable-names/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-26T05:21:00+00:00" />
+		<meta property="article:modified_time" content="2016-12-26T05:21:00+00:00" />
+		<meta property="og:image" content="./img_607d35446ecb2.png" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+		
+		<link rel="alternate" href="../../introduction/choosing-significant-variable-names/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/alegerea-numelor-semnificative-de-variabile/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Choosing significant variable names - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Read this in
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/choosing-significant-variable-names/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/alegerea-numelor-semnificative-de-variabile/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Table of contents
+					</div>
+					<ul>
+						<li>
+							<a href="../../">
+								<span>Contents</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Chapters
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/uncategorized/">
+								<span>Uncategorized</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introduction/">
+								<span>Introduction</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrays/">
+								<span>Arrays</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functions/">
+								<span>Functions</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/strings-and-text-processing/">
+								<span>Strings And Text Processing</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/objects/">
+								<span>Objects</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/graphical-user-interface/">
+								<span>Graphical User Interface</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/data-structures/">
+								<span>Data Structures</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-and-error-handling/">
+								<span>Debugging And Error Handling</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/first-practical-application/">
+								<span>First Practical Application</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/object-oriented-programming/">
+								<span>Object Oriented Programming</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegates-lambda-expressions-events/">
+								<span>Delegates, Lambda Expressions, Events</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Choosing significant variable names
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../" style="font-style: italic; color: #777777;">Table of contents</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introduction/" style="font-style: italic; color: #777777;">Introduction</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Choosing significant variable names</a>
+
+					<p>First of all, this is not a mandatory topic. You can name your variables whatever you like. However, you will soon come to understand that choosing significant variable names is a very good programming practice.</p>
+					<p>If you ask me, the term &#8220;generally accepted programming naming convention&#8221; is practically a joke. Even with long established naming conventions, there is always some smart guy or company out there that thinks they can re-invent the Universe, by modifying/creating new naming conventions. There is a general war out there among the programmers regarding which naming conventions are &#8220;good&#8221; and which are &#8220;evil&#8221;, so it is quite difficult to establish a standard.</p>
+					<p>In my opinion, it is best to stick to the practices that appeared a long time ago (possibly, the first practices that ever appeared) and that proved their efficiency by passing the test of time.</p>
+					<p>Hence, there are a few &#8220;rules&#8221; that you may want to adopt:</p>
+					<h2 style="color: #00ff00;"><strong>DO</strong></h2>
+					<p>Use <span class="tooltip"><a style="color: #3366ff;" href="https://en.wikipedia.org/wiki/PascalCase" target="_blank" rel="noopener noreferrer">PascalCasing</a><span class="tooltiptext">PascalCase denotes the practice of writing compound words or phrases such that the first letter of each concatenated word is capitalized. No other characters are used to separate the words, like hyphens or underscores. Example: SomeNameUsingPascalCasing</span>
+					</span> for <a href="../../objects/classes/">class</a> names and <a href="../../functions/functions/">method</a> names:</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="class-name">FileManipulation</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">public void </span><span class="method">DeleteFile</span><span>()</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment"> // ...</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">public void </span><span class="method">CreateFile</span><span>()</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment"> // ...</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: keeping consistency with the Microsoft&#8217;s .NET Framework and easiness to read.</em></p>
+
+					<p>Use <span class="tooltip"><a style="color: #3366ff;" href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" rel="noopener noreferrer">camelCasing</a><span class="tooltiptext">Camel case (also camelCase, CamelCase, camel caps or medial capitals) is the practice of writing compound words or phrases such that each word or abbreviation in the middle of the phrase begins with a capital letter, with no spaces or hyphens. Example: someNameUsingCamelCasing"></span></span> for method <a href="../../functions/methods-and-functions-parameters/">arguments</a> and <a href="../../functions/variable-scope/">local</a> variables.</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="class-name">UserLog</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">public void </span><span class="method">Add</span><span>(<span class="using">string</span>[]<span class="param"> logEvent</span>)</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">int</span> <span class="unused-param">itemCount</span> = <span class="param">logEvent</span>.Length;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment"> // ...</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: keeping consistency with the Microsoft&#8217;s .NET Framework and easiness to read.</em></p>
+
+					<p>Use <span class="generic-term">PascalCasing</span> for abbreviations 3 characters or more (2 chars are both uppercase):</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">HtmlHelper </span><span class="unused-using-content">htmlHelper</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">FtpTransfer </span><span class="unused-using-content">ftpTransfer</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">UIControl </span><span class="unused-using-content">uiControl</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: consistent with the Microsoft&#8217;s .NET Framework. Two successive capital letters would visually steal too much attention.</em></p>
+					
+					<p>Use <span class="generic-term">predefined type names</span> instead of system type names like <span class="inline-code class-name">Int16</span>, 
+					<span class="inline-code class-name">Single</span>, 
+					<span class="inline-code class-name">UInt64</span>, etc:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Correct </span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">string </span><span class="unused-using-content">firstName</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">int </span><span class="unused-using-content">userAge</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">bool </span><span class="unused-using-content">isCreated</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Avoid </span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">String </span><span class="unused-using-content">firstName</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">Int32 </span><span class="unused-using-content">userAge</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">Boolean </span><span class="unused-using-content">isCreated</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework, makes code more natural to read, shortens typing.</em></p>
+
+					<p>Use <span class="generic-term">noun or noun phrases</span> to name a <a href="../../objects/classes/">class</a>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>12</div>
+												<div class="line-numbers-highlight">13</div>
+												<div>14</div>
+												<div class="line-numbers-highlight">15</div>
+												<div>16</div>
+												<div class="line-numbers-highlight">17</div>
+												<div>18</div>
+												<div class="line-numbers-highlight">19</div>
+												<div>20</div>
+												<div class="line-numbers-highlight">21</div>
+												<div>22</div>
+												<div class="line-numbers-highlight">23</div>
+												<div>24</div>
+												<div class="line-numbers-highlight">25</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public class </span>
+													<span class="class-name">Employee</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public class </span>
+													<span class="class-name">UserData</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public class </span>
+													<span class="class-name">DataCollection</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework, easy to remember, casing differentiates classes by variables</em></p>
+
+					<p>Use <span class="generic-term">letter I as prefix</span> for <a href="../../object-oriented-programming/interfaces/">interfaces</a>.  Interface names are noun (phrases) or adjectives:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>12</div>
+												<div class="line-numbers-highlight">13</div>
+												<div>14</div>
+												<div class="line-numbers-highlight">15</div>
+												<div>16</div>
+												<div class="line-numbers-highlight">17</div>
+												<div>18</div>
+												<div class="line-numbers-highlight">19</div>
+												<div>20</div>
+												<div class="line-numbers-highlight">21</div>
+												<div>22</div>
+												<div class="line-numbers-highlight">23</div>
+												<div>24</div>
+												<div class="line-numbers-highlight">25</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public interface </span>
+													<span class="enum">IColor</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public interface </span>
+													<span class="enum">IAttackable</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;public interface </span>
+													<span class="enum">IDisposable</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+												
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework.</em></p>
+
+					<p>Use <span class="generic-term">organized <a href="../../objects/namespaces/">namespaces</a></span> with a clearly defined structure</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;namespace </span>Company.Employee.Data.Age { }
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;namespace </span>Company.Product.Price { }
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework. Maintains good organization of your code base.</em></p>
+
+					<p>Use capital letters for <a href="../../objects/constants/">constants</a> or readonly variables:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Correct </span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">public const int </span>MAXIMUM_CHARACTERS = <span class="literal">256</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Avoid </span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">public const int </span>maximumCharacters = <span class="literal">256</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: consistent with the Microsoft&#8217;s .NET Framework. Quickly identifies a read-only value.</em></p>
+					
+					<h2><span style="color: #ff0000;"><strong>DO NOT</strong></span></h2>
+					
+					<p>Use <span class="tooltip"><a style="color: #3366ff;" href="https://en.wikipedia.org/wiki/Hungarian_notation" target="_blank" rel="noopener noreferrer">Hungarian notation</a><span class="tooltiptext"> Hungarian notation is an identifier naming convention in computer programming, in which the name of a variable or function indicates its type or intended use.</span></span> or any other type identification in identifiers:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Correct </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">int </span><span class="unused-using-content">age</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">string </span><span class="unused-using-content">name</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Avoid </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">int </span><span class="unused-using-content">iAge</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">string </span><span class="unused-using-content">strName</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: consistent with the Microsoft&#8217;s .NET Framework and Visual Studio IDE makes determining types very easy (via tooltips). In general you want to avoid type indicators in any identifier.</em></p>
+
+					<p>Use abbreviations. Exceptions: abbreviations commonly used as names, such as <span class="generic-term">Id, Xml, Ftp, Uri</span>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Correct </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">UserGroup </span><span class="unused-using-content">userGroup</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Assignment </span><span class="unused-using-content">employeeAssignment</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Avoid </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">UserGroup </span><span class="unused-using-content">usrGrp</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Assignment </span><span class="unused-using-content">empAssignment</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Exceptions </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">CustomerId </span><span class="unused-using-content">customerId</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">XmlDocument </span><span class="unused-using-content">xmlDocument</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">FtpHelper </span><span class="unused-using-content">ftpHelper</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">UriPart </span><span class="unused-using-content">uriPart</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework and prevents inconsistent abbreviations.</em></p>
+	
+					<p>Use underscores in <span class="generic-term">identifiers</span>. Exception: you can prefix private static variables and constants:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Correct </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">DateTime </span><span class="unused-using-content">clientBirthday</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">TimeSpan </span><span class="unused-using-content">timeLeft</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Avoid </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">DateTime </span><span class="unused-using-content">client_Birthday</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">TimeSpan </span><span class="unused-using-content">time_Left</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Exceptions </span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="enum">DateTime </span><span class="unused-using-content">_registrationDate</span>;
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">const int </span>BOILING_TEMPERATURE = <span class="literal">100</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p><em>Reason: Consistent with the Microsoft&#8217;s .NET Framework. Makes code more natural to read (without &#8216;slur&#8217;). Also avoids underline stress (inability to see underline).</em></p>
+					
+					<p>Many of the concepts presented in these examples are still unfamiliar to you. Do not concern yourself with that, for now. However, once in a while, when you will become more advanced and you will develop the usual and inevitable programming &#8220;habits&#8221;, do come back and refer to this article again, before &#8220;the evil takes roots too deep&#8221; and you find yourself stuck with a poor choice in choosing significant variable names that will be much harder to correct.</p>
+
+					<p class="video-disclaimer">The concepts explained in this lesson are also shown visually as part of the following video:</p>
+					
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=X4kUzqw-mWg&list=PLFPg3ZcPgeptcrEpLGfMDm0blSoBfczeV&index=7" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Tags: <span style="color: rgb(190, 105, 104);">
+							best programming practices, variable names, variable naming conventions, variables
+						</span>
+						</p>
+						<small>
+						This entry was posted on Monday, December 26th, 2016 at 07:21 and is filed under <a href="../../category/introduction/" rel="category tag">Introduction</a>.
+						</small>
+					</div>
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introduction/c-sharp-keywords/" rel="prev">C# keywords</a></div>
+						<div class="alignright"><a href="../../introduction/interacting-with-the-console/" rel="next">Interacting with the Console</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Read this in
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/choosing-significant-variable-names/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/alegerea-numelor-semnificative-de-variabile/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Table of contents
+						</div>
+						<ul>
+							<li>
+								<a href="../../">
+									<span>Contents</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Chapters
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/uncategorized/">
+									<span>Uncategorized</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introduction/">
+									<span>Introduction</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrays/">
+									<span>Arrays</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functions/">
+									<span>Functions</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/strings-and-text-processing/">
+									<span>Strings And Text Processing</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/objects/">
+									<span>Objects</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/graphical-user-interface/">
+									<span>Graphical User Interface</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/data-structures/">
+									<span>Data Structures</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-and-error-handling/">
+									<span>Debugging And Error Handling</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/first-practical-application/">
+									<span>First Practical Application</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/object-oriented-programming/">
+									<span>Object Oriented Programming</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegates-lambda-expressions-events/">
+									<span>Delegates, Lambda Expressions, Events</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">This website <span style="color: #6DCBFE;">DOES NOT</span> use JavaScript. Because some people prefer it disabled, and it respects their choice. It <span style="color: #6DCBFE;">DOES NOT</span> use cookies, of any kind and you don't have to click through countless agreements. It has no reason to, 
+				and, no, there is no such thing as "mandatory cookies" or "legitimate interest" to "function properly". This website <span style="color: #6DCBFE;">DOES NOT</span> display ads. Neither does it sell anything. You don't have 
+				to register, subscribe, purchase or donate anything. Not everything is about greed and more profit. This website is <strong style="color: #ff0000;">strongly</strong> against social media. It <span style="color: #6DCBFE;">DOES NOT</span> embed any Facebook, Google, 
+				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
+				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
+				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

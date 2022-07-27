@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="binar, bit, numărare binară, octet, programare, programare în limba română" />
+		<meta name="description" content="În această lecție analizăm diferența dintre conceptul de bit și byte, precum și modul de înumărare în sistem de numere binare." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Diferența dintre bit și byte. Înumărarea binară - Follow the white rabbit" />
+		<meta property="og:description" content="În această lecție analizăm diferența dintre conceptul de bit și byte, precum și modul de înumărare în sistem de numere binare." />
+		<meta property="og:url" content="./introducere/bit-byte-inumararea-binara/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-26T06:41:54+00:00" />
+		<meta property="article:modified_time" content="2016-12-26T06:41:54+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/bit-byte-binary-counting/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/bit-byte-inumararea-binara/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Diferența dintre bit și byte. Înumărarea binară - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/bit-byte-binary-counting/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/bit-byte-inumararea-binara/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Bit. Byte. Înumărarea binară.
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Bit. Byte. Înumărarea binară.</a>
+
+					<p>Explicam într-o lecție anterioară faptul că, la cel mai adânc nivel, computerele stochează și procesează informațiile doar ca două valori, <span class="inline-code literal">0</span> și <span class="inline-code literal">1</span>. Aceste valori sunt cele mai mici bucăți individuale de informații din interiorul unui computer, și se numesc <span class="programming-term">biți</span>. Un bit poate conține doar o singură valoare la un moment dat, fie <span class="inline-code literal">0</span> sau <span class="inline-code literal">1</span>. Un grup de opt biți se numește <span class="programming-term">byte</span>, <span class="programming-term">octet</span>și, uneori, <span class="programming-term">cuvânt</span> (<span class="programming-term">word</span>). Un octet este cea mai mică bucată de memorie pe care un computer o poate manipula direct. Este de asemenea egal cu un singur caracter, sau o literă. Deci, atunci când tastăm litera <span class="inline-code literal">A</span>, știm acum că aceasta necesită 1 octet sau 8 biți pentru a fi stocată în memorie.</p>
+					<p>Ultimul aspect al acestei lecții este de obicei mai greu de înțeles, mai ales de către începători. Cu toate acestea, acest subiect nu este obligatoriu să fie învățat, puteți fi programatori buni chiar și fără să știți să înumărați în mod direct în cod binar.</p>
+					<p>Dacă vă amintiți din lecțiile de matematică, numărarea binară, numită și <span class="generic-term">numărarea în baza 2</span>, numără doar două valori, <span class="inline-code literal">0</span> și <span class="inline-code literal">1</span>. Conform aceluiași principiu, numărătoarea zecimală, numită și <span class="generic-term">numărarea în baza 10</span>, numără 10 valori, de la <span class="inline-code literal">0</span> la <span class="inline-code literal">9</span>. Deci, putem spune că în sistemul zecimal începem de la <span class="inline-code literal">0</span>, iar limita superioară este <span class="inline-code literal">9</span>, după care trebuie să adăugăm o nouă unitate la următoarea magnitudine. Similiar, în sistemul binar, începem să numărăm de la <span class="inline-code literal">0</span>, iar limita superioară este <span class="inline-code literal">1</span>, după care trebuie să adăugăm o unitate nouă la o magnitudine mai mare. Numărarea binară este într-adevăr aceeași ca și numărarea zecimală, singura diferență fiind folosirea numai a primelor două cifre din aceasta.</p>
+					<p>Așadar, vom începe să numărăm atât în sistem binar, cât și în zecimal, pentru comparație. În ambele sisteme, începem cu <span class="inline-code literal">0</span>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Următorul număr în ambele sisteme este <span class="inline-code literal">1</span>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>												
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Aici, asemănările se termină. În sistemul zecimal, următorul număr după <span class="inline-code literal">1</span> este <span class="inline-code literal">2</span>. Cu toate acestea, deoarece nu există valoarea <span class="inline-code literal">2</span> în binar, pentru că sistemul se termină la <span class="inline-code literal">1</span>, putem considera că ajungând la <span class="inline-code literal">1</span> în binar (ultimul număr unitar în binar) este același lucru cu ajungerea la <span class="inline-code literal">9</span> în zecimal (ultimul număr unitar în zecimal). Când vom ajunge la <span class="inline-code literal">9</span> în zecimal, vom adăuga o unitate la următoarea magnitudine superioară și vom începe din nou să înumărăm unitățile de la <span class="inline-code literal">0</span>. Cu alte cuvinte, în zecimal, după <span class="inline-code literal">9</span>, avem <span class="inline-code literal">10</span>: o unitate pe următoarea magnitudine mai mare (zeci) și resetare la <span class="inline-code literal">0</span> pe cifra unitară. În binar este același lucru: când ajungem la <span class="inline-code literal">1</span>, care este ultimul număr unitar, adăugăm <span class="inline-code literal">1</span> la următoarea magnitudine superioară și începem din nou de la <span class="inline-code literal">0</span> în locul unitar:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Continuăm să numărăm ca de obicei: în zecimal, următorul număr după <span class="inline-code literal">2</span> este <span class="inline-code literal">3</span>, în binar, după <span class="inline-code literal">0</span> avem <span class="inline-code literal">1</span>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Apoi, în zecimal, e simplu: după <span class="inline-code literal">3</span> vine <span class="inline-code literal">4</span>. În binar, pentru că pe locul unităților am ajuns la <span class="inline-code literal">1</span>, trebuie să pornim din nou de la <span class="inline-code literal">0</span> și să adăugăm o unitate la următoarea magnitudine superioară. Dar, deoarece deja avem <span class="inline-code literal">1</span> pe acel loc și din moment ce nu există <span class="inline-code literal">2</span> în binar, adăugăm o unitate la următoarea magnitudine superioară, corespondentul &#8222;sutelor&#8221; în zecimal, și  de asemenea resetăm și echivalentul &#8222;zecimalelor&#8221; la <span class="inline-code literal">0</span>:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Apoi, în zecimal, știm că urmează <span class="inline-code literal">5</span>, în timp ce în binar, începem să numărăm din nou unitățile:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Din nou, în zecimal, următoarea cifră este <span class="inline-code literal">6</span>, în timp ce în binar am ajuns din nou la punctul unde unitățile sunt <span class="inline-code literal">1</span>, adică ultima cifră posibilă, deci trebuie să le resetăm la <span class="inline-code literal">0</span> și să adăugăm o unitate la următoarea magnitudine superioară:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Continuăm mai apoi în mod normal:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Acum, din nou, în sistemul zecimal, după <span class="inline-code literal">7</span> știm că urmează <span class="inline-code literal">8</span>. În binar, am ajuns la punctul în care toate cele trei cifre sunt ultimul număr, <span class="inline-code literal">1</span>, așa cum în zecimal <span class="inline-code literal">999</span> este punctul când toate cele trei cifre sunt la ultima valoare posibilă, numărul <span class="inline-code literal">9</span> și trebuie să le resetăm pe toate la <span class="inline-code literal">0</span>, în timp ce adăugăm o unitate pe locul miilor. La fel procedăm și în binar:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Și continuă în același mod la infinit, pe baza acelorași principii pe care le-am descris mai sus:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="method">&nbsp;zecimal&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;binar</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="comment">============================</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;101</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;111</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1000</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1001</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1010</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1011</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1100</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1101</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1110</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1111</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10000</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10001</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10010</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="literal">&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10011</span>
+												</div>
+												<div class="code-line">
+													<span class="literal">&nbsp;&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10100</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Evident, la un moment dat, dacă doriți să convertiți un număr zecimal mare în reprezentarea sa binară, nu veți începe să numărați de la 0. În schimb, putem folosi o formulă valabilă pentru conversia oricărui număr zecimal într-un număr binar. Tot ce trebuie să facem este să ne împărțim în mod constant numărul respectiv la 2 și să stocăm resturile acestor împărțiri. Numărul binar este reprezentat de aceste resturi, ordonate de la ultimul spre primul, astfel:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/bit-byte-binary-counting/img_607ff06907de2.png">
+							<picture>
+							  <source srcset="../../introduction/bit-byte-binary-counting/img_607ff06907de2.png" media="(min-width: 300px)" />
+							  <img src="../../introduction/bit-byte-binary-counting/img_607ff06907de2-300x169.png" style="width:100%;"/>
+							</picture>
+						</a>
+						<p class="caption-text">
+							<a href="https://www.competentedigitale.ro/computer/baze.php" target="_blank" rel="noopener noreferrer">
+								Sursă Imagine
+							</a>
+						</p>	
+					</div>
+					<p>Când doriți să convertiți un număr din binar în zecimal, deplasându-vă de la dreapta la stânga, cifrele dintr-un sistem în baza 2 reprezintă puteri ale lui 2 (1, 2, 4, 8 etc. sau 2^0, 2^1, 2^2, 2^3, etc). Valoarea unui număr reprezentat ca binar este suma valorii fiecărei cifre binare înmulțită cu puterea corespunzătoare a lui 2. Exemplu:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/bit-byte-binary-counting/img_607ffbaf4a90d.png">
+							<picture>
+							  <source srcset="../../introduction/bit-byte-binary-counting/img_607ffbaf4a90d.png" media="(min-width: 300px)" />
+							  <img src="../../introduction/bit-byte-binary-counting/img_607ffbaf4a90d-300x28.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Deci, dacă avem numărul binar 101101, putem vedea că reprezentarea sa zecimală este 45:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/bit-byte-binary-counting/img_607ffcb1d0add.png">
+							<picture>
+							  <source srcset="../../introduction/bit-byte-binary-counting/img_607ffcb1d0add.png" media="(min-width: 300px)" />
+							  <img src="../../introduction/bit-byte-binary-counting/img_607ffcb1d0add-300x49.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+
+
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=P77huVl-irE&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=7" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							binar, bit, numărare binară, octet
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Luni, 26 Decembrie 2016 la ora 08:41 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/interactiunea-cu-consola/" rel="prev">Interactiunea cu consola</a></div>
+						<div class="alignright"><a href="../../introducere/numere-hexazecimale/" rel="next">Numere hexazecimale</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/bit-byte-binary-counting/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/bit-byte-inumararea-binara/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

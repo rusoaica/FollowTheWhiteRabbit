@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="operatori, precedența operatorilor" />
+		<meta name="description" content="Precedența operatorilor se referă la faptul că unii operatori au o importanță mai mare decât alții. Spre exemplu, înmulțirea e mai importantă decât adunarea" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Scurtă introducere despre Precedența operatorilor - Follow the white rabbit" />
+		<meta property="og:description" content="Precedența operatorilor se referă la faptul că unii operatori au o importanță mai mare decât alții. Spre exemplu, înmulțirea e mai importantă decât adunarea" />
+		<meta property="og:url" content="./introducere/precedenta-operatorilor/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-01-05T19:41:39+00:00" />
+		<meta property="article:modified_time" content="2017-01-05T19:41:39+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/operator-precedence/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/precedenta-operatorilor/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Scurtă introducere despre Precedența operatorilor - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/operator-precedence/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/precedenta-operatorilor/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Precedența operatorilor
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Precedența operatorilor</a>
+
+					<p>Dacă vă mai amintiți încă de matematica de la școală (da, cum să nu! 😀), unii operatori au precedență față de alții, adică au o importanță mai mare; spre exemplu, înmulțirea este mai importantă decât adunarea și va fi calculată mai întâi. Trebuie să țineți cont de precedența operatorilor de fiecare dată când veți efectua operații cu mai mult de doi operanzi.</p>
+					<p>Ca și în matematică, puteți forța schimbarea precedenței operatorilor prin utilizarea parantezelor. Să considerăm următorul exemplu:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">media</span> = <span class="literal">5</span> + <span class="literal">10</span> + <span class="literal">15</span> / <span class="literal">3</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Dacă media ar fi calculată, rezultatul ar trebui să fie <span class="inline-code literal">10</span>. Dar dacă lăsați C# să evalueze această expresie, rezultatul va fi <span class="inline-code literal">20</span>, deoarece:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">media</span> = <span class="literal">5</span> + <span class="literal">10</span> + <span class="literal">15</span> / <span class="literal">3</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span class="literal">5</span> + <span class="literal">10</span> + <span class="literal">5</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span class="literal">15</span> + <span class="literal">5</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span class="literal">20</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Acest lucru se întâmplă deoarece împărțirea are o prioritate mai mare decât adunarea, și e calculată mai întâi. Pentru a putea calcula corect valoarea medie, trebuie să &#8220;forțați&#8221; o altă ordine a operațiilor:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">media</span> = (<span class="literal">5</span> + <span class="literal">10</span> + <span class="literal">15</span>) / <span class="literal">3</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (<span class="literal">15</span> + <span class="literal">15</span>) / <span class="literal">3</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = (<span class="literal">30</span>) / <span class="literal">3</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = <span class="literal">10</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Motivul pentru care exemplul de mai sus functionează se datorează faptului că în C#, parantezele <span class="inline-code">()</span> au o prioritate a operatorilor mai mare decât oricare alt operator. Așa că, prin utilizarea lor, am forțat compilatorul să evalueze mai întâi expresia în interiorul parantezelor, iar mai apoi să efectueze împărțirea.</p>
+					<p>Iată un tabel care prezintă precedența operatorilor în C#, de la cea mai mare spre cea mai mică prioritate:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">													
+													(,)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													++, -- (ca postfix), new, (type), typeof, sizeof
+												</div>
+
+												<div class="code-line">
+													++, -- (ca prefix), +, - (unary), !, ~
+												</div>
+
+												<div class="code-line code-line-highlight">
+													*, /, %
+												</div>
+
+												<div class="code-line">
+													+ (concatenare string)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													+, -
+												</div>
+
+												<div class="code-line">
+													<<, >>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<, >, <=, >=, is, as
+												</div>
+
+												<div class="code-line">
+													==, !=
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&, ^, |
+												</div>
+
+												<div class="code-line">
+													&&
+												</div>
+
+												<div class="code-line code-line-highlight">
+													||
+												</div>
+
+												<div class="code-line">
+													?:, ??
+												</div>
+
+												<div class="code-line code-line-highlight">
+													=, *=, /=, %=, +=, -=, <<=, >>=, &=, ^=, |=
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Ca regulă generală, ar trebui să folosiți paranteze ori de câte ori expresia ar fi ambiguă:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="comment">// Ambiguu</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="param">x</span> + <span class="param">y</span> / <span class="literal">2</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="comment">// Metoda recomandată, mai clară</span>
+												</div>
+
+												<div class="code-line">
+													<span class="param">x</span> + (<span class="param">y</span> / <span class="literal">2</span>)
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>			
+
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=UTXDDuRZbp8&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=12" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							operatori, precedența operatorilor
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Joi, 05 Ianuarie 2017 la ora 21:41 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/operatori/" rel="prev">Operatori</a></div>
+						<div class="alignright"><a href="../../introducere/operatorii-aritmetici/" rel="next">Operatorii aritmetici</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/operator-precedence/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/precedenta-operatorilor/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

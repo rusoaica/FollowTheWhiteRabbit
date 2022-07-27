@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="C#, programare, programare în limba română, IDE, Visual Studio Community 2022" />
+		<meta name="description" content="O nouă versiune de Visual Studio a fost lansată. Deci, astăzi vom vorbi despre instalarea Visual Studio Community Edition 2022." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Instalare Visual Studio Community Edition 2022 - Follow the white rabbit" />
+		<meta property="og:description" content="O nouă versiune de Visual Studio a fost lansată. Deci, astăzi vom vorbi despre instalarea Visual Studio Community Edition 2022." />
+		<meta property="og:url" content="./introducere/instalare-visual-studio-community-edition-2022/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-21T02:10:57+00:00" />
+		<meta property="article:modified_time" content="2016-12-21T02:10:57+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/installing-visual-studio-2022-community-edition/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/instalare-visual-studio-community-edition-2022/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Instalare Visual Studio Community Edition 2022 - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/installing-visual-studio-2022-community-edition/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/instalare-visual-studio-community-edition-2022/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Instalare Visual Studio Community Edition 2022
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Instalare Visual Studio Community Edition 2022</a>
+
+					<p>Din momentulul în care am început acest proiect de predare C#, câteva lucruri s-au schimbat. Astăzi voi vorbi despre unul dintre aceste lucruri. Iată, o veste bună: o nouă versiune de Visual Studio a fost lansată. Deci, astăzi vom vorbi despre instalarea Visual Studio Community Edition 2017.</p>
+					<p>Înainte de a instala, ar trebui să citiți cerințele de sistem necesare pentru a instala Visual Studio, și dacă PC-ul dvs. le îndeplinește <a href="https://docs.microsoft.com/en-us/visualstudio/releases/2022/system-requirements#visual-studio-2022-system-requirements" target="_blank">aici</a>.</p>
+					<p>Deci, în primul rând, vom merge la pagina de descărcare, care în acest moment se află <a href="https://www.visualstudio.com/downloads/" target="_blank" rel="noopener noreferrer">aici</a>.</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-0.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-0.png" alt="visual studio download page" style="width:100%;"/>
+						</a>
+					</div>
+					<p>Descărcați Visual Studio Community și rulați executabilul care se va descărca. Când instalarea va începe, vă va fi prezentat cu următoarea fereastră:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-1.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-1.png" alt="Visual Studio Community Edition 2022" style="width:50%;"/>
+						</a>
+					</div>
+					<p>Faceți clic pe butonul Continue. Va apărea o nouă fereastră:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-2.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-2.png" alt="Visual Studio Give us a minute" style="width:50%;"/>
+						</a>
+					</div>
+					<p>Aveți răbdare. Această operațiune poate dura ceva timp. Când se va termina, vă va fi prezentat ecranul principal de instalare Visual Studio Community Edition 2022:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-3.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-3.png" alt="Visual Studio installation main screen" style="width:100%;"/>
+						</a>
+					</div>
+					<p>În scopul acestor lecții, sunteți interesați doar de componenta „.NET desktop development“. Selectați-o făcând clic pe bifă:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-4.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-4.png" alt="Visual Studio .NET desktop development" style="width:50%;"/>
+						</a>
+					</div>
+					<p>Dacă vă simțiți aventuroși, puteți selecta alte componente de instalat, dar acestea nu vă vor fi de nici un folos în ceea ce privește lecțiile prezentate pe acest site. De asemenea, rețineți că elementele instalate pot fi ulterior modificate, în cazul în care vă decideți să faceți acest lucru.</p>
+					<p>Puteți schimba, de asemenea, locația de instalare, dacă doriți.</p>
+					<p>Când ați terminat, faceți clic pe butonul Install pentru a începe instalarea:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-5.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-5.png" alt="Visual Studio install" style="width:50%;"/>
+						</a>
+					</div>
+					<p>În acest moment, procesul de descărcare ar trebui să înceapă:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-6.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-6.png" alt="Visual Studio downloading process" style="width:100%;"/>
+						</a>
+					</div>
+					<p>Acest proces poate dura ceva timp, în funcție de numărul de pachete pe care le-ați ales să le instalați, de viteza conexiunii la internet și viteza procesorului. Aveți răbdare până când se termină.</p>
+					<p>În cele din urmă, atunci când e gata, puteți lansa noul instalat Visual Studio:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-7.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-7.png" alt="Visual Studio launch" style="width:100%;"/>
+						</a>
+					</div>
+					<p>Desigur, apare obișnuita fereastră de încărcare:</p>
+					<div class="caption aligncenter">
+						<a href="./VS2022-8.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-8.png" alt="Visual Studio getting things ready" style="width:50%;"/>
+						</a>
+					</div>
+					<p>În continuare, va trebui să vă conectați utilizând o adresă de e-mail:</p>
+					<div class="caption aligncenter">
+						<a href="./VS2022-9.gif">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-9.gif" alt="Visual Studio Community Edition 2022 sign in screen" style="width:50%;"/>
+						</a>
+					</div>
+					<p>Puteți începe să utilizați Visual Studio imediat, chiar și fără a vă conecta, dar dacă nu o faceți, nu veți mai fi capabili să utilizati Visual Studio după un timp, până când nu vă conectați.</p>
+					<p>În cele din urmă, iată-ne ajunși la final. Iată fereastra finală, confirmând că totul a mers bine si am instalat cu succes Visual Studio Community Edition 2017:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/installing-visual-studio-2022-community-edition/VS2022-10.png">
+							<img src="../../introduction/installing-visual-studio-2022-community-edition/VS2022-10.png" alt="Visual Studio Get Started" style="width:100%;"/>
+						</a>
+					</div>
+
+					<p class="video-disclaimer">Instalarea Visual Studio este explicată și vizual în videoclipul următor:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=up6gSe0xNQE&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=3" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							C#
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Luni, 19 Decembrie 2016 la ora 06:05 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="comment-thread">
+					    <!-- Comment 1 start -->
+					    <details open class="comment" id="comment-1">
+					        <summary>
+					            <div class="comment-heading">
+					                <div class="comment-info">
+					                    <span class="comment-author">Dorel</span>
+					                    <span class="m-0">
+					                        &bull; 28/04/2018 la 06:13
+					                    </span>
+					                </div>
+					            </div>
+					        </summary>
+					        <div class="comment-body">
+					            <p>
+					                probleme la instalare se descarca fisierele si apoi spune ca nu am conexiune la internet desi conexiunea exista deci nu pot instala pe win 10
+					            </p>
+					        </div>
+					        <div class="replies">
+					            <!-- Comment 2 start -->
+					            <details open class="comment" id="comment-2">
+					                <summary>
+					                    <div class="comment-heading">
+					                        <div class="comment-info">
+					                            <a href="../../" class="comment-author">rusoaica</a>
+					                            <span class="m-0">
+					                                &bull; 29/04/2018 la 10:04
+					                            </span>
+					                        </div>
+					                    </div>
+					                </summary>
+					                <div class="comment-body">
+					                    <p>
+					                        Îmi pare rău să aud acest lucru, deși pare mai degrabă o problemă a sistemului de operare, decât a pachetului de instalare Visual Studio. Ai mai întâmpinat această problemă cu alte programe?
+					                    </p>
+					                </div>
+					            </details>
+					            <!-- Comment 2 end -->
+					        </div>
+					    </details>
+					    <!-- Comment 1 end -->
+					    <!-- Comment 3 start -->
+					    <details open class="comment" id="comment-3">
+					        <summary>
+					            <div class="comment-heading">
+					                <div class="comment-info">
+					                    <span class="comment-author">popescu</span>
+					                    <span class="m-0">
+					                        &bull; 06/06/2018 la 07:16
+					                    </span>
+					                </div>
+					            </div>
+					        </summary>
+					        <div class="comment-body">
+					            <p>
+					                se descarca la infinit dar nu se instaleaza
+					            </p>
+					        </div>
+					        <div class="replies">
+					            <!-- Comment 4 start -->
+					            <details open class="comment" id="comment-4">
+					                <summary>
+					                    <div class="comment-heading">
+					                        <div class="comment-info">
+					                            <a href="../../" class="comment-author">rusoaica</a>
+					                            <span class="m-0">
+					                                &bull; 07/06/2018 la 02:01
+					                            </span>
+					                        </div>
+					                    </div>
+					                </summary>
+					                <div class="comment-body">
+					                    <p>
+					                        Știu că descărcarea/instalarea pot lua o eternitate, însă ar trebui totuși să se finalizeze. Ai verificat dacă PC-ul tău îndeplinește toate condițiile cerute de Visual Studio?
+					                    </p>
+					                </div>
+					            </details>
+					            <!-- Comment 4 end -->
+					        </div>
+					    </details>
+					    <!-- Comment 3 end -->
+					    <!-- Comment 5 start -->
+					    <details open class="comment" id="comment-5">
+					        <summary>
+					            <div class="comment-heading">
+					                <div class="comment-info">
+					                    <span class="comment-author">Claudia</span>
+					                    <span class="m-0">
+					                        &bull; 22/01/2020 la 16:30
+					                    </span>
+					                </div>
+					            </div>
+					        </summary>
+					        <div class="comment-body">
+					            <p>
+					                Poate merită menționat faptul că acum, dacă intri pe link-ul pe care l-ai lăsat în textul lecției, vei fi redirecționat către Visual Studio 2019. Așadar, o nouă versiune! 🙂
+					            </p>
+					        </div>
+					        <div class="replies">
+					            <!-- Comment 6 start -->
+					            <details open class="comment" id="comment-6">
+					                <summary>
+					                    <div class="comment-heading">
+					                        <div class="comment-info">
+					                            <a href="../../" class="comment-author">rusoaica</a>
+					                            <span class="m-0">
+					                                &bull; 22/01/2020 la 20:11
+					                            </span>
+					                        </div>
+					                    </div>
+					                </summary>
+					                <div class="comment-body">
+					                    <p>
+					                        Da, desigur, ei schimba mereu la ultima versiune.
+					                    </p>
+					                </div>
+					            </details>
+					            <!-- Comment 6 end -->
+					        </div>
+					    </details>
+					    <!-- Comment 5 end -->
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/introducere-in-programare/" rel="prev">Introducere în programare</a></div>
+						<div class="alignright"><a href="../../introducere/crearea-primului-proiect/" rel="next">Crearea primului proiect</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/installing-visual-studio-2022-community-edition/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/instalare-visual-studio-community-edition-2022/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

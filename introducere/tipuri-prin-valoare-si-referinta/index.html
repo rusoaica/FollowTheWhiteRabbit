@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="tipuri de valoare și referință, tipuri de variabile, variabile, programare în limba română" />
+		<meta name="description" content="Variabilele în C# pot fi categorizate în două tipuri principale: tipuri prin valoare şi referință. Să analizăm diferențele dintre ele" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Tipuri prin valoare şi referință - Follow the white rabbit" />
+		<meta property="og:description" content="Variabilele în C# pot fi categorizate în două tipuri principale: tipuri prin valoare şi referință. Să analizăm diferențele dintre ele" />
+		<meta property="og:url" content="./introducere/tipuri-prin-valoare-si-referinta/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-01-03T20:22:11+00:00" />
+		<meta property="article:modified_time" content="2017-01-03T20:22:11+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/value-and-reference-types/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/tipuri-prin-valoare-si-referinta/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Tipuri prin valoare şi referință - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/value-and-reference-types/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/tipuri-prin-valoare-si-referinta/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Tipuri prin valoare şi referință
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Tipuri prin valoare şi referință</a>
+
+					<p>Variabilele din C# pot fi clasificate în două tipuri principale: tipuri prin valoare și referință. Care este diferența dintre ele?</p>
+					<p><span class="programming-term">Tipurile de valoare</span> sunt stocate într-o zonă specială, care se numește <span class="programming-term">stivă de execuție</span> (<span class="programming-term">execution stack</span>) iar valoarea lor este stocată şi accesată în mod direct. Iată lista completă a tipurilor de valoare: <span class="inline-code using">sbyte</span>, <span class="inline-code using">byte</span>, <span class="inline-code using">short</span>, <span class="inline-code using">ushort</span>, <span class="inline-code using">int</span>, <span class="inline-code using">long</span>, <span class="inline-code using">ulong</span>, <span class="inline-code using">float</span>, <span class="inline-code using">double</span>, <span class="inline-code using">decimal</span>, <span class="inline-code using">char</span>, <span class="inline-code using">bool</span>. Ca o caracteristică specifică a tipurilor prin valoare, memoria alocată pentru aceste variabile de către program este eliberată când domeniul lor de execuție se termină, sau când programul îşi încheie execuția. De exemplu, atunci când avem un bloc de cod, cum ar fi funcția <span class="inline-code method">Main</span> atunci când aceasta îşi termină execuția, toate variabilele de tip valoare stocate în stivă sunt eliberate (distruse).</p>
+					<p><span class="programming-term">Tipurile de referință</span> nu dețin valori directe. Acestea păstrează de fapt o adresă (<em>referință</em>) în stiva de execuție a programului, și acea referință este cea care indică spre valoarea reală stocată în memoria dinamică (numită <span class="programming-term">heap</span>). Iată un exemplu a modului în care este reprezentată o variabilă de referință: <span class="inline-code literal">0x009F54A9</span>. Spre deosebire de tipurile de valoare, tipurile de referință pot avea valori fr tip <span class="inline-code using">null</span>, iar ele pot indica numai obiecte de același tip.</p>
+					<p>O altă caracteristică distinctă a tipurilor de referință este faptul că acestea alocă memorie dinamică pentru declarația lor. Acestea sunt gestionate în mod automat de un concept numit <span class="programming-term">colector de gunoi</span> (<span class="programming-term">garbage collector</span>), care eliberează automat memoria lor atunci când nu mai sunt utilizate. Din această cauză, tipurile de referință sunt un pic mai lente decât tipurile de valoare. Pentru că tipurile de referință sunt alocate și eliberate în mod dinamic și automat, este posibil ca dimensiunea lor să nu fie cunoscută dinainte. De exemplu, atunci când declarăm o variabilă de tip <span class="inline-code using">string</span>, care poate conține text, aceasta nu va ști dinainte lungimea textului pa care îl vom păstra în interiorul ei.</p>
+					<p>Vă puteți imagina mult mai ușor tipurile de valoare și de referință folosind exemple din lumea reală. În cazul în care dorim să creem un obiect și numai un singur obiect, vom crea un tip de valoare. De exemplu, vom crea o sculptură, și atât. O așezăm pe un suport și cu asta, basta. Așa că tipurile de valoare sunt ușor de înțeles. Creăm un obiect și orice modificare alegem să facem se face direct pe acel obiect în sine.</p>
+					<p>Pe de altă parte, să spunem că suntem un inginer, şi suntem angajați pentru a construi 300 de avioane. Ne apucăm să proiertăm pe fiecare în parte? NU! Proiectăm un model (<em>o schiță</em>), după care putem crea copii (numite <span class="programming-term">referințe</span> sau <span class="programming-term">instanțe</span> în C#). Așa că atunci când se utilizează tipuri de referință, nu desfășurăm acțiuni sau folosim direct obiectul original (schița). În schimb, de fiecare dată când avem nevoie, vom crea o <a href="../../obiecte/instantierea/"><span class="programming-term">instanță</span></a> (copie) a acesteia, și modificăm sau utilizăm acea copie.</p>				
+
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=jtXSjRkorLw&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=10" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							tipuri de valoare și referință, tipuri de variabile, variabile
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Marți, 03 Ianuarie 2017 la ora 22:22 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+					<div class="alignleft">« <a href="../../introducere/tipuri-de-variabile-ce-pot-fi-nule/" rel="prev">Tipuri de variabile ce pot fi nule</a></div>
+					<div class="alignright"><a href="../../introducere/secventele-escape/" rel="next">Secvenţele Escape</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/value-and-reference-types/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/tipuri-prin-valoare-si-referinta/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

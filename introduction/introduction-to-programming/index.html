@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="C#, programming" />
+		<meta name="description" content="The process of defining the instructions that the computer executes is called programming. This is one of the first concept in introduction to programming" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="First steps: Introduction to programming - Follow the white rabbit" />
+		<meta property="og:description" content="The process of defining the instructions that the computer executes is called programming. This is one of the first concept in introduction to programming" />
+		<meta property="og:url" content="./introduction/introduction-to-programming/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-17T21:42:10+00:00" />
+		<meta property="article:modified_time" content="2016-12-17T21:42:10+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		
+		<link rel="alternate" href="../../introduction/introduction-to-programming/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/introducere-in-programare/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			First steps: Introduction to programming - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Read this in
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/introduction-to-programming/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/introducere-in-programare/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Table of contents
+					</div>
+					<ul>
+						<li>
+							<a href="../../">
+								<span>Contents</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Chapters
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/uncategorized/">
+								<span>Uncategorized</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introduction/">
+								<span>Introduction</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrays/">
+								<span>Arrays</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functions/">
+								<span>Functions</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/strings-and-text-processing/">
+								<span>Strings And Text Processing</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/objects/">
+								<span>Objects</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/graphical-user-interface/">
+								<span>Graphical User Interface</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/data-structures/">
+								<span>Data Structures</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-and-error-handling/">
+								<span>Debugging And Error Handling</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/first-practical-application/">
+								<span>First Practical Application</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/object-oriented-programming/">
+								<span>Object Oriented Programming</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegates-lambda-expressions-events/">
+								<span>Delegates, Lambda Expressions, Events</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Introduction to programming
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../" style="font-style: italic; color: #777777;">Table of contents</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introduction/" style="font-style: italic; color: #777777;">Introduction</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Introduction to programming</a>
+
+					<p>Computer programs, also known as &#8220;software&#8221;, are a series of instructions that the computer can execute. When you are creating a program, you must specify the instructions that the computer must execute in order to achieve the desired operations. The process of defining the instructions that the computer executes is called <span id="generic-term">programming</span>.</p>
+					<p>The instructions that a computer executes are actually strings of 1&#8217;s and 0&#8217;s (binary numbers), which represent electronic signals produced by the hardware, inside the computer. Back in the day, when computer revolution was just at the beginning, humans had to understand and program computers directly in this series of 0 and 1, called &#8220;machine code&#8221;. Nowadays, things have greatly changed, programmers write computer instructions in a more humanly accessible form, called programming languages. A special program called <span id="generic-term">compiler</span> then transforms these instructions into machine code that can be processed by the microprocessor.</p>
+					<div class="caption aligncenter">
+						<a href="./term-compiler.jpg">
+							<picture>
+							  <source srcset="./term-compiler.jpg" media="(min-width: 769px)" />
+							  <source srcset="./term-compiler-300x225.jpg" media="(min-width: 300px)" />
+							  <img src="./term-compiler-150x150.jpg" style="width:70%;"/>
+							</picture>
+						</a>	
+						<p class="caption-text">
+							<a href="http://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2012/06/term-compiler.jpg" target="_blank" rel="noopener noreferrer">
+								Image Source
+							</a>
+						</p>
+					</div>
+					<p>There are many programming languages, each with pro&#8217;s and con&#8217;s, each with different concepts and syntax, however, what I will be teaching is a programming language called C# (read as &#8220;See Sharp&#8221;). In my opinion, it is the most suitable language for beginners, because its one of the easiest, yet still robust programming language out there. Its syntax is also very similar to C, C++, Java, PHP, etc, which will help you a lot if you ever want to jump to a different (more complex or not) language.</p>
+					<p>C# is part of a larger development platform called &#8220;Microsoft .NET&#8221;, and it is not the only language in which you can develop software (.NET also offers VB.NET, F#, ASP.NET, C++ managed, etc). The software we will use to write our sample exercises and create our programs is called Visual Studio and it is what programmers call an &#8220;IDE&#8221; (<span id="generic-term">integrated development environment</span>). It offers everything we need to design, create, write, compile, execute and debug programs using C#. In the next post we will have a look at installing Visual Studio.</p>
+
+					<p class="video-disclaimer">The theoretical concepts explained in this lesson are also discussed in the following video:</p>
+					
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=wg3aNgwZr3Q&list=PLFPg3ZcPgeptcrEpLGfMDm0blSoBfczeV&index=2" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Tags: <span style="color: rgb(190, 105, 104);">
+							C#
+						</span>
+						</p>
+						<small>
+						This entry was posted on Monday, December 19th, 2016 at 06:05 and is filed under <a href="../../category/introduction/" rel="category tag">Introduction</a>.
+						</small>
+					</div>
+
+					<div class="comment-thread">
+					    <!-- Comment 1 start -->
+					    <details open class="comment" id="comment-1">
+					        <summary>
+					            <div class="comment-heading">
+					                <div class="comment-info">
+					                    <a href="http://www.borgsteamfactory.com/" target="_blank" class="comment-author">Thomas Anderson</a>
+					                    <span class="m-0">
+					                        &bull; 23/12/2016 at 02:24
+					                    </span>
+					                </div>
+					            </div>
+					        </summary>
+					        <div class="comment-body">
+					            <p>
+					                following along as this might give me some info I need for what I am doing these days, thanks so much 🙂 I am usually a hardware guy, but I am hitting a brick wall on software to run my hardware these days 🙂
+					            </p>
+					        </div>
+					        <div class="replies">
+					            <!-- Comment 2 start -->
+					            <details open class="comment" id="comment-2">
+					                <summary>
+					                    <div class="comment-heading">
+					                        <div class="comment-info">
+					                            <a href="../../" class="comment-author">rusoaica</a>
+					                            <span class="m-0">
+					                                &bull; 27/12/2016 at 23:48
+					                            </span>
+					                        </div>
+					                    </div>
+					                </summary>
+					                <div class="comment-body">
+					                    <p>
+					                        I hope that I can help you improve your knowledge! 🙂
+					                    </p>
+					                </div>
+					            </details>
+					            <!-- Comment 2 end -->
+					        </div>
+					    </details>
+					    <!-- Comment 1 end -->
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../" rel="prev">Contents</a></div>
+						<div class="alignright"><a href="../../introduction/installing-visual-studio-2022-community-edition/" rel="next">Installing Visual Studio 2022 Community Edition</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Read this in
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/introduction-to-programming/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/introducere-in-programare/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Table of contents
+						</div>
+						<ul>
+							<li>
+								<a href="../../">
+									<span>Contents</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Chapters
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/uncategorized/">
+									<span>Uncategorized</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introduction/">
+									<span>Introduction</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrays/">
+									<span>Arrays</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functions/">
+									<span>Functions</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/strings-and-text-processing/">
+									<span>Strings And Text Processing</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/objects/">
+									<span>Objects</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/graphical-user-interface/">
+									<span>Graphical User Interface</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/data-structures/">
+									<span>Data Structures</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-and-error-handling/">
+									<span>Debugging And Error Handling</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/first-practical-application/">
+									<span>First Practical Application</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/object-oriented-programming/">
+									<span>Object Oriented Programming</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegates-lambda-expressions-events/">
+									<span>Delegates, Lambda Expressions, Events</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">This website <span style="color: #6DCBFE;">DOES NOT</span> use JavaScript. Because some people prefer it disabled, and it respects their choice. It <span style="color: #6DCBFE;">DOES NOT</span> use cookies, of any kind and you don't have to click through countless agreements. It has no reason to, 
+				and, no, there is no such thing as "mandatory cookies" or "legitimate interest" to "function properly". This website <span style="color: #6DCBFE;">DOES NOT</span> display ads. Neither does it sell anything. You don't have 
+				to register, subscribe, purchase or donate anything. Not everything is about greed and more profit. This website is <strong style="color: #ff0000;">strongly</strong> against social media. It <span style="color: #6DCBFE;">DOES NOT</span> embed any Facebook, Google, 
+				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
+				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
+				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="interfața visual studio, Visual studio versiunea Community 2015" />
+		<meta name="description" content="Scurtă introducere în interfața Visual Studio (versiunea 2022 Community Edition) și compilarea cu succes a primului program" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Scurtă introducere asupra interfeței Visual Studio - Follow the white rabbit" />
+		<meta property="og:description" content="Scurtă introducere în interfața Visual Studio (versiunea 2022 Community Edition) și compilarea cu succes a primului program" />
+		<meta property="og:url" content="./introducere/scurta-introducere-asupra-interfetei-visual-studio/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-22T21:24:38+00:00" />
+		<meta property="article:modified_time" content="2016-12-22T21:24:38+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/short-introduction-visual-studio-interface/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/scurta-introducere-asupra-interfetei-visual-studio/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Scurtă introducere asupra interfeței Visual Studio - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/short-introduction-visual-studio-interface/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/structura-unui-program-c-sharp/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Scurtă introducere asupra interfeței Visual Studio
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Scurtă introducere asupra interfeței Visual Studio</a>
+
+					<p>O.K. În lecția anterioară am creat primul nostru proiect. Bine până aici. Dar&#8230; ce urmează? Ce-i cu toate aceste butoane și fișiere și linii de text și&#8230; la naiba! Ce facem acum?!</p>
+					<p>Calmați-vă! Nu intrați în panică, stați cu mine. Știu că pare intimidant la început și că vă simțiți rătăciți.</p>
+					<p>Prin urmare, scurtă introducere în interfața Visual Studio. Din moment ce momentan vom crea doar o aplicație de consolă, lucrurile vor fi un pic mai ușoare. Nu vom avea de a face cu o interfață grafică (<span class="tooltip">GUI<span class="tooltiptext">Graphical User Interface</span></span>), cum ar fi o fereastră și componentele ei (butoane, câmpuri de text, etc). Acest lucru ne lasă cu doar trei panouri care ne interesează: fereastra principală, unde scriem codurile programului, Solution Explorer și consola de ieșire. Iată-le:</p>
+					<div class="caption aligncenter">
+						<a href="./0.png">
+							<picture>
+							  <source srcset="./0.png" media="(min-width: 769px)" />
+							  <source srcset="./0-768x562.png" media="(min-width: 300px)" />
+							  <img src="./0-300x220.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Fereastra principală (Main window) este auto-explicativă. Acesta este locul unde vom deschide diferitele fișiere ale proiectului nostru, unde vom scrie codurile care vor crea funcționalitatea programului nostru.</p>
+					<p>Panoul Solution Explorer este de fapt structura proiectului nostru. În Visual Studio, un proiect se numește &#8222;soluție&#8221;, iar dacă veți arunca o privire în directorul unde am salvat proiectul nostru, veți observa un fișier cu numele proiectului nostru, având extensia &#8222;.sln&#8221;.</p>
+					<p>Acesta este de fapt fișierul soluție, sau mai concret, proiectul nostru Visual Studio. Deși această descriere nu este chiar exactă, și l-am numit &#8222;proiect&#8221; doar pentru a obține o analogie cu alte software-uri care ar putea salva un fișier „proiect&#8221; (precum fișierele PSD pentru Photoshop).</p>
+					<p>De ce am spus că &#8222;proiect&#8221; nu este termenul cel mai corect? Pentru că în Visual Studio, &#8222;proiect&#8221; are un sens diferit. De exemplu, putem avea un fișier soluție &#8211; &#8222;PrimulMeuProgram.sln&#8221;, care poate conține unul, două sau mai multe proiecte &#8211; BunăLume.csproj, BunVenitMosCraciun.csproj, etc. În exemplul nostru de până acum, avem o soluție &#8211; HelloWorld, care conține doar un singur proiect, de asemenea numit HelloWorld.</p>
+					<p>Motivul pentru care o soluție poate conține mai multe proiecte este acela că fiecare proiect construiește propriul fișier de ieșire (fie un executabil sau un .DLL), dar ele sunt <em>structurate</em> împreună în aceeași soluție, pentru ușurința proiectării, fluxul de lucru și din alte motive.</p>
+					<p>De exemplu, să spunem că vrem să construim un program care are un fel de temă customizabilă. N-ar fi frumos dacă am putea pune skin-urile diferite într-un fișier separat, și nu în executabilul principal, sau chiar mai rău, extrase direct pe hard disk? Sau, dacă avem un program cu un număr foarte mare de module diferite și plugin-uri, cum ar fi Photoshop? Imaginați-vă ce haos ar fi de am avea toate codurile programului principal și ale TUTUROR plugin-uri Photoshop, într-un singur proiect!</p>
+					<p>In schimb, putem crea cu ușurință o soluție cu mai multe proiecte, sa zicem, primul proiect este principalul program executabil, al doilea este o resursă care conține teme și imagini, iar al treilea, o bibliotecă adițională sau un modul sau plug-in, sub forma a unui <span class="tooltip">DLL<span class="tooltiptext">Dynamic Link Library</span></span>. În acest caz, am putea separa cu ușurință lucrurile, am putea menține structura fluxului de lucru, etc.</p>
+					<p>Pentru a rezuma, Solution Explorer este panoul în care puteți vizualiza / deschide proiectele care conțin soluția noastră, împreună cu fișierele lor.</p>
+					<p>Fereastra de ieșire (Output) este utilă pentru noi, deoarece oferă informații despre modul în care ne desfasurăm activitatea (semnalizând erori sau avertismente, etc), sau pentru că putem redirecționa către ea informații relevante în procesul de depanare. Deocamdată, vom fi interesați doar de afișarea erorilor.</p>
+					<details>
+					    <summary>Informații suplimentare</summary>
+					    <p>Există trei moduri principale atunci când lucrăm cu un program: proiectare, depanare și execuție. Timpul de proiectare se referă la momentul în care vom scrie codurile noastre sau vom modifica interfețele noastre grafice; timpul de execuție se referă la momentul în care programul nostru este executat și rulează. Tmpul de depanare este o stare &#8222;între&#8221; cele două, atunci când programul rulează, dar îi oprim executarea astfel încât să putem vedea diferite valori și procese pentru a corecta eventualele erori care ar putea să apară.</p>
+					</details>
+					<p>Să ne concentrăm asupra fereastrei noastre principale. Acolo, avem o metodă numita Main, în interiorul căreia vom scrie prima noastră linie de cod:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>9</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Buna Lume!&quot;</span><span>)</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>În timp ce începeți să tastați, veți observa că Visual Studio afișează o listă de coduri posibile care încearcă să prezică ceea ce tastați, caracteristică numită <span class="generic-term">Intellisense:</span></p>
+					<div class="caption aligncenter">
+						<a href="./1.png">
+							<picture>
+							  <source srcset="./1.png" media="(min-width: 769px)" />
+							  <source srcset="./1-768x562.png" media="(min-width: 300px)" />
+							  <img src="./1-300x220.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Acolo puteți vedea, de asemenea, o scurtă descriere a termenului selectat. Pentru a insera de predicție, puteți apăsa Tab, Space sau puteți efectua dublu clic pe aceasta cu mouse-ul. Deocamdată, doar tastați linia arătată mai sus. Când ați terminat, apăsați pe butonul din partea de sus a a interfaței Visual Studio care arată ca un mic semn verde de &#8222;Play&#8221;, în dreptul căruia scrie &#8222;Start&#8221; (sau apăsați tasta F5):</p>
+					<div class="caption aligncenter">
+						<a href="./2.png">
+							<picture>
+							  <source srcset="./2.png" media="(min-width: 769px)" />
+							  <source srcset="./2-768x562.png" media="(min-width: 300px)" />
+							  <img src="./2-300x220.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>În acest stadiu, Visual Studio va încerca să compileze codul nostru sursă într-un fișier executabil și să-l execute. Dar&#8230;. Surpriză! Nu se va întâmpla nimic! Veți sfârși în cele din urmă cu o fereastră care arată cam așa:</p>
+					<div class="caption aligncenter">
+						<a href="./3.png">
+							<picture>
+							  <source srcset="./3.png" media="(min-width: 769px)" />
+							  <source srcset="./3-768x562.png" media="(min-width: 300px)" />
+							  <img src="./3-300x220.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Motivul pentru care programul nostru nu a fost compilat este acela că am omis în mod deliberat o bucată din sintaxa codului nostru, iar compilatorul ne avertizează că avem o eroare în codurile noastre, care îl împiedică să le compileze cu succes. Există trei locuri care indică eroarea noastră.</p>
+					<p>Cel mai uzual și util este panoul Error List, chiar lângă fila Output (despre care tocmai am discutat). Nu numai că ne va avertiza cu privire la posibilele erori, dar va încerca de asemenea să ne spună câte ceva despre eroarea cu care avem de a face, și, eventual, chiar să ne ofere câteva sugestii asupra a ceea ce putem face pentru a remedia problema. Din păcate, veți observa că mesajele de eroare sunt de cele mai multe ori scrise în limbajul academic cu care suntem obișnuiți. Tot din păcate, nu există nici o soluție pentru acest lucru, însă vă veți obișnui și veți înțelege aceste mesaje o dată cu experiența.</p>
+					<p>Numărul 2 este fereastra principală în sine. Acesta va sublinia cu un zig-zag roșu linia porțiunii de cod care generează eroarea.</p>
+					<p>Locul al treilea în care suntem informați despre eroarea noastră se află pe bara de derulare în interiorul interfeței Visual Studio (3). Observăm un pătrat roșu acolo, care indică o linie cu o eroare. Derulând la acel punct, veți ajunge la linia problematică.</p>
+					<p>O.K. Doar ce am întâmpinat prima noastră eroare, cunoscută sub numele de <span class="generic-term">bug</span> (română &#8211; „gândac”, „gânganie”). Nu, nu are multe picioare încă 😉 dar trebuie să o „strivim”. Așa că, modificați linia de mai sus prin adăugarea unui caracter punct și virgulă la sfârșit, după cum sugerează fereastra de ieșire:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>9</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Buna Lume!&quot;</span><span>);</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Apăsați din nou butonul Start. De data aceasta, nu vom primi nici o eroare, programul va fi compilat și rulat, dar&#8230;.. se va închide de la sine, într-o clipită. Asta deoarece programele de consolă tind să își încheie execuția și să se închidă, dacă nu le spunem în mod specific să aștepte pentru o anumită interacțiune din partea noastră. Să corectăm acest lucru. Adaugați o nouă linie:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Buna Lume!&quot;</span><span>);</span>
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">ReadLine</span><span>();</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Faceți clic pe Start din nou. Spre bucuria voastră, veți vedea primul vostru program analizat, compilat și a executat! Felicitări, ați învățat elementele de bază ale interfeței Visual Studio și ați făcut de asemenea primul pas spre a deveni un programator (sau programatoare 😉 )! (Bine&#8230;. nu chiar, dar totuși&#8230;)</p>
+					<div class="caption aligncenter">
+						<a href="./img_607adb0ee2153.png">
+							<picture>
+							  <source srcset="./img_607adb0ee2153.png" media="(min-width: 769px)"/>
+							  <source srcset="./img_607adb0ee2153-768x492.png" media="(min-width: 300px)" />
+							  <img src="./img_607adb0ee2153-300x192.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și în mod visual, în videoclipul următor:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=avNjztCJ_CY&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=4" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							interfața visual studio, Visual studio versiunea Community 2022
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Joi, 22 Decembrie 2016 la ora 23:24 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/crearea-primului-proiect/" rel="prev">Crearea primului proiect</a></div>
+						<div class="alignright"><a href="../../introducere/structura-unui-program-c-sharp/" rel="next">Structura unui program în C#</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/short-introduction-visual-studio-interface/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/scurta-introducere-asupra-interfetei-visual-studio/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'MonacoRegular';
+    src: url('../fonts/monaco/monaco-webfont.eot');
+    src: url('../fonts/monaco/monaco-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/monaco/monaco-webfont.woff') format('woff'),
+         url('../fonts/monaco/monaco-webfont.ttf') format('truetype'),
+         url('../fonts/monaco/monaco-webfont.svg#MonacoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.using {
+	color: #569CD6 !important;
+}
+.unused-using {
+	color: #285696 !important;
+}
+.unused-using-content {
+	color: #A4A4A4 !important;
+}
+.if {
+	color: #D8A0DF !important;
+}
+.literal {
+	color: #B5CEA8 !important;
+}
+.enum {
+	color: #B8D7A3 !important;
+}
+.string {
+	color: #D69D85 !important;
+}
+.escape {
+	color: #FFD68F !important;
+}
+.param {
+	color: #6ECCFE !important;
+}
+.unused-param {
+	color: #60A4C6 !important;
+}
+.region {
+	color: #808080 !important;
+}
+.class-name {
+	color: #4EC9B0 !important;
+}
+.method {
+	color: #DCDCAA !important;
+}
+.comment {
+	color: #57A64A !important;
+}
+.documentation {
+	color: #608B4E !important;
+}
+
+.code-block {
+	margin-top: 12px; 
+	margin-bottom: 12px; 
+	font-size: 12px !important; 
+	line-height: 15px !important; 
+	font-family: 'MonacoRegular', Monaco, Consolas, monospace;
+	height: auto;
+
+	border-bottom-color: #777777;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	
+	border-top-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	
+	border-right-color: #777777;
+	border-right-style: solid;
+	border-right-width: 1px;
+	
+	border-left-color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+
+.code-block-header {
+	height: 18px !important; 
+	line-height: 18px !important;
+	background: #006400 !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #000000 !important;
+    border-bottom-style: solid !important;
+}
+
+.code-block-title {
+	padding-left: 5px;
+}
+
+.code-block-body {
+	position: relative; 
+	z-index: 1; 
+	overflow: auto;
+	padding: 0;
+    margin: 0;
+}
+
+.code-block-body-table {
+	width: 100%;
+	border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: auto !important;
+}
+
+.line-numbers {
+	background: #363232 !important;
+    color: #1bc625 !important;
+    border-right-style: solid !important;
+    user-select: none;
+    width: 23px;
+}
+
+.vertical-dash-line {
+	border-right: 1px dashed #717171; 
+	padding-left: 3px;
+	margin-right: -4px;
+	user-select: none;
+}
+
+.line-numbers-highlight {
+	background: #494444 !important;
+}
+
+.line-numbers-content {
+	line-height: 15px !important;
+	white-space: nowrap;
+	text-align: right;
+}
+
+.line-numbers-content div {
+	width: 23px;
+}
+
+.code-pre {
+	background: #292626;
+	overflow: auto;
+	white-space: nowrap;
+	color: #DCDCDC;
+	font-size: 12px !important; 
+	line-height: 15px !important; 
+	-moz-tab-size:4; 
+	-o-tab-size:4; 
+	-webkit-tab-size:4; 
+	tab-size:4;
+}
+
+.code-line {
+	padding-left: 5px;
+}
+
+.code-line-highlight {
+	background: #312C2C;
+}
+
+.inline-code {
+	font-family: ;
+	padding-left: 2px;
+	padding-right: 2px;
+	color: #DCDCDC;
+	
+	/*border: 1px solid #444444 !important;*/
+	border-bottom-color: #777777;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	
+	border-top-color: #000000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	
+	border-right-color: #777777;
+	border-right-style: solid;
+	border-right-width: 1px;
+	
+	border-left-color: #000000;
+	border-left-style: solid;
+	border-left-width: 1px;
+
+    background: #363636 !important;
+	font-size: 12px !important; 
+	line-height: 15px !important; 
+	font-family: 'MonacoRegular', Monaco, Consolas, monospace;
+}

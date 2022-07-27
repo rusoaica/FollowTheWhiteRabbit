@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="operator de concatenare, operatori" />
+		<meta name="description" content="Cu toate că am folosit deja operatorul de concatenare de câteva ori, nu l-am explicat încă. Operatorul de concatenare (+) este folosit pentru a uni (...)" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Scurtă introducere despre Operatorul de concatenare - Follow the white rabbit" />
+		<meta property="og:description" content="Cu toate că am folosit deja operatorul de concatenare de câteva ori, nu l-am explicat încă. Operatorul de concatenare (+) este folosit pentru a uni (...)" />
+		<meta property="og:url" content="./introducere/operatorul-de-concatenare/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-01-05T23:15:05+00:00" />
+		<meta property="article:modified_time" content="2017-01-05T23:15:05+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/concatenator-operator/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/operatorul-de-concatenare/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Scurtă introducere despre Operatorul de concatenare - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/concatenator-operator/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/operatorul-de-concatenare/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Operatorul de concatenare
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Operatorul de concatenare</a>
+
+					<p>TCu toate că am folosit deja operatorul de concatenare de câteva ori, nu l-am explicat încă. Operatorul de concatenare (<span class="inline-code">+</span>) este folosit pentru a uni două sau mai multe valori de tip <span class="inline-code using">string</span> împreună.</p>
+					<p>Ca o notă, nu este necesar ca ambii operanzi să fie de tip <span class="inline-code using">string</span>. Dacă cel puțin unul dintre ei este un șir de caractere, ceilalți <em>vor fi convertiți în string</em>, în scopul de a asigura succesul concatenării.</p>
+					<p>Ar trebui să știți că această conversie se face din mers, de către .NET runtime. Acesta este un lucru minunat, deoarece nu trebuie să ne facem griji despre convertirea fiecărui operand în <span class="inline-code using">string</span>, etc. Cu toate acestea, deși acest lucru s-ar putea să pară o sarcină plictisitoare, ar trebui să vă obișnuiți să convertiți în mod explicit fiecare operand care trebuie convertit, pentru a se evita erorile de <a href="../../introducere/conversia-de-tip-implicita/">conversie implicită</a> (despre care vom discuta în viitor).</p>
+					<p>Iată un exemplu simplu despre folosirea operatorului concatenator, cu sau fără convertirea explicită a operatorilor non-string:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+												<div>29</div>
+												<div class="line-numbers-highlight">30</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span>{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare simplă de stringuri</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">prenume </span>= 
+													<span class="string">&quot;Ion&quot;</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">nume </span>= 
+													<span class="string">&quot;Popescu&quot;</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">numeComplet </span>= 
+													<span class="param">prenume </span>+
+													<span class="param">nume</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="param">numeComplet</span><span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare fără conversie explicită</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">salutare </span>= 
+													<span class="string">&quot;Bună! Data de azi este &quot;</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>
+													<span class="param"> dataCurenta</span> = 
+													<span class="literal">6</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">salutareCompleta </span>= 
+													<span class="param">salutare </span>+
+													<span class="param">dataCurenta</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="param">salutareCompleta</span><span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare cu conversie explicită</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">adresa </span>= 
+													<span class="string">&quot;Strada Fanteziei, numarul &quot;</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>
+													<span class="param"> numarStrada</span> = 
+													<span class="literal">3</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
+													<span class="param">adresaCompleta </span>= 
+													<span class="param">adresa </span>+
+													<span class="param">numarStrada</span>.<span class="method">ToString</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="param">adresaCompleta</span><span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">ReadLine</span><span>();</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span>}</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Consola va arăta</p>
+					<div class="caption aligncenter">
+						<a href="./img_5b2683c417105.png">
+							<picture>
+							  <source srcset="./img_5b2683c417105.png" media="(min-width: 300px)" />
+							  <img src="./img_5b2683c417105-300x239.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>				
+
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=UTXDDuRZbp8&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=12" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							operator de concatenare, operatori
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Vineri, 06 Ianuarie 2017 la ora 01:15 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/operatorii-logici/" rel="prev">Operatorii logici</a></div>
+						<div class="alignright"><a href="../../introducere/operatorii-pe-biti/" rel="next">Operatorii pe biți</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/concatenator-operator/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/operatorul-de-concatenare/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

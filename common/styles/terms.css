@@ -1,0 +1,17 @@
+.generic-term {
+	font-weight: bold;
+	font-style: italic;
+	color: #CC99FF;
+}
+
+.programming-term {
+	font-weight: bold;
+	font-style: italic;
+	color: #3366FF;
+}
+
+.error-term {
+	font-weight: bold;
+	font-style: italic;
+	color: #FF0000;
+}

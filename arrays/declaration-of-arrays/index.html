@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="arrays" />
+		<meta name="description" content="Arrays length is set at the time we instantiate them, it determines the total number of elements that they can store, and it can&#039;t be changed afterwards" />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Short introduction to Declaration of arrays - Follow the white rabbit" />
+		<meta property="og:description" content="Arrays length is set at the time we instantiate them, it determines the total number of elements that they can store, and it can&#039;t be changed afterwards" />
+		<meta property="og:url" content="./arrays/declaration-of-arrays/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-01-18T23:18:08+00:00" />
+		<meta property="article:modified_time" content="2017-01-18T23:18:08+00:00" />
+		<meta property="og:image" content="./img_607d35446ecb2.png" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+		
+		<link rel="alternate" href="../../arrays/declaration-of-arrays/" hreflang="en" />
+		<link rel="alternate" href="../../arrayuri/declararea-array-urilor/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Short introduction to Declaration of arrays - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Read this in
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../arrays/declaration-of-arrays/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../arrayuri/declararea-array-urilor/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Table of contents
+					</div>
+					<ul>
+						<li>
+							<a href="../../">
+								<span>Contents</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Chapters
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/uncategorized/">
+								<span>Uncategorized</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introduction/">
+								<span>Introduction</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrays/">
+								<span>Arrays</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functions/">
+								<span>Functions</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/strings-and-text-processing/">
+								<span>Strings And Text Processing</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/objects/">
+								<span>Objects</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/graphical-user-interface/">
+								<span>Graphical User Interface</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/data-structures/">
+								<span>Data Structures</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-and-error-handling/">
+								<span>Debugging And Error Handling</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/first-practical-application/">
+								<span>First Practical Application</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/object-oriented-programming/">
+								<span>Object Oriented Programming</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegates-lambda-expressions-events/">
+								<span>Delegates, Lambda Expressions, Events</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Declaration of arrays
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../" style="font-style: italic; color: #777777;">Table of contents</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/arrays/" style="font-style: italic; color: #777777;">Arrays</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Declaration of arrays</a>
+
+					<p>When we are dealing with declaration of an array, you should always remember that arrays in C# are fixed length. Their length is set at the time we <a href="../../objects/instantiation/">instantiate</a> them, it determines the total number of elements that they can store, and it cannot be changed/resized anymore. If you remember our previous lesson, we compared an array to a building, where we have apartments (array&#8217;s elements), each identified by an apartment number (<span class="programming-term">index</span>, or <span class="programming-term">indices</span>). As in real world, once a building is built after a blueprint (&#8220;instantiation&#8221; of an array &#8211; creation of a copy after the blueprint), we cannot add or remove apartments from it.</p>
+					<p>An array can be declared as follows:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>HelloWorld</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[] <span class="param">myArray</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>In our example, we have declared an array of type integer, named <span class="inline-code param">myArray</span>. Using <span class="inline-code">[]</span> we are indicating that we want to declare an array of elements, not a single element. Arrays are reference types. This means that when they are declared, they store the default value of <span class="inline-code using">null</span>. This happens because the memory for the elements is not yet allocated.</p>
+					<p>Because arrays are reference types, they are initialized using the <span class="inline-code using">new</span> keyword.</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>HelloWorld</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[] <span class="param">myArray</span> = <span class="using">new int</span>[<span class="literal">6</span>];
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>In the above code, we have declared an array of 6 elements length (remember, array indexes start from <span class="inline-code literal">0</span>, not <span class="inline-code literal">1</span>, so you access them from <span class="inline-code"><span class="param">myArray</span>[<span class="literal">0</span>]</span> to <span class="inline-code"><span class="param">myArray</span>[<span class="literal">5</span>]</span>!), of type integer. What this means is that the dynamic memory (also called <span class="programming-term">heap</span>) now contains 6 integer numbers, and they are all initialized with the value <span class="inline-code literal">0</span>.</p>
+					<p>Always remember that declaration of arrays does not allow initialization of negative length arrays (obviously) and the type of the array must always coincide with the initialization type (we cannot write <span class="inline-code"><span class="using">int</span>[] <span class="param">myArray</span> = <span class="using">new double</span>[];</span>).</p>
+
+					<p class="video-disclaimer">The concepts explained in this lesson are also shown visually as part of the following video:</p>
+					
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=EQSIm-XgVzI&list=PLFPg3ZcPgeptcrEpLGfMDm0blSoBfczeV&index=16" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Tags: <span style="color: rgb(190, 105, 104);">
+							arrays
+						</span>
+						</p>
+						<small>
+						This entry was posted on Thursday, January 19th, 2017 at 01:18 and is filed under <a href="../../category/arrays/" rel="category tag">Arrays</a>.
+						</small>
+					</div>
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../arrays/arrays/" rel="prev">Arrays</a></div>
+						<div class="alignright"><a href="../../arrays/initialization-of-arrays/" rel="next">Initialization of arrays</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Read this in
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../arrays/declaration-of-arrays/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../arrayuri/declararea-array-urilor/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Table of contents
+						</div>
+						<ul>
+							<li>
+								<a href="../../">
+									<span>Contents</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Chapters
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/uncategorized/">
+									<span>Uncategorized</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introduction/">
+									<span>Introduction</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrays/">
+									<span>Arrays</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functions/">
+									<span>Functions</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/strings-and-text-processing/">
+									<span>Strings And Text Processing</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/objects/">
+									<span>Objects</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/graphical-user-interface/">
+									<span>Graphical User Interface</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/data-structures/">
+									<span>Data Structures</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-and-error-handling/">
+									<span>Debugging And Error Handling</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/first-practical-application/">
+									<span>First Practical Application</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/object-oriented-programming/">
+									<span>Object Oriented Programming</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegates-lambda-expressions-events/">
+									<span>Delegates, Lambda Expressions, Events</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">This website <span style="color: #6DCBFE;">DOES NOT</span> use JavaScript. Because some people prefer it disabled, and it respects their choice. It <span style="color: #6DCBFE;">DOES NOT</span> use cookies, of any kind and you don't have to click through countless agreements. It has no reason to, 
+				and, no, there is no such thing as "mandatory cookies" or "legitimate interest" to "function properly". This website <span style="color: #6DCBFE;">DOES NOT</span> display ads. Neither does it sell anything. You don't have 
+				to register, subscribe, purchase or donate anything. Not everything is about greed and more profit. This website is <strong style="color: #ff0000;">strongly</strong> against social media. It <span style="color: #6DCBFE;">DOES NOT</span> embed any Facebook, Google, 
+				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
+				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
+				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

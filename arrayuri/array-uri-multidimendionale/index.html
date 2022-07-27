@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="array-uri, declararea și inițializarea variabilelor, initializarea array-urilor" />
+		<meta name="description" content="Array-urile multidimensionale sunt numite matrici. În programare, numim array-uri multidimensionale orice array cu mai mult de o dimensiune." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Array-uri multidimendionale - Follow the white rabbit" />
+		<meta property="og:description" content="Array-urile multidimensionale sunt numite matrici. În programare, numim array-uri multidimensionale orice array cu mai mult de o dimensiune." />
+		<meta property="og:url" content="./arrayuri/array-uri-multidimendionale/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-04-05T13:48:09+00:00" />
+		<meta property="article:modified_time" content="2017-04-05T13:48:09+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../arrays/multidimensional-arrays/" hreflang="en" />
+		<link rel="alternate" href="../../arrayuri/array-uri-multidimendionale/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Array-uri multidimendionale - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../arrays/multidimensional-arrays/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../arrayuri/array-uri-multidimendionale/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Array-uri multidimendionale
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/arrayuri/" style="font-style: italic; color: #777777;">Array-uri</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Array-uri multidimendionale</a>
+
+					<p>În matematică, array-urile unidimensionale sunt cunoscute ca <span class="generic-term">vectori</span>. Unii dintre voi poate vă aminti încă (siiiiigur! 🙂) faptul că array-urile multidimensionale sunt numite <span class="generic-term">matrici</span>. În programare, numim array-uri multidimensionale orice array cu mai mult de o dimensiune.</p>
+					<p>De exemplu, cum am putea reprezenta structura unei table de șah, în cod? Ea are două dimensiuni: una formată din numere (pornind de la 1, terminând cu 8) și una din literele (de la A la H), și identificăm o celulă prin combinarea celor două, ca într-un sistem de coordonate: H3, B6, etc.</p>
+					<p>Modul în care realizăm acest lucru este prin declararea unui array bidimensional, astfel:</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">arrayBiDimensional</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Dacă doriți să reprezentați un sistem tridimensional, cum ar fi coordonatele unui punct 3D (axele X, Y și Z), puteți declara un array tridimensional:</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,,] <span class="param">arrayTriDimensional</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>si asa mai departe. Cu toate acestea, array-urile bidimensionale sunt rar utilizate, iar cele cu mai mult de două dimensiuni chiar și mai rar. Cu toate acestea, în teorie, ați putea declara un număr infinit de dimensiuni.</p>
+					<p>Declarăm array-urile multidimensionale astfel:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">intMatrice</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">float</span>[,] <span class="param">floatMatrice</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string</span>[,,] <span class="param">strCub</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>și le putem inițializa astfel:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">intMatrice</span> = <span class="using">new int</span>[<span class="literal">3</span>, <span class="literal">4</span>];
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">float</span>[,] <span class="param">floatMatrice</span> = <span class="using">new float</span>[<span class="literal">8</span>, <span class="literal">2</span>];
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string</span>[,,] <span class="param">strCub</span> = <span class="using">new string</span>[<span class="literal">5</span>, <span class="literal">5</span>, <span class="literal">5</span>];
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Deoarece array-urile multidimensionale sunt greu de înțeles ca și concept când le vizualizăm așa, le puteți imagina mai bine vizualizându-le prin următoarea imagine:</p>
+					<div class="caption aligncenter">
+						<a href="../../arrays/multidimensional-arrays/multidimensional-arrays.png">
+							<picture>
+							  <img src="../../arrays/multidimensional-arrays/multidimensional-arrays.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Imaginea de mai sus reprezintă reprezentarea vizuală a matricei noastre <span class="inline-code param">intMatrice</span> populată cu unele elemente aleatoare. După cum se poate vedea din inițializarea noastră, am declarat <span class="inline-code param">intMatrice</span> cu două dimensiuni, una de 3 elemente, una de 4. Imaginea ilustrează exact același lucru, ținând cont de faptul că array-urile multidimensionale, la fel ca array-urile obișnuite, au indecșii pornind de la <span class="inline-code literal">0</span>, nu <span class="inline-code literal">1</span>.</p>
+					<p>În cele din urmă, acesta este modul în care vom inițializa array-ul noastru multidimensional cu unele valori:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">matrice</span> = 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>, <span class="literal">4</span> }, <span class="comment">// valori rand 0, cu 4 coloane</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">5</span>, <span class="literal">6</span>, <span class="literal">7</span>, <span class="literal">8</span> }, <span class="comment">// valori rand 1, cu 4 coloane</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;};
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// marimea matricei este 2 x 4 (2 randuri, 4 coloane)</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Și da, este un pic complicat. Dar nu fiți triști, chiar și programatorii cu experiență au probleme în conceptualizarea array-urilor cu mai mult de trei dimensiuni 😀</p>
+					<p>Cu toate acestea, accesarea sau setarea valorilor anumitor locații ale array-urilor multidimensionale este un pic mai simplă. Considerați declarația de mai sus. Array-ul <span class="inline-code param">matrice</span> are un total de 8 elemente, 2 rânduri cu 4 coloane fiecare. Deci, elementele sale pot fi accesate astfel:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">matrice</span>[<span class="literal">0</span>, <span class="literal">0</span>], <span class="param">matrice</span>[<span class="literal">0</span>, <span class="literal">1</span>], <span class="param">matrice</span>[<span class="literal">0</span>, <span class="literal">2</span>], <span class="param">matrice</span>[<span class="literal">0</span>, <span class="literal">3</span>] <span class="comment">// primul rând</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="param">matrice</span>[<span class="literal">1</span>, <span class="literal">0</span>], <span class="param">matrice</span>[<span class="literal">1</span>, <span class="literal">1</span>], <span class="param">matrice</span>[<span class="literal">1</span>, <span class="literal">2</span>], <span class="param">matrice</span>[<span class="literal">1</span>, <span class="literal">3</span>] <span class="comment">// al doilea rând</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>După o inspecție rapidă a exemplului meu, vă puteți da seama probabil că array-urile bidimensionale pot fi accesate prin</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">matrice</span>[<span class="literal">rand</span>, <span class="literal">coloana</span>]
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>și similar, orice număr de dimensiuni pot fi accesate cu</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">nDimensionalArray</span>[<span class="literal">index1</span>, ..., <span class="literal">indexN</span>]
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Un alt concept de care ar trebui să fiți conștienți este lungimea array-urilor multidimensionale. Desigur, nu putem accesa proprietatea <span class="inline-code">Length</span> direct, cum am făcut în cazul array-urilor unidimensionale, deoarece nu este posibil. Acest lucru se datorează faptului că fiecare dimensiune are propria sa lungime, care poate fi preluată în acest fel:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">matrice</span> = 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>, <span class="literal">4</span> }, 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">5</span>, <span class="literal">6</span>, <span class="literal">7</span>, <span class="literal">8</span> }, 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;};
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">0</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">1</span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>La o prima vedere, ați putea crede că <span class="inline-code"><span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">0</span>)</span> va returna lungimea primului rând, în timp ce <span class="inline-code"><span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">1</span>)</span>, valorile celui de-al doilea, iar aceasta ar fi o capcană perfidă! De fapt, <span class="inline-code"><span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">0</span>)</span> returnează lungimea primei noastre dimensiuni &#8211; rândurile &#8211; care, în cazul nostru este 2, în timp ce <span class="inline-code"><span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">1</span>)</span> returnează lungimea celei de a doua dimensiuni &#8211; coloanele &#8211; care este 4!</p>
+					<p>Pentru a încheia această lecție, acesta este modul de afișare a elementelor unei matrice la consolă:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[,] <span class="param">matrice</span> = 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>, <span class="literal">4</span> }, <span class="comment">// valori rand 0</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="literal">5</span>, <span class="literal">6</span>, <span class="literal">7</span>, <span class="literal">8</span> }, <span class="comment">// valori rand 1</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;};
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// afiseaza matricea la consola</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">rand</span> = <span class="literal">0</span>; <span class="param">rand</span> &lt; <span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">0</span>); <span class="param">rand</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">coloana</span> = <span class="literal">0</span>; <span class="param">coloana</span> &lt; <span class="param">matrice</span>.<span class="method">GetLength</span>(<span class="literal">1</span>); <span class="param">coloana</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="param">matrice</span>[<span class="param">rand</span>, <span class="param">coloana</span>]);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Mai întâi declarăm și inițializăm o matrice. Matricea este bidimensională, de aceea folosim o buclă <span class="inline-code if">for</span> ce va itera rândurile și o buclă <span class="inline-code if">for</span> <a href="../../introducere/buclele-imbricate/">imbricată</a> care va itera coloanele pentru fiecare rând. La fiecare iterație vom afișa elementul curent folosind metoda adecvată pentru a accesa acest element utilizând doi indici (rânduri și coloane). În cele din urmă, când vom executa această bucată de cod, vom obține următorul rezultat:</p>
+					<div class="caption aligncenter">
+						<a href="../../arrays/multidimensional-arrays/printing-multidimensional-arrays.png">
+							<picture>
+							  <source srcset="../../arrays/multidimensional-arrays/printing-multidimensional-arrays.png" media="(min-width: 300px)" />
+							  <img src="../../arrays/multidimensional-arrays/printing-multidimensional-arrays-300x152.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+			
+					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=Vl_istgghCk&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=16" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							array-uri, declararea și inițializarea variabilelor, initializarea array-urilor
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Vineri, 31 Martie 2017 la ora 18:04 și este categorizată ca <a href="./category/arrayuri/" rel="category tag">Array-uri</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../arrayuri/declararea-array-urilor/" rel="prev">Declararea array-urilor</a></div>
+						<div class="alignright"><a href="../../arrayuri/accesarea-elementelor-unui-array/" rel="next">Accesarea elementelor unui array</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../arrays/multidimensional-arrays/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../arrayuri/array-uri-multidimendionale/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

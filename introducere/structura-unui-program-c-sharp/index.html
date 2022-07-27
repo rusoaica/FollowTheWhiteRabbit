@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="C#, programare, programare în limba română" />
+		<meta name="description" content="Analiză și explicație de bază a instrucțiunilor și structurii unui program de consolă în C#, în Visual Studio. Explicarea conceptelor fundamentale în C#." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Structura unui program în C# - Follow the white rabbit Follow" />
+		<meta property="og:description" content="Analiză și explicație de bază a instrucțiunilor și structurii unui program de consolă în C#, în Visual Studio. Explicarea conceptelor fundamentale în C#." />
+		<meta property="og:url" content="./introducere/structura-unui-program-c-sharp/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2016-12-17T21:42:10+00:00" />
+		<meta property="article:modified_time" content="2016-12-17T21:42:10+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../introduction/structure-c-sharp-console-program/" hreflang="en" />
+		<link rel="alternate" href="../../introducere/structura-unui-program-c-sharp/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Structura unui program în C# - Follow the white rabbit Follow
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../introduction/structure-c-sharp-console-program/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/structura-unui-program-c-sharp/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Structura unui program în C#
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Structura unui program în C#</a>
+
+					<p>În postarea precedentă, am creat primul nostru program în C#, o aplicație de consolă care afișează o singură propoziție și care conținea următoarele instrucțiuni:</p>
+					
+					<div class="code-block">
+		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="unused-using">using</span>
+													<span class="unused-using-content"> System.Collections.Generic;</span>
+												</div>
+
+												<div class="code-line">
+													<span class="unused-using">using</span>
+													<span class="unused-using-content"> System.Linq;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="unused-using">using </span>
+													<span class="unused-using-content">System.Text;</span>
+												</div>
+
+												<div class="code-line">
+													<span class="unused-using">using</span>
+													<span class="unused-using-content"> System.Threading.Tasks;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span>{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">static void </span><span class="method">Main</span><span>(<span class="using">string</span>[]<span class="param"> args</span>)</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Buna Lume!&quot;</span><span>);</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">ReadLine</span><span>();</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+
+												<div class="code-line">
+													<span>}</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<p>E momentul să analizăm structura unui program de consolă în C#.</p>
+					<p>În primul rând, când spun „program de consolă”, nu mă refer la console de jocuri. Programele de consolă sunt doar acele programe cu fereastre neagre care apar pe ecran, nu conțin butoane, casete de text sau imagini, iar modul în care puteți interacționa cu ele este doar prin intermediul tastaturii.</p>
+					<p>Aceste instrucțiuni sunt foarte asemănătoare cu majoritatea celor pe care le vom întâlni în cele mai multe dintre programele pe care le vom scrie vreodată.</p>
+					<p>După cum se poate vedea, programul nostru începe cu câteva instrucțiuni  <span class="inline-code using">using</span> instructions. Instrucțiunile <span class="inline-code using">using</span> cer compilatorului să utilizeze conținutulul unui fișier. În cazul programului nostru, instrucțiunile <span class="inline-code using">using</span> cer compilatorului să includă conținutul unor fișiere, conținuturi care sunt numite <span class="inline-code">System.Collections.Generic</span>, <span class="inline-code">System.Text</span>, etc.</p>
+					<p>Aceste conținuturi sunt stocate în ceea ce programatorii .NET numesc <a href="../../obiecte/namespaces/"><em>namespace</em></a>. Nu trebuie să vă faceți griji cu privire la ceea ce înseamnă 
+						<span class="inline-code using">namespace</span> pentru moment, tot ce trebuie să știți este că acestea conțin coduri suplimentare pe care le putem folosi în programele noastre. De fiecare dată când utilizați o directivă
+						<span class="inline-code using">using</span> nu trebuie să tastați manual aceste coduri și nici nu trebuie să re-inventați roata.</p>
+					<p>De exemplu, dacă ar trebui să scrieți un program care să calculeze radicali, nu va trebui să creați o funcție pentru a face acest lucru. În schimb, ați insera o directivă 
+						<span class="inline-code"><span class="using">using</span> System.Math;</span> care conține o funcție de calcul al rădăcinilor pătrate, și alte funcții matematice, gata disponibile.</p>
+					<p>După cum probabil ați observat, câteva directive <span class="inline-code using">using</span> au fost adăugate automat de Visual Studio, când am creat proiectul. Visual Studio încearcă să vă simplifice munca adăugând cele mai frecvent utilizate directive <span class="inline-code using">using</span> , pentru a vă ajuta să începeți. Cu toate acestea, nu aveți întotdeauna nevoie de toate fișierele importate, iar acesta este și motivul pentru care unele dintre directivele <span class="inline-code using">using</span> sunt albe, în timp ce altele sunt gri. Ori de câte ori folosim în programele noastre coduri care sunt conținute în fișierele importate cu directivele <span class="inline-code using">using</span>, directivele <span class="inline-code using">using</span> își vor schimba culoarea fontului în alb. Prin urmare, ori de câte ori vedeți directive
+						<span class="inline-code using">using</span> gri, le puteți șterge în siguranță.</p>
+					<p>Puteți chiar automatiza acest proces, făcând clic dreapta oriunde în fereastra principală și alegând opțiunea <span class="generic-term">Remove and Sort Usings</span>(eliminare și sortare directive using), astfel:</p>
+					<div class="caption aligncenter">
+						<a href="../../introduction/structure-c-sharp-console-program/remove-usings.png">
+							<picture>
+							  <source srcset="../../introduction/structure-c-sharp-console-program/remove-usings.png" media="(min-width: 769px)" />
+							  <source srcset="../../introduction/structure-c-sharp-console-program/remove-usings-300x300.png" media="(min-width: 300px)" />
+							  <img src="../../introduction/structure-c-sharp-console-program/remove-usings-150x150.png" style="width:70%;"/>
+							</picture>
+						</a>
+					</div>
+					
+					<p>Visual Studio va elimina automat directivele <span class="inline-code using">using</span> nefolosite din fișierul programului.</p>
+					<p>După declarațiile <span class="inline-code using">using</span>, veți vedea două noi concepte: <em><a href="../../obiecte/namespace/">namespace</a></em> (spațiu de nume) și 
+						<em><a href="../../obiecte/clase/">class</a></em> (clasă). Deocamdată, ne gândim la o clasă ca fiind un obiect. Un obiect din lumea reală, cum ar fi o mașină, o casă, o pisică, etc. Clasele sunt obiecte, și ele conțin proprietăți și alte lucruri. Namespace, pe de altă parte, sunt o colecție de clase, grupate după aceleași criterii. De exemplu, am putea avea un namespace numit Univers, care ar conține unele obiecte (clase): stele, planete, galaxii, etc. Acum are sens să grupăm aceste obiecte într-un namespace, pentru că ele au ceva în comun: ele sunt PARTE a Universului.</p>
+					<p>Următoarea linie a programului nostru este</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>11</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">static void </span><span class="method">Main</span><span>(<span class="using">string</span>[]<span class="param"> args</span>)</span>
+												</div>
+
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+					<p>Fiecare aplicație de consolă pe care o veți crea va conține o linie similară cu instrucțiunea <span class="inline-code using">void <span class="method">Main</span></span>. Pe viitor, veți observa că va fi mult mai ușor să grupăm instrucțiunile pe care un program trebuie să le execute, astfel încât acestea să fie mai inteligibile pentru noi sau pentru alți programatori, ori pentru a înțelege ce anume trebuie să execute programul. Ceea ce trebuie să vă amintiți este că într-o aplicație de consolă, instrucțiunea <span class="inline-code using">void <span class="method">Main</span></span> este executată întotdeauna prima. Este punctul de pornire al execuției unui program. Deci, când efectuați dublu click pe un executabil, funcția <span class="inline-code method">Main</span> este prima care va fi executată.</p>
+					<p>Cum rămâne cu caracterele <span class="inline-code">{ }</span>? Deocamdată, tot ce trebuie să știți este că programele C# au instrucțiunile grupate în blocuri, iar fiecare bloc începe cu <span class="inline-code">{</span> și se termină cu <span class="inline-code">}</span>. Acesta este modul în care compilatorul poate înțelege unde începe un bloc de cod, și unde se termină. Rețineți că pentru orice acoladă deschisă, trebuie să utilizați o acoladă de închidere.</p>
+					<p>În sfârșit, în programul nostru, în interiorul blocului de cod al funcției <span class="inline-code method">Main</span>, avem două linii de cod:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title testtest"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">static void </span><span class="method">Main</span><span>(<span class="using">string</span>[]<span class="param"> args</span>)</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Buna Lume!&quot;</span><span>);</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="class-name">Console</span><span>.</span><span class="method">ReadLine</span><span>();</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Prin utilizarea <span class="inline-code class-name">Console<span>.</span><span class="method">WriteLine</span></span> am instruit programul nostru să afișeze un text în fereastra sa. Prin utilizarea 
+								<span class="inline-code class-name">Console<span>.</span><span class="method">ReadLine</span></span> , l-am instruit să nu închidă fereastra după ce execuția se încheie (programele de consolă tind să se închidă singure când își termină execuția), ci să aștepte o interacțiune din partea noastră (în cazul de față, orice text introdus la tastatură, urmat de tasta Enter).</p>
+
+					<p class="video-disclaimer">Conceptele teoretice explicate în această lecție sunt prezentate și în videoclipul următor:</p>
+
+					<div class="youtube-cropped">
+						<a href="https://www.youtube.com/watch?v=UiVpxkDMnvM&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=5" target="_blank">
+							<img src="../../common/images/youtube.webp"/>
+							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+						</a>
+					</div>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							C#
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Luni, 19 Decembrie 2016 la ora 06:05 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../introducere/scurta-introducere-asupra-interfetei-visual-studio/" rel="prev">Scurtă introducere asupra interfeței Visual Studio</a></div>
+						<div class="alignright"><a href="../../c-sharp-face-diferenta-intre-litere-mici-si-mari/" rel="next">C# face diferența între majuscule și minuscule</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../introduction/structure-c-sharp-console-program/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/structura-unui-program-c-sharp/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>
