@@ -15,3 +15,21 @@
 	font-style: italic;
 	color: #FF0000;
 }
+
+.property {
+	font-weight: bold;
+	font-style: italic;
+	color: #ff00ff;
+}
+
+.function {
+	font-weight: bold;
+	font-style: italic;
+	color: #ffff00;
+}
+
+.event {
+	font-weight: bold;
+	font-style: italic;
+	color: #00ffff;
+}

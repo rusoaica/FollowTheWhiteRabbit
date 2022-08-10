@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="ro-RO">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="funcții, funcții recursive" />
+		<meta name="description" content="În cuvinte simple, funcțiile recursive sunt funcții care fac apel la ele însele din interiorul corpului lor, pentru a rezolva o problemă." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="ro_RO" />
+		<meta property="og:locale:alternate" content="ro_RO" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Scurtă introducere despre funcții recursive în C# - Follow the white rabbit" />
+		<meta property="og:description" content="În cuvinte simple, funcțiile recursive sunt funcții care fac apel la ele însele din interiorul corpului lor, pentru a rezolva o problemă." />
+		<meta property="og:url" content="./functii/functii-recursive/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-04-20T18:16:12+00:00" />
+		<meta property="article:modified_time" content="2017-04-20T18:16:12+00:00" />
+		<meta property="og:image" content="./term-compiler-300x225.jpg" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+
+		<link rel="alternate" href="../../functions/recursive-functions/" hreflang="en" />
+		<link rel="alternate" href="../../functii/functii-recursive/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Scurtă introducere despre funcții recursive în C# - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Citește în
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../functions/recursive-functions/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../functii/functii-recursive/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Cuprins
+					</div>
+					<ul>
+						<li>
+							<a href="../../index-ro.html">
+								<span>Listă de lecții</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Capitole
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/fara-categorie/">
+								<span>Fără categorie</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introducere/">
+								<span>Introducere</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrayuri/">
+								<span>Array-uri</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functii/">
+								<span>Funcții</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+								<span>Șiruri de caractere și procesare de text</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/obiecte/">
+								<span>Obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/interfata-grafica-cu-utilizatorul/">
+								<span>Interfața grafică cu utilizatorul</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/structuri-de-date/">
+								<span>Structuri de date</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-si-manipularea-erorilor/">
+								<span>Debugging și manipularea erorilor</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/prima-aplicatie-practica/">
+								<span>Prima aplicație practică</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/programarea-orientata-pe-obiecte/">
+								<span>Programarea orientată pe obiecte</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegati-expresii-lambda-evenimente/">
+								<span>Delegați, expresii Lambda, evenimente</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq-ro/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Funcții recursive
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/functii/" style="font-style: italic; color: #777777;">Funcții</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Funcții recursive</a>
+
+					<p>Recursivitatea este un concept matematic care definește orice obiect care este conținut sau definit de el însuși. Aceasta ar trebui să fie definiția oficială, academică. În cuvinte simple, funcțiile recursive sunt funcții care fac apel la ele însele din interiorul corpului lor, pentru a rezolva o problemă.</p>
+					<p><span class="generic-term">Funcțiile recursive</span>, atunci când sunt create în mod corect, ne pot ajuta să rezolvăm probleme foarte complicate, care ar necesita un volum mult mai mare de cod dacă le-am rezolva în alt mod, si ne pot ajuta să scriem un cod elegant, ușor de înțeles. Să luăm un exemplu de recursivitate. Câți dintre voi încă vă mai amintesc numerele lui Fibonacci? Așa ma gândeam și eu 😀</p>
+					<p><span class="generic-term">Numerele lui Fibonacci</span> sunt o secvență de numere în care fiecare element nou este suma celor două elemente anterioare. De exemplu: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, etc. Imaginați-vă acum că va trebui să calculați secvența Fibonacci până la 1000. Veți sfârși în cele din urma cu ceva de genul:</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">numar</span> = <span class="literal">16</span>; <span class="comment">// numarul elementelor Fibonacci</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[] <span class="param">fib</span> = <span class="using">new int</span>[<span class="param">numar</span> + <span class="literal">1</span>]; 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// initializeaza primele doua elemente</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fib</span>[<span class="literal">0</span>] = <span class="literal">0</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fib</span>[<span class="literal">1</span>] = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">2</span>; <span class="param">i</span> &lt;= <span class="param">numar</span>; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fib</span>[<span class="param">i</span>] = <span class="param">fib</span>[<span class="param">i</span> - <span class="literal">2</span>] + <span class="param">fib</span>[<span class="param">i</span> - <span class="literal">1</span>];
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">fib</span>[<span class="param">i</span> - <span class="literal">2</span>] + <span class="param">fib</span>[<span class="param">i</span> - <span class="literal">1</span>]);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Iar rezultatul ar fi acesta:</p>
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/fibonacci-non-recursive.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/fibonacci-non-recursive.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/fibonacci-non-recursive-300x190.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Singura problemă cu codul de mai sus este că trebuie să știm în prealabil câte elemente dorim să calculăm în secvență. Pentru numărul 1000, există 15 astfel de elemente. Dar dacă am fi vrut să-l calculăm pentru un număr mult mai mare, cum ar fi 1.000.000? Am avea nevoie de o mulțime de teste pentru a vedea câte elemente se încadrează în acel interval. Și acest lucru nu este elegant dacă dorim o soluție dinamică, pentru orice număr.</p>
+					<p>Deci .. Vă prezint &#8230; pam-pam-paaaam! Funcții recursive! Iată un exemplu de bază:</p>
+
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">CalculeazaFibonacci</span>(<span class="literal">10</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static long </span><span class="method">CalculeazaFibonacci</span>(<span class="using">int</span> <span class="param">n</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span> (<span class="param">n</span> &lt;= <span class="literal">2</span>) 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="literal">1</span>; 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="method">CalculeazaFibonacci</span>(<span class="param">n</span> - <span class="literal">1</span>) + <span class="method">CalculeazaFibonacci</span>(<span class="param">n</span> - <span class="literal">2</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Vedeți cât de scurtă este funcția noastră? Doar 3 linii de cod. Acesta este un exemplu perfect pentru modul în care recursivitatea ne poate ajuta, dar și un exemplu clasic de implementare greșită și extrem de ineficientă a recursivității. Acest lucru se datorează faptului că există multe calcule excesive ale unuia și aceluiași element al secvenței. Vom aborda aceste avantaje și dezavantaje ale recursivității mai târziu.</p>
+					<p>Există două tipuri de recursivitate:</p>
+					<ul>
+						<li><span class="generic-term">recursivitate directă</span> &#8211; atunci când avem un apel la aceeași funcție din corpul acelei funcții</li>
+						<li><span class="generic-term">recursivitate indirectă</span> &#8211; atunci când avem funcția A, care apelează funcția B, care apelează funcția C, care în schimb apelează din nou funcția A, creând un fel de inel. Aceste funcții sunt numite și <span class="generic-term">reciproc recursive</span>.</li>
+					</ul>
+					<p>Ca și în cazul buclelor infinite, funcțiile recursive dețin, de asemenea, pericolul de <span class="generic-term">recursivitate infinită</span>. Ori de câte ori folosiți recursivitatea, trebuie să vă asigurați că specificați cel puțin un caz atunci când obțineți un rezultat concret, care nu are nevoie de un alt apel recursiv. Cu alte cuvinte, cel puțin un caz în care recursivitatea este terminată. Programatorii numesc acest caz specific <span class="generic-term">fundul recursivității</span>. În exemplul nostru anterior, fundul recursiunii este atunci când variabila <span class="inline-code param">n</span> atinge o valoare mai mică sau egală cu <span class="inline-code literal">2</span>. Dacă nu specificați un fund al al recursiunii, probabil că veți sfârși cu oexcepție <span class="programming-term">StackOverflowException</span>.</p>
+					<p>Deci, cum creăm o funcție recursivă? Ca și în cazul oricărei alte sarcini de programare, trebuie să împărțiți sarcina pe care încercați să o rezolvați în sub-sarcini, pentru soluția cărora putem folosi același algoritm, ca într-un tipar. În final, combinația tuturor subsarcinilor ar trebui să conducă la rezolvarea sarcinii inițiale. Pentru fiecare sub-sarcină, calculul trebuie modificat astfel încât la un moment dat să fie atins fundul recursiunii.</p>
+					<p>Acum, că am stabilit că avem nevoie de un tipar oarecare pentru a putea crea o recursivitate, să încercăm un alt exemplu. Și, îmi pare rău, matematică din nou&#8230; De data aceasta, vom calcula numere factoriale. Ce sunt ele? Un număr factorial n (scris <span class="generic-term">n!</span>) este produsul tuturor numerelor întregi între <span class="inline-code literal">1</span> și <span class="inline-code param">n</span> inclusiv. Există o singură excepție, <span class="generic-term">0!</span> este prin definiție <span class="inline-code literal">1</span>. Ca și concept de bază, putem scrie acest lucru ca fiind:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">n</span>! = <span class="literal">1</span> * <span class="literal">2</span> * <span class="literal">3</span> * ... * <span class="param">n</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Aceasta este definiția generală, dar cum putem identifica un tipar pe care îl putem folosi pentru implementarea noastră recursivă? Să luăm reprezentarea discretă a câtorva elemente:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="literal">0</span>! = <span class="literal">1</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="literal">1</span>! = <span class="literal">1</span> = <span class="literal">1</span> * <span class="literal">1</span> = <span class="literal">1</span> * <span class="literal">0</span>!
+												</div>
+
+												<div class="code-line">
+													<span class="literal">2</span>! = <span class="literal">2</span> * <span class="literal">1</span> = <span class="literal">2</span> * <span class="literal">1</span>!
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="literal">3</span>! = <span class="literal">3</span> * <span class="literal">2</span> * <span class="literal">1</span> = <span class="literal">3</span> * <span class="literal">2</span>!
+												</div>
+
+												<div class="code-line">
+													<span class="literal">4</span>! = <span class="literal">4</span> * <span class="literal">3</span> * <span class="literal">2</span> * <span class="literal">1</span> = <span class="literal">4</span> * <span class="literal">3</span>!
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="literal">5</span>! = <span class="literal">5</span> * <span class="literal">4</span> * <span class="literal">3</span> * <span class="literal">2</span> * <span class="literal">1</span> = <span class="literal">5</span> * <span class="literal">4</span>!
+												</div>
+
+												<div class="code-line">
+													<span class="literal">6</span>! = <span class="literal">6</span> * <span class="literal">5</span> * <span class="literal">4</span> * <span class="literal">3</span> * <span class="literal">2</span> * <span class="literal">1</span> = <span class="literal">6</span> * <span class="literal">5</span>!
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>și așa mai departe. Și acum, putem vedea clar că există următorul tipar:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="param">n</span>! = <span class="param">n</span> * (<span class="param">n</span> - <span class="literal">1</span>)!
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Din aceasta putem spune că fundul recursivității va fi ultimul caz al secvenței, <span class="inline-code"><span class="param">n</span> = <span class="literal">0</span></span>, atunci când valoarea factorialului este egală cu <span class="inline-code literal">1</span>. Suntem siguri că recursiunea noastră nu va fi infinită, deoarece, pentru fiecare recursiune, calculăm <span class="inline-code"><span class="param">n</span> - <span class="literal">1</span></span> și multiplicăm rezultatul cu <span class="inline-code param">n</span>, iar scăderea succesivă a lui <span class="inline-code literal">1</span> din <span class="inline-code param">n</span> va duce în cele din urmă la <span class="inline-code literal">0</span>, fundul recursiunii noastre. În acest moment, putem scrie următoarea funcție:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">factorial</span> = <span class="method">Factorial</span>(<span class="literal">10</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="string">&quot;10! = &quot;</span> + <span class="param">factorial</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static decimal </span><span class="method">Factorial</span>(<span class="using">int</span> <span class="param">n</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span> (<span class="param">n</span> == <span class="literal">0</span>) <span class="comment">// fundul recursiunii</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="literal">1</span>; 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">else</span> <span class="comment">// apel recursiv: functia se apeleaza pe ea insasi</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="param">n</span> * <span class="method">Factorial</span>(<span class="param">n</span> - <span class="literal">1</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>și acesta este rezultatul:</p>
+
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/recursive-factorial.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/recursive-factorial.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/recursive-factorial-300x190.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Cu toate acestea, ca și în exemplul nostru Fibonacci, aceasta este, de asemenea, o implementare proastă a recursivității, chiar dacă la explicarea funcțiilor recursive, numerele factoriale sunt exercițiile preferate în universități. De aceea vă voi explica alternativa, utilizând iterații, care în acest caz sunt mai eficiente. Singura diferență este că iterația nu este la fel de intuitivă ca recursiunea.</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">factorial</span> = <span class="method">Factorial</span>(<span class="literal">10</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="string">&quot;10! = &quot;</span> + <span class="param">factorial</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static decimal </span><span class="method">Factorial</span>(<span class="using">int</span> <span class="param">n</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">decimal</span> <span class="param">rezultat</span> = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">1</span>; <span class="param">i</span> &lt;= <span class="param">n</span>; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">rezultat</span> = <span class="param">rezultat</span> * <span class="param">i</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="param">rezultat</span>; 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Ceea ce trebuie să vă amintiți este că, deși recursiunea este un instrument puternic, iterația, atunci când este posibilă, este mai eficientă. De aceea, ori de câte ori puteți adapta o bucată de cod pentru a utiliza iterația în locul recursivității, faceți-o. Programul dvs. va rula mai repede.</p>
+					<p>Să ne uităm la un alt exemplu în care am putea folosi recursivitatea pentru a rezolva problema. De data aceasta vom lua în considerare și o soluție iterativă. Dacă vă aduceți aminte de lecția <a href="../../introducere/buclele-imbricate/">bucle imbricate</a>, am avut acolo ceva de genul:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="if">for</span> (<span class="param">a1</span> = <span class="literal">1</span>; <span class="param">a1</span> &lt;= <span class="param">K</span>; <span class="param">a1</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="param">a2</span> = <span class="literal">1</span>; <span class="param">a2</span> &lt;= <span class="param">K</span>; <span class="param">a2</span>++)
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="param">a3</span> = <span class="literal">1</span>; <span class="param">a3</span> &lt;= <span class="param">K</span>; <span class="param">a3</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="param">aN</span> = <span class="literal">1</span>; <span class="param">aN</span> &lt;= <span class="param">K</span>; <span class="param">aN</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">a1</span> + <span class="string">&quot; &quot;</span> + <span class="param">a2</span> + <span class="string">&quot; &quot;</span> + <span class="param">a3</span> + <span class="string">&quot; ... &quot;</span> + <span class="param">aN</span>);
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Exemplul de mai sus este ușor de înțeles, avem bucle imbricate care sunt ușor de implementat atunci când știm deja numărul de bucle de care avem nevoie. Dar când nu știm acest lucru, încep să apară probleme. Dacă vrem să căutăm un fișier pe hard disk, pornind de la un director rădăcină, am putea folosi buclele pentru fiecare nivel nou din arborele de directoare, dar numai dacă știm în prealabil cât de adânc este ramificat și cât de adânc buclele trebuie să meargă. Dar nu știm, ceea ce face implementarea dificilă sau imposibilă.</p>
+					<p>Deci, încercând să rezolvăm problema, putem spune că avem nevoie de un set de instrucțiuni pentru un număr de <span class="inline-code param">N</span> bucle imbricate, de la <span class="inline-code literal">1</span> la <span class="inline-code param">K</span>. Ca exemplu, atunci când <span class="inline-code"><span class="param">N</span> = <span class="literal">2</span></span> și <span class="inline-code"><span class="param">K</span> = <span class="literal">3</span></span> (adică „două bucle imbricate, de la <span class="inline-code literal">1</span> la <span class="inline-code param">K</span>),și, de asemenea, atunci când <span class="inline-code"><span class="param">N</span> = <span class="literal">3</span></span> și <span class="inline-code"><span class="param">K</span> = <span class="literal">3</span></span>, acesta ar trebui să fie rezultatul:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">1</span> <span class="literal">1</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">1</span> <span class="literal">2</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">1</span> <span class="literal">3</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="param">N</span> = <span class="literal">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">2</span> <span class="literal">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">N</span> = <span class="literal">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">1</span> <span class="literal">2</span> <span class="literal">1</span>
+												</div>
+
+												<div class="code-line">
+													<span class="param">K</span> = <span class="literal">3</span> -&gt;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">2</span> <span class="literal">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">K</span> = <span class="literal">3</span> -&gt;&nbsp;&nbsp;&nbsp;...
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">2</span> <span class="literal">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">2</span> <span class="literal">3</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">3</span> <span class="literal">1</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">3</span> <span class="literal">2</span>
+												</div>
+
+												<div class="code-line">
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">3</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">3</span> <span class="literal">3</span> <span class="literal">3</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Fiecare rând al rezultatului poate fi considerat secvență ordonată a numerelor <span class="inline-code param">N</span>. Primul reprezintă valoarea curentă a contorului buclei, al doilea &#8211; al celei de-a doua bucle, etc. La fiecare poziție, putem avea valori între <span class="inline-code literal">1</span> și <span class="inline-code param">K</span>. . Soluția sarcinii noastre se reduce la găsirea tuturor secvențelor ordonate ale <span class="inline-code param">N</span> elemente pentru orice <span class="inline-code param">N</span> și <span class="inline-code param">K</span> date. Când căutăm o soluție recursivă la această problemă, prima problemă cu care ne confruntăm este găsirea unei dependențe recurente. Să examinăm mai atent exemplul din această sarcină și să-i acordăm o atenție suplimentară. Observați că dacă am calculat răspunsul pentru <span class="inline-code"><span class="param">N</span> = <span class="literal">2</span></span>, atunci răspunsul pentru <span class="inline-code"><span class="param">N</span> = <span class="literal">3</span></span> poate fi obținut dacă punem pe prima poziție fiecare dintre valorile <span class="inline-code param">K</span> (în acest caz de la <span class="inline-code literal">1</span> la <span class="inline-code literal">3</span>), iar pe celelalte două poziții punem fiecare dintre cuplurile de numere produse pentru <span class="inline-code"><span class="param">N</span> = <span class="literal">2</span></span>. Putem verifica dacă această regulă se aplică pentru numere mai mari de <span class="inline-code literal">3</span>. Astfel am obținut următoarea dependență &#8211; începând de la prima poziție, punem pe poziția fiecăreia dintre valorile de la <span class="inline-code literal">1</span> la <span class="inline-code param">K</span> și continuarea recursiv cu următoarea poziție. Aceasta continuă până când ajungem în poziția <span class="inline-code param">N</span>, după care vom imprima rezultatul obținut (fundul recursiunii). Iată cum arată metoda implementată în C#:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+												<div>29</div>
+												<div class="line-numbers-highlight">30</div>
+												<div>31</div>
+												<div class="line-numbers-highlight">32</div>
+												<div>33</div>
+												<div class="line-numbers-highlight">34</div>
+												<div>35</div>
+												<div class="line-numbers-highlight">36</div>
+												<div>37</div>
+												<div class="line-numbers-highlight">38</div>
+												<div>39</div>
+												<div class="line-numbers-highlight">40</div>
+												<div>41</div>
+												<div class="line-numbers-highlight">42</div>
+												<div>43</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span> numarBucle;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span> numarIteratii;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span>[] bucle;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;N = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numarBucle = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;K = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numarIteratii = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle = <span class="using">new int</span>[numarBucle]; 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">BucleImbricate</span>(<span class="literal">0</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">BucleImbricate</span>(<span class="using">int</span> <span class="param">iteratiaCurenta</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span> (<span class="param">iteratiaCurenta</span> == numarBucle)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">AfiseazaBucle</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span>; 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">contor</span> = <span class="literal">1</span>; <span class="param">contor</span> &lt;= numarIteratii; <span class="param">contor</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle[<span class="param">iteratiaCurenta</span>] = <span class="param">contor</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">BucleImbricate</span>(<span class="param">iteratiaCurenta</span> + <span class="literal">1</span>); 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">AfiseazaBucle</span>()
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">0</span>; <span class="param">i</span> &lt;= numarBucle; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(bucle[<span class="param">i</span>] + <span class="string">&quot; &quot;</span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Vom păstra secvența de valori într-un array numit <span class="inline-code">bucle</span>, care vor fi imprimate pe consolă prin metoda <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> atunci când este necesar. Metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> ia un parametru ce indică poziția în care vom plasa valorile. În buclă plasăm consecutiv pe poziția curentă fiecare dintre valorile posibile (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">K</span>, introdusă de utilizator), după care apelăm recursiv metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> pentru următoarea poziție. Fundul recursiunii este atins atunci când poziția curentă devine <span class="inline-code param">N</span> (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">N</span>, entered by the user). introdusă de utilizator). În acest moment avem valori pe toate pozițiile și tipărim secvența.</p>
+					<p>Dacă rulați aplicația și introduceți <span class="inline-code param">N</span> și <span class="inline-code param">K</span>, respectiv <span class="inline-code literal">2</span> și <span class="inline-code literal">4</span>, vom obține următorul rezultat:</p>
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/nested-loops-recursion.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/nested-loops-recursion.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/nested-loops-recursion-300x190.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>În metoda <span class="inline-code"><span class="method">Main</span>()</span> introducem valori pentru <span class="inline-code param">N</span> și <span class="inline-code param">K</span>, creăm un array în care vom păstra succesiunea valorilor, după care apelăm metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span>, pornind de la prima poziție. Observați că setăm <span class="inline-code literal">0</span> ca parametru al array-ului, deoarece păstrăm secvența de valori într-un array și după cum deja știm, numărarea elementelor de array începe de la <span class="inline-code literal">0</span>. Metoda <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> iterează toate elementele array-ului și le imprimă pe consolă.</p>
+					<p>Acum, că am văzut cum arată buclele imbricate folosind recurivitatea, să aruncăm o privire asupra celui de-al doilea mod de a implementa buclele imbricate, iterația. Pentru implementarea unei soluții iterative a buclelor imbricate, putem folosi următorul algoritm care găsește următoarea secvență de numere și o imprimă la fiecare iterație:</p>
+					<ol>
+						<li>La începutul fiecărei poziții plasează numărul <span class="inline-code literal">1</span>.</li>
+						<li>Imprimă secvența curentă de numere.</li>
+						<li>Incrementează cu <span class="inline-code literal">1</span> numărul din poziția <span class="inline-code param">N</span>. Dacă valoarea obținută este mai mare decât <span class="inline-code param">K</span> înlocuiește cu <span class="inline-code literal">1</span> și incrementează cu <span class="inline-code literal">1</span> valoarea din poziția <span class="inline-code"><span class="param">N</span> - <span class="literal">1</span></span>. Dacă valoarea sa a devenit mai mare decât <span class="inline-code param">K</span>, înlocuiește cu <span class="inline-code literal">1</span> și incrementează cu <span class="inline-code literal">1</span> valoarea în poziția <span class="inline-code"><span class="param">N</span> - <span class="literal">2</span></span>, etc.</li>
+						<li>Dacă valoarea primei poziții a devenit mai mare decât <span class="inline-code param">K</span>, algoritmul își încheie lucrarea.</li>
+						<li>Revine la pasul 2.</li>
+					</ol>
+					<p>Mai jos propun o implementare simplă a algoritmului iterativ al buclei imbricate descrise:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+												<div>29</div>
+												<div class="line-numbers-highlight">30</div>
+												<div>31</div>
+												<div class="line-numbers-highlight">32</div>
+												<div>33</div>
+												<div class="line-numbers-highlight">34</div>
+												<div>35</div>
+												<div class="line-numbers-highlight">36</div>
+												<div>37</div>
+												<div class="line-numbers-highlight">38</div>
+												<div>39</div>
+												<div class="line-numbers-highlight">40</div>
+												<div>41</div>
+												<div class="line-numbers-highlight">42</div>
+												<div>43</div>
+												<div class="line-numbers-highlight">44</div>
+												<div>45</div>
+												<div class="line-numbers-highlight">46</div>
+												<div>47</div>
+												<div class="line-numbers-highlight">48</div>
+												<div>49</div>
+												<div class="line-numbers-highlight">50</div>
+												<div>51</div>
+												<div class="line-numbers-highlight">52</div>
+												<div>53</div>
+												<div class="line-numbers-highlight">54</div>
+												<div>55</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span> numarBucle;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span> numarIteratii;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static int</span>[] bucle;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;N = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numarBucle = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;K = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numarIteratii = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle = <span class="using">new int</span>[numarBucle]; 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">BucleImbricate</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">BucleImbricate</span>()
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">InitiazaBucle</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">pozitieCurenta</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">while</span> (<span class="using">true</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">AfiseazaBucle</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">pozitieCurenta</span> = numarBucle - <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle[<span class="param">pozitieCurenta</span>] = bucle[<span class="param">pozitieCurenta</span>] + <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">while</span> (bucle[<span class="param">pozitieCurenta</span>] &gt; numarIteratii)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle[<span class="param">pozitieCurenta</span>] = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">pozitieCurenta</span>--;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span> (<span class="param">pozitieCurenta</span> &lt; <span class="literal">0</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;bucle[<span class="param">pozitieCurenta</span>] = bucle[<span class="param">pozitieCurenta</span>] + <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">InitiazaBucle</span>()
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">0</span>; <span class="param">i</span> &lt;= numarBucle; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bucle[<span class="param">i</span>] = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">AfiseazaBucle</span>()
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">0</span>; <span class="param">i</span> &lt;= numarBucle; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(bucle[<span class="param">i</span>] + <span class="string">&quot; &quot;</span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Metodele <span class="inline-code"><span class="method">Main</span>()</span> și <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> sunt aceleași ca și în implementarea soluției recursive. Metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> este diferită. Implementează acum algoritmul pentru rezolvarea iterativă a problemei, și din acest motiv nu primește parametri, spre deosebire de versiunea recursivă. La începutul acestei metode numim metoda <span class="inline-code"><span class="method">InitiazaBucle</span>()</span> care iterează elementele array-ului și pune în fiecare poziție <span class="inline-code literal">1</span>. Efectuăm pașii algoritmului într-o buclă infinită, din care vom scăpa la momentul potrivit, încheind executărea metodelor prin folosirea operatorului <span class="inline-code if">return</span>. Modul în care implementăm pasul 3 al algoritmului este foarte interesant. Implementăm verificarea valorilor mai mari decât <span class="inline-code param">K</span>, înlocuirea lor cu <span class="inline-code literal">1</span> și incrementarea cu <span class="inline-code literal">1</span> a valorii pe poziția anterioară (după care facem aceeași verificare și pentru ea) utilizând o buclă <span class="inline-code if">while</span> în care intrăm numai dacă valoarea este mai mare decât <span class="inline-code param">K</span>. Pentru acest scop, vom înlocui mai întâi valoarea poziției curente cu <span class="inline-code literal">1</span>. După aceea, poziția de dinainte devine poziția curentă. Apoi vom incrementa valoarea pe noua poziție cu <span class="inline-code literal">1</span> și vom reveni la începutul buclei. Aceste acțiuni continuă până când valoarea de pe poziția curentă nu este mai mică sau egală cu <span class="inline-code param">K</span> (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">K</span>), moment când vom ieși din buclă. Atunci când valoarea primei poziții devine mai mare decât <span class="inline-code param">K</span> (acesta este momentul în care trebuie să terminăm execuția), în locul ei punem <span class="inline-code literal">1</span> și încercăm să incrementăm valoarea pe poziția anterioară. În acest moment valoarea variabilei <span class="inline-code param">pozitieCurenta</span> devine negativă (deoarece prima poziție a array-ului este <span class="inline-code literal">0</span>) și terminăm execuția metodei folosind operatorul <span class="inline-code if">return</span>. Acesta este sfârșitul sarcinii noastre. Acum o putem testa cu <span class="inline-code"><span class="param">N</span> = <span class="literal">3</span></span> și <span class="inline-code"><span class="param">K</span> = <span class="literal">2</span></span>, de exemplu:</p>
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/nested-loops-interration.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/nested-loops-interration.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/nested-loops-interration-300x190.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Deci, în cele din urmă, care este mai bună? Iterația sau recursivitatea?</p>
+					<p>Dacă algoritmul de rezolvare a problemei este recursiv, implementarea soluției recursive poate fi mult mai lizibilă și mai elegantă decât soluția iterativă a aceleași probleme. Uneori definirea unui algoritm echivalent este mult mai dificilă și nu este ușor să se demonstreze că cei doi algoritmi sunt echivalenți. În anumite cazuri, folosind recursivitatea, putem realiza soluții mult mai simple, mai scurte și ușor de înțeles. Pe de altă parte, apelurile recursive pot consuma mult mai multe resurse (timp CPU și memorie). În anumite situații, soluțiile recursive pot fi mult mai greu de înțeles și de urmat decât soluțiile iterative relevante. Recursivitatea este o tehnică de programare puternică, dar trebuie să ne gândim cu atenție înainte de a o folosi. Dacă este folosită în mod incorect, poate duce la soluții ineficiente și greu de înțeles și de întreținut.</p>
+					<p>>Am spus la începutul acestei lungi lecții că voi explica mai pe îndelete de ce exemplul numărului lui Fibonacci este ineficient. Dacă am seta în exemplul nostru valoarea <span class="inline-code"><span class="param">n</span> = <span class="literal">100</span></span>, calculele ar lua atât de mult timp încât nimeni nu ar aștepta să vadă rezultatul. Motivul este că o implementare similară este extrem de ineficientă. Fiecare apel recursiv duce la alte două apeluri și fiecare dintre aceste apeluri determină încă două apeluri și așa mai departe. De aceea arborele de apeluri crește exponențial, după cum se arată în figura de mai jos. Numărul de pași pentru calculul <span class="inline-code"><span class="method">fib</span>(<span class="literal">100</span>)</span> este de ordinul <strong>1.6 ridicat la puterea 100</strong> (acest lucru ar putea fi dovedit matematic), în timp ce, dacă soluția este liniară, numărul de pași ar fi doar 100. Problema vine din faptul că există o mulțime de calcule excesive. Puteți observa că <span class="inline-code"><span class="method">fib</span>(<span class="literal">2</span>)</span> apare de mai multe ori pe arborele Fibonacci:</p>
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/fibonacci-recursive-bad-practice.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/fibonacci-recursive-bad-practice.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/fibonacci-recursive-bad-practice-300x136.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Acum, să vorbim puțin despre implementarea corectă a unei astfel de soluții recursive. Putem optimiza metoda recursivă pentru calcularea numerelor Fibonacci prin memorarea (salvarea) numerelor deja calculate într-un array, și efectuarea unui apel recursiv numai dacă numărul pe care încercăm să-l calculăm nu a fost deja calculat. Datorită acestei mici tehnici de optimizare (cunoscută în domeniul informaticii și optimizării dinamice ca <span class="programming-term">memoization</span> - a nu se confunda cu <span class="programming-term">memorization</span>), soluția recursivă ar funcționa pentru numărătoarea liniară a pașilor. Iată o astfel de implementare:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static long</span>[] numere;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;n = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">n</span> = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numere = <span class="using">new long</span>[<span class="param">n</span> + <span class="literal">2</span>];
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numere[<span class="literal">1</span>] = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;numere[<span class="literal">2</span>] = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">long</span> <span class="param">rezultat</span> = <span class="method">Fib</span>(<span class="param">n</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="string">&quot;fib(&quot;</span> + <span class="param">n</span> + <span class="string">&quot;) = &quot;</span> + <span class="param">rezultat</span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static long </span><span class="method">Fib</span>(<span class="using">int</span> <span class="param">n</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">if</span> (numere[<span class="param">n</span>] == <span class="literal">0</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numere[<span class="param">n</span>] = <span class="method">Fib</span>(<span class="param">n</span> - <span class="literal">1</span>) + <span class="method">Fib</span>(<span class="param">n</span> - <span class="literal">2</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> numere[<span class="param">n</span>];
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Observați diferența? În timp ce în versiunea inițială, dacă <span class="inline-code"><span class="param">n</span> = <span class="literal">100</span></span> se părea că execuția continuă pentru eternitate, soluția optimizată obține un răspuns instantaneu. După cum vom învăța mai târziu, prima soluție rulează în timp exponențial, în timp ce a doua este liniară:</p>
+					<div class="caption aligncenter">
+						<a href="../../functions/recursive-functions/fibonacci-recursive-good-practice.png">
+							<picture>
+							  <source srcset="../../functions/recursive-functions/fibonacci-recursive-good-practice.png" media="(min-width: 300px)" />
+							  <img src="../../functions/recursive-functions/fibonacci-recursive-good-practice-300x190.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Putem chiar să îmbunătățim conceptul precedent de păstrare a valorilor anterioare ale numerelor. Nu este greu de observat că putem rezolva problema fără a folosi recursivitatea, calculând consecutiv numerele Fibonacci. În acest scop, vom păstra numai ultimele două elemente calculate ale secvenței și le vom folosi pentru a obține următorul element. Mai jos puteți vedea o implementare a algoritmului iterativ de calcul al numerelor Fibonacci:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+												<div>29</div>
+												<div class="line-numbers-highlight">30</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">Write</span>(<span class="string">&quot;n = &quot;</span>); 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span> <span class="param">n</span> = <span class="using">int</span>.<span class="method">Parse</span>(<span class="class-name">Console</span>.<span class="method">ReadLine</span>());
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">long</span> <span class="param">rezultat</span> = <span class="method">Fib</span>(<span class="param">n</span>);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="string">&quot;fib(&quot;</span> + <span class="param">n</span> + <span class="string">&quot;) = &quot;</span> + <span class="param">rezultat</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static long </span><span class="method">Fib</span>(<span class="using">int</span> <span class="param">n</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">long</span> <span class="param">fn</span> = <span class="literal">0</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">long</span> <span class="param">fnMinus1</span> = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">long</span> <span class="param">fnMinus2</span> = <span class="literal">1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">for</span> (<span class="using">int</span> <span class="param">i</span> = <span class="literal">2</span>; <span class="param">i</span> &lt; <span class="param">n</span>; <span class="param">i</span>++)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fn</span> = <span class="param">fnMinus1</span> + <span class="param">fnMinus2</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fnMinus2</span> = <span class="param">fnMinus1</span>;
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">fnMinus1</span> = <span class="param">fn</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">return</span> <span class="param">fn</span>;
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Această soluție nu este doar scurtă și elegantă, ci ascunde și riscurile recursivității. În plus, este eficientă și nu necesită memorie suplimentară. Ca și concluzie a exemplelor anterioare, vă pot oferi următoarea recomandare:</p>
+					<p>Evitați recursivitatea, cu excepția cazului în care sunteți siguri de modul în care funcționează și de ceea ce trebuie să se întâmple în fundal. Recursivitatea este o armă puternică, cu care puteți cu ușurință să vă împușcați propriul picior (au!). Utilizați-o cu atenție!</p>
+					<p>Pentru a încheia această lecție, să vedem un exemplu pe care l-am sugerat deja, căutarea unui fișier într-un director cu subdirectoare:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+												<div class="line-numbers-highlight">20</div>
+												<div>21</div>
+												<div class="line-numbers-highlight">22</div>
+												<div>23</div>
+												<div class="line-numbers-highlight">24</div>
+												<div>25</div>
+												<div class="line-numbers-highlight">26</div>
+												<div>27</div>
+												<div class="line-numbers-highlight">28</div>
+												<div>29</div>
+												<div class="line-numbers-highlight">30</div>
+												<div>31</div>
+												<div class="line-numbers-highlight">32</div>
+												<div>33</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="using">using</span>
+													<span> System.IO;</span>
+												</div>
+
+												<div class="code-line">&nbsp;</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="using">namespace </span>
+													<span>BunaLume</span>
+												</div>
+
+												<div class="code-line">
+													{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">CautaDirector</span>(<span class="string">&quot;C:<span class="escape">\\</span>&quot;</span>, <span class="string">&quot;test.txt&quot;</span>); 
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">CautaDirector</span>(<span class="using">string</span> <span class="param">directorRadacina</span>, <span class="using">string</span> <span class="param">numeFisier</span>)
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">try</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">foreach</span> (<span class="using">string</span> <span class="param">director</span> = <span class="class-name">Directory</span>.<span class="method">GetDirectories</span>(<span class="param">directorRadacina</span>))
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">foreach</span> (<span class="using">string</span> <span class="param">file</span> = <span class="class-name">Directory</span>.<span class="method">GetFiles</span>(<span class="param">director</span>, <span class="param">numeFisier</span>))
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">file</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">CautaDirector</span>(<span class="param">director</span>, <span class="param">numeFisier</span>);
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">catch</span>(<span class="class-name">Exception</span> <span class="param">ex</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">ex</span>.Message);
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
+												</div>
+
+												<div class="code-line">
+													}
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<p>În codul de mai sus, există câteva lucruri noi despre care încă nu am vorbit, cum ar fi instrucțiunea <span class="inline-code if">try...catch</span>, și ar trebui să o ignorați. O veți înțelege mai bine când va veni timpul. De asemenea, trebuie să observați că am folosit instrucțiunea <span class="inline-code"><span class="using">using</span> System.IO;</span>, deoarece folosim funcții cum ar fi <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetDirectories</span>()</span>, care se află în ansamblul <span class="inline-code">System.IO</span>. Nu vă faceți griji nici despre ea, deocamdată. Tot ce mi-a rămas de specificat este că deși nu am învățat încă despre ele, instrucțiunile <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetDirectories</span>()</span> și <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetFiles</span>()</span> fac exact asta: returnează o listă de directoare, respectiv fișiere, dintr-o anumită cale pe care o specificăm. Așa cum am învățat în lecția <a href="../../arrays-ro/iterarea-elementelor-unui-array/">iterarea elementelor unui array</a>, folosim o buclă <span class="inline-code if">foreach</span> pentru a trece prin toate elementele din lista returnată de instrucțiunea <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetDirectories</span>()</span>. Apoi, pentru fiecare dintre aceste directoare, folosim o altă buclă <span class="inline-code if">foreach</span>, pentru a itera prin lista tuturor fișierelor care corespund criteriilor de căutare, conținute în acel director, listă furnizată de <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetFiles</span>()</span>. Acesta este locul în care imprimăm fișierele găsite la consolă. Totuși, ceea ce face ca această metodă să fie recursivă este faptul că la fiecare iterație a buclei <span class="inline-code if">foreach</span> care trece prin directoare, apelăm din nou metoda <span class="inline-code"><span class="method">CautaDirector</span>()</span>, cu directorul curent al iteratației. Aceasta înseamnă că bucla curentă va aștepta până la terminarea acestui nou apel la metodă și numai după aceea își va relua ciclarea. Desigur, dacă în noul apel, metoda <span class="inline-code"><span class="class-name">Directory</span>.<span class="method">GetFiles</span>()</span> va conține o nouă listă de directoare (subdirectoarele din directorul pe care l-am folosit în prima buclă, atunci când am apelat metoda), bucla <span class="inline-code if">foreach</span> va apela funcția din nou, pentru fiecare dintre aceste directoare, și așa mai departe. Aceasta înseamnă că, dacă avem un arbore de directoare, funcția va trece recursiv prin toate acestea.</p>
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Etichete: <span style="color: rgb(190, 105, 104);">
+							funcții, funcții recursive
+						</span>
+						</p>
+						<small>
+						Această intrare a fost postată Joi, 20 Aprilie 2017 la ora 20:16 și este categorizată ca <a href="./category/functii/" rel="category tag">Funcții</a>.
+						</small>
+					</div>
+					<div class="comment-thread">
+					    <!-- Comment 1 start -->
+					    <details open class="comment" id="comment-1">
+					        <summary>
+					            <div class="comment-heading">
+					                <div class="comment-info">
+					                    <span class="comment-author">Ghiță Ovidiu</span>
+					                    <span class="m-0">
+					                        &bull; 27/05/2021 la 21:41
+					                    </span>
+					                </div>
+					            </div>
+					        </summary>
+					        <div class="comment-body">
+					            <p>
+					               Cum fac funcția de mai jos doar recursiv, într-o singură funcție?<br />
+									int numar(int n,int c1,int c2)<br />
+									{<br />
+									    int v[9],c=-1,i;<br />
+									    while (n)<br />
+									    {<br />
+									        v[++c]=n%10;<br />
+									        n/=10;<br />
+									    }<br />
+									    for (i=0;i=0;&#8211;i)<br />
+									        n=n*10+v[i];<br />
+									    return n;<br />
+									}
+					            </p>
+					        </div>
+					        <div class="replies">
+					            <!-- Comment 2 start -->
+					            <details open class="comment" id="comment-2">
+					                <summary>
+					                    <div class="comment-heading">
+					                        <div class="comment-info">
+					                            <a href="../../" class="comment-author">rusoaica</a>
+					                            <span class="m-0">
+					                                &bull; 04/06/2021 la 14:55
+					                            </span>
+					                        </div>
+					                    </div>
+					                </summary>
+					                <div class="comment-body">
+					                    <p>
+					                        Bună și ție!
+
+											Funcția de mai nu face sens. În primul rând, folosește C, nu C#, care este predat pe acest site. În al doilea rând, la bucla for, i = 0 la condiția de încheiere n-are nici un sens. Și în al treilea rând, acțiunea de la sfârșit, -i, la fel, nu are sens.
+
+											Două puncte: dacă adaugi niște comentarii prin cod, poate lumea chiar reușește să înțeleagă ce vrea să facă respectivul cod, fără să stea o oră să descifreze și să ghicească; să spui „bună!” și „te rog”/„mulțumesc” pot aduce mai multă cooperare, chiar și atunci când cererea pare destul de evident mai degrabă din categoria „mi-am găsit mașină de scris teme” decât „nu am înțeles, am nevoie de lămuriri”.
+					                    </p>
+					                </div>
+					            </details>
+					            <!-- Comment 2 end -->
+					        </div>
+					    </details>
+					    <!-- Comment 1 end -->
+					</div>
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../functii/practici-recomandate-la-folosirea-metodelor-si-functiilor/" rel="prev">Practici recomandate la folosirea metodelor și funcțiilor</a></div>
+						<div class="alignright"><a href="../../siruri-de-caractere-si-procesarea-de-text/string-uri/" rel="next">String-uri</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Citește în
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../functions/recursive-functions/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../functii/functii-recursive/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Cuprins
+						</div>
+						<ul>
+							<li>
+								<a href="../../index-ro.html">
+									<span>Listă de lecții</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Capitole
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/fara-categorie/">
+									<span>Fără categorie</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introducere/">
+									<span>Introducere</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrayuri/">
+									<span>Array-uri</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functii/">
+									<span>Funcții</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/siruri-de-caractere-si-procesarea-de-text/">
+									<span>Șiruri de caractere și procesarea de text</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/obiecte/">
+									<span>Obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/interfata-grafica-cu-utilizatorul/">
+									<span>Interfața grafică cu utilizatorul</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/structuri-de-date/">
+									<span>Structuri de date</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-si-manipularea-erorilor/">
+									<span>Debugging și manipularea erorilor</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/prima-aplicatie-practica/">
+									<span>Prima aplicație practică</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/programarea-orientata-pe-obiecte/">
+									<span>Programarea orientată pe obiecte</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegati-expresii-lambda-evenimente/">
+									<span>Delegați, expresii Lambda, evenimente</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq-ro/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">Acest website <span style="color: #6DCBFE;">NU</span> folosește JavaScript. Deoarece unii oameni îl preferă dezactivat, și le respectă alegerea. <span style="color: #6DCBFE;">NU</span> folosește cookie-uri, de nici un tip, și nu trebuie să dați click prin nenumărate aprobări. Nu are nici un motiv să o facă,
+				și, nu, nu există "cookie-uri obligatorii" sau "interes legitim" pentru a "funcționa corect". Acest website <span style="color: #6DCBFE;">NU</span> afișează reclame. Nici nu vinde nimic. Nu trebuie să 
+				vă înregistrați, subscrieți, cumpărați sau donați nimic. Nu totul este despre lăcomie și profit. Acest website este <strong style="color: #ff0000;">foarte</strong> împotriva social media. <span style="color: #6DCBFE;">NU</span> înglobează nici un Facebook, Google, 
+				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
+				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
+				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>
