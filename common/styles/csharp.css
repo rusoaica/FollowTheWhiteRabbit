@@ -165,12 +165,11 @@
 }
 
 .inline-code {
-	font-family: ;
 	padding-left: 2px;
 	padding-right: 2px;
+	padding-top: 1px;
 	color: #DCDCDC;
 	
-	/*border: 1px solid #444444 !important;*/
 	border-bottom-color: #777777;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;

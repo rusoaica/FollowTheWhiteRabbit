@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="rusoaica" />
-		<meta name="keywords" content="bucla for, bucla foreach" />
-		<meta name="description" content="Bucla Foreach a fost creată pentru a itera prin toate elementele unui array, liste sau orice alt tip de colecție ce implementeaza interfața IEnumerable" />
+		<meta name="keywords" content="expresii regulare, operațiuni string, regex, replace, substring" />
+		<meta name="description" content="Când doriți să înlocuiți un șir în alt șir, .NET Framework oferă funcția Replace(). Este o funcție care acceptă doi parametri de tip șir de caractere." />
 		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
 		<meta name="viewport" content="width=device-width">
@@ -12,28 +12,28 @@
 		<meta property="og:locale" content="ro_RO" />
 		<meta property="og:locale:alternate" content="ro_RO" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Scurtă introducere despre Bucla Foreach - Follow the white rabbit" />
-		<meta property="og:description" content="Bucla Foreach a fost creată pentru a itera prin toate elementele unui array, liste sau orice alt tip de colecție ce implementeaza interfața IEnumerable" />
-		<meta property="og:url" content="./introducere/bucla-foreach/" />
+		<meta property="og:title" content="Înlocuirea unui string în alt string - Follow the white rabbit" />
+		<meta property="og:description" content="Când doriți să înlocuiți un șir în alt șir, .NET Framework oferă funcția Replace(). Este o funcție care acceptă doi parametri de tip șir de caractere." />
+		<meta property="og:url" content="./siruri-de-caractere-si-procesarea-de-text/inlocuirea-unui-string-in-alt-string/" />
 		<meta property="og:site_name" content="Follow the white rabbit" />
 		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
-		<meta property="article:published_time" content="2017-01-14T17:20:58+00:00" />
-		<meta property="article:modified_time" content="2017-01-14T17:20:58+00:00" />
+		<meta property="article:published_time" content="2017-04-21T05:03:47+00:00" />
+		<meta property="article:modified_time" content="2017-04-21T05:03:47+00:00" />
 		<meta property="og:image" content="./term-compiler-300x225.jpg" />
 
 		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />		
 		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
 
-		<link rel="alternate" href="../../introduction/foreach-loop/" hreflang="en" />
-		<link rel="alternate" href="../../introducere/bucla-foreach/" hreflang="ro" />
+		<link rel="alternate" href="../../strings-and-text-processing/replacing-a-string-inside-another-string/" hreflang="en" />
+		<link rel="alternate" href="../../siruri-de-caractere-si-procesarea-de-text/inlocuirea-unui-string-in-alt-string/" hreflang="ro" />
 		
 		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
 		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
 		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
 
 		<title>
-			Scurtă introducere despre Bucla Foreach - Follow the white rabbit
+			Înlocuirea unui string în alt string - Follow the white rabbit
 		</title>
 	</head>
 	<body>
@@ -47,13 +47,13 @@
 					</div>
 					<ul>
 						<li>
-							<a lang="en-US" hreflang="en-US" href="../../introduction/foreach-loop/">
+							<a lang="en-US" hreflang="en-US" href="../../strings-and-text-processing/replacing-a-string-inside-another-string/">
 								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
 								<span style="margin-left:0.3em;">English</span>
 							</a>
 						</li>
 						<li>
-							<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/bucla-foreach/">
+							<a lang="ro-RO" hreflang="ro-RO" href="../../siruri-de-caractere-si-procesarea-de-text/inlocuirea-unui-string-in-alt-string/">
 								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
 								<span style="margin-left:0.3em;">Română</span>
 							</a>
@@ -150,7 +150,7 @@
 					</div>
 				</div>
 				<div id="header-separator">
-					Bucla Foreach
+					Înlocuirea unui string în alt string
 				</div>
 				<hr class="border-shine" style="margin-top: -32px;">
 			</div>
@@ -159,44 +159,11 @@
 			<div class="flex-container">
 				<div id="content">
 					<a href="../../index-ro.html" style="font-style: italic; color: #777777;">Cuprins</a><span style="color: #00ff00;"> >></span> 
-					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
-					<a href="./" style="font-style: italic; color: #777777;">Bucla Foreach</a>
+					<a href="../../category/siruri-de-caractere-si-procesarea-de-text/" style="font-style: italic; color: #777777;">Șiruri De Caractere Și Procesarea De Text</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Înlocuirea unui string în alt string</a>
 
-					<p>Bucla <span class="inline-code if">foreach</span> este mult mai simplă decât bucla <span class="inline-code if">for</span>, dar este de asemenea mai dificilă pentru cititorii acestui blog, deoarece se bazează pe concepte noi, pe care nu le-am învățat încă. Din acest motiv, vă voi spune pur și simplu că o buclă <span class="inline-code if">foreach</span> a fost proiectată pentru a itera prin toate elementele unui <a href="../../arrayuri/array/">array</a>, <a href="../../structuri-de-date/list-2/">liste</a> sau orice altă colecție de elemente care implementează <span class="inline-code enum">IEnumerable</span> (o <a href="../../programarea-orientata-pe-obiecte/interfete/">interfață</a> despre care vom învăța mai <a href="../../linq-ro/ienumerable-si-ienumerator/">târziu</a>). Trece prin toate elementele din colecție, chiar și atunci când colecția nu este indexată. Acesta este un concept oarecum nou pentru familia de limbaje C, C++, C#, dar programatorii care provin din <span class="programming-term">VB</span> sau <span class="programming-term">PHP</span> ar trebui să fie bine familiarizați cu el.</p>
-					<p>Desigur, vom discuta <a href="../../arrayuri/iterarea-elementelor-unui-array/">array</a>-uri și <a href="../../structuri-de-date/list-2/">liste</a> în detaliu atunci când vom ajunge la momentul potrivit. Pentru moment, vă puteți imagina un array ca fiind o secvență ordonată de elemente de același tip (numere întregi, siruri de caractere, etc).</p>
-					<p>Acesta este modul în care arată în general o buclă <span class="inline-code if">foreach</span>:</p>
-					<div class="code-block">		
-						<div class="code-block-header">
-							<span class="code-block-title"></span>
-						</div>
-						<div class="code-block-body">
-							<table class="code-block-body-table">
-								<tbody>
-									<tr>
-										<td class="line-numbers">
-											<div class="line-numbers-content">
-												<div>1</div>
-												<div class="line-numbers-highlight">2</div>
-											</div>
-										</td>
-										<td>
-											<div class="code-pre">
-												<div class="code-line">
-													<span class="if">foreach </span>(<span class="using">tip</span> <span class="param">variabila</span> <span class="if">in </span><span class="param">colectie</span>)
-												</div>
+					<p>Ori de câte ori doriți să înlocuiți un șir de caractere în interiorul unui alt șir, .NET Framework oferă funcția <span class="inline-code"><span class="method">Replace</span>()</span>. . Este o funcție care acceptă doi parametri de tip <span class="inline-code using">string</span>, reprezentând textul pe care dorim să îl înlocuim, și textul cu care dorim să îl înlocuim. Utilizarea sa este foarte simplă:</p>
 
-												<div class="code-line code-line-highlight">
-													&nbsp;&nbsp;&nbsp;&nbsp;<span class="method">instructiuni</span>;
-												</div>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<p>Nu foarte descriptiv, nu-i așa? Deși, trebuie să recunoașteți, este mult mai simplă decât bucla <span class="inline-code if">for</span>. Ori de câte ori trebuie să treceți prin fiecare element dintr-o colecție, este de preferat să foloiți bucla <span class="inline-code if">foreach</span>.</p>
-					<p>Să luăm un exemplu real de utilizare a acesteia:</p>
 					<div class="code-block">		
 						<div class="code-block-header">
 							<span class="code-block-title"></span>
@@ -224,9 +191,6 @@
 												<div>15</div>
 												<div class="line-numbers-highlight">16</div>
 												<div>17</div>
-												<div class="line-numbers-highlight">18</div>
-												<div>19</div>
-												<div class="line-numbers-highlight">20</div>
 											</div>
 										</td>
 										<td>
@@ -238,39 +202,46 @@
 
 												<div class="code-line code-line-highlight">&nbsp;</div>
 
-
 												<div class="code-line">
 													<span class="using">namespace </span>
 													<span>BunaLume</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span>{</span>
+													{
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">class </span>
 													<span class="class-name">Program</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[] <span class="param">args</span>)
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{ 
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">int</span>[] <span class="param">numere</span> = { <span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>, <span class="literal">4</span>, <span class="literal">5</span>, <span class="literal">6</span>, <span class="literal">7</span>, <span class="literal">8</span>, <span class="literal">9</span> };
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string</span> <span class="param">greeting</span> = <span class="string">&quot;Buna Lume&quot;</span>; 
+												</div>
+
+												<div class="code-line code-line-highlight">													
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">salutare</span>);
+												</div>
+
+												<div class="code-line">													
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string</span> <span class="param">inlocuit</span> = <span class="param">salutare</span>.<span class="method">Replace</span>(<span class="string">&quot;World&quot;</span>, <span class="string">&quot;Yulia&quot;</span>);
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string</span>[] <span class="param">nume</span> = { <span class="string">&quot;John&quot;</span>, <span class="string">&quot;Alice&quot;</span>, <span class="string">&quot;William&quot;</span> };
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">inlocuit</span>);
 												</div>
 
 												<div class="code-line">
@@ -278,40 +249,19 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">foreach </span>(<span class="using">int</span><span class="param"> i</span><span class="if"> in </span><span class="param">numere</span>)
-												</div>
-
-												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">i</span>);
-												</div> 
-
-												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;
-												</div>
-
-												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="if">foreach </span>(<span class="using">string</span><span class="param"> persoana</span><span class="if"> in </span><span class="param">nume</span>)
-												</div>
-
-												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">persoana</span>);
-												</div>
-
-												<div class="code-line">
 													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span>.<span class="method">ReadLine</span>();
 												</div>
 
-												<div class="code-line code-line-highlight">
+												<div class="code-line">
 													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
 												</div>
 
-
-												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;} 
 												</div>
 
-												<div class="code-line code-line-highlight">
-													<span>}</span>
+												<div class="code-line">
+													}
 												</div>
 											</div>
 										</td>
@@ -320,40 +270,33 @@
 							</table>
 						</div>
 					</div>
-					<p>Și aici este rezultatul:</p>
+					<p>Codul de mai sus produce următoarea ieșire:</p>
 					<div class="caption aligncenter">
-						<a href="../../introduction/foreach-loop/foreach-loop.png">
+						<a href="./img_5b7fd2a2e7d00.png">
 							<picture>
-							  <source srcset="../../introduction/foreach-loop/foreach-loop.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/foreach-loop/foreach-loop-300x152.png" style="width:100%;"/>
+							  <source srcset="./img_5b7fd2a2e7d00.png" media="(min-width: 300px)" />
+							  <img src="./img_5b7fd2a2e7d00-300x156.png" style="width:100%;"/>
 							</picture>
 						</a>	
 					</div>
-					<p>În exemplul de mai sus am creat două array-uri <span class="inline-code param">numere</span> și <span class="inline-code param">nume</span>, unul de tip <span class="inline-code using">int</span>, celălalt de tip <span class="inline-code using">string</span>. Apoi, le-am inițializat cu o colecție de numere întregi și șiruri. În cele din urmă, am folosit bucla <span class="inline-code if">foreach</span> pentru a trece prin toate elementele acestor array-uri și a afișa elementele la consolă.</p>				
 
-					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
-
-					<div class="youtube-cropped">
-						<a href="https://www.youtube.com/watch?v=6GS85bsZZnQ&list=PLFPg3ZcPgepvBkKqt5SWi3M3ZkYpZeruv&index=15" target="_blank">
-							<img src="../../common/images/youtube.webp"/>
-							<svg class="youtube-button" height="48" version="1.1" viewBox="0 0 68 48" width="68"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" ></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
-						</a>
-					</div>
+					<p>Explicația este la fel de simplă: am oferit șirul pe care am vrut să-l înlocuim și șirul cu care am dorit să fie înlocuit, apoi am afișat rezultatul.</p>
+					<p>O funcționalitate ajutătoare pentru funcția <span class="inline-code"><span class="method">Replace</span>()</span> este folosirea unei <span class="programming-term">expresii regulare</span> (<span class="programming-term">regular expressions</span>). Expresiile regulare ne permit să găsim anumite tipare de text destul de complicate, precum numere de telefon, coduri poștale, adrese de email, etc. Vom învăța despre ele mai târziu.</p>					
 					<p>&nbsp;</p>
 
 					<div id="content-footer">
 						<p>Etichete: <span style="color: rgb(190, 105, 104);">
-							bucla for, bucla foreach
+							expresii regulare, operațiuni string, regex, replace, substring
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Sâmbătă, 14 Ianuarie 2017 la ora 19:20 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						Această intrare a fost postată Vineri, 21 Aprilie 2017 la ora 07:03 și este categorizată ca <a href="./category/siruri-de-caractere-si-procesarea-de-text/" rel="category tag">Șiruri De Caractere Și Procesarea De Text</a>.
 						</small>
 					</div>
 
 					<div class="navigation">
-						<div class="alignleft">« <a href="../../introducere/bucla-for/" rel="prev">Bucla For</a></div>
-						<div class="alignright"><a href="../../introducere/operatorul-break/" rel="next">Operatorul Break</a> »</div>
+						<div class="alignleft">« <a href="../../siruri-de-caractere-si-procesarea-de-text/eliminarea-caracterelor-inutile/" rel="prev">Eliminarea caracterelor inutile</a></div>
+						<div class="alignright"><a href="../../siruri-de-caractere-si-procesarea-de-text/alte-metode-string/" rel="next">Alte metode string</a> »</div>
 					</div>
 				</div>
 				<nav id="sidebar">
@@ -363,13 +306,13 @@
 						</div>
 						<ul>
 							<li>
-								<a lang="en-US" hreflang="en-US" href="../../introduction/foreach-loop/" style="background: transparent;">
+								<a lang="en-US" hreflang="en-US" href="../../strings-and-text-processing/replacing-a-string-inside-another-string/" style="background: transparent;">
 									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
 									<span style="margin-left:0.3em;">English</span>
 								</a>
 							</li>
 							<li>
-								<a lang="ro-RO" hreflang="ro-RO" href="../../introducere/bucla-foreach/" style="background: transparent;">
+								<a lang="ro-RO" hreflang="ro-RO" href="../../siruri-de-caractere-si-procesarea-de-text/inlocuirea-unui-string-in-alt-string/" style="background: transparent;">
 									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
 									<span style="margin-left:0.3em;">Română</span>
 								</a>
