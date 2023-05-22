@@ -305,13 +305,26 @@
 						</div>
 					</div>
 					<p>The output on the console will be:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop.png">
-							<picture>
-							  <source srcset="./for-loop.png" media="(min-width: 300px)" />
-							  <img src="./for-loop-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">0</div>
+								<div class="code-line">1</div>
+								<div class="code-line">2</div>
+								<div class="code-line">3</div>
+								<div class="code-line">4</div>
+								<div class="code-line">5</div>
+								<div class="code-line">6</div>
+								<div class="code-line">7</div>
+								<div class="code-line">8</div>
+								<div class="code-line">9</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>In our example, we declared an integer variable (our control variable) called <span class="inline-code param">counter</span> and initialized it to the default value of <span class="inline-code literal">0</span>. Next, we specified that we want the loop to be executed only if our counter variable&#8217;s value is less than <span class="inline-code literal">10</span>. Finally, we instructed it to increment our counter variable by <span class="inline-code literal">1</span> on each cycle of the loop.</p>
 					<p>So, we initialized a variable called <span class="inline-code param">counter</span> to the value <span class="inline-code literal">0</span>. The <span class="inline-code if">for</span> loop executed the instructions inside the loop block and increments the value of <span class="inline-code param">counter</span> by <span class="inline-code literal">1</span>. After that, it checks the condition: is <span class="inline-code param">counter</span> less than <span class="inline-code literal">10</span>? If yes, run the instructions again, increment the variable again, perform the check of the value again, etc, until the check of our <span class="inline-code param">counter</span> variable&#8217;s value determines that it&#8217;s value was incremented to <span class="inline-code literal">10</span>, which will return <span class="inline-code using">false</span> when we check if our variable is less than <span class="inline-code literal">10</span>.</p>
@@ -425,13 +438,26 @@
 						</div>
 					</div>
 					<p>Which will display:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop-decrement.png">
-							<picture>
-							  <source srcset="./for-loop-decrement.png" media="(min-width: 300px)" />
-							  <img src="./for-loop-decrement-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">9</div>
+								<div class="code-line">8</div>
+								<div class="code-line">7</div>
+								<div class="code-line">6</div>
+								<div class="code-line">5</div>
+								<div class="code-line">4</div>
+								<div class="code-line">3</div>
+								<div class="code-line">2</div>
+								<div class="code-line">1</div>
+								<div class="code-line">0</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>In this case, the loop will perform the same way as in our previous case, with three differences: first, we initialized our variable as <span class="inline-code literal">9</span>, not <span class="inline-code literal">0</span>; second, we specified the ending condition of our loop to be when our <span class="inline-code param">counter</span> variable is greater than or equal to <span class="inline-code literal">0</span>; third, we instructed our variable to decrement by <span class="inline-code literal">1</span> each loop. Basically, the program will now count down from <span class="inline-code literal">9</span> to <span class="inline-code literal">0</span>.</p>
 					<p>We could also specify a different increment factor:</p>
@@ -544,13 +570,26 @@
 						</div>
 					</div>
 					<p>You can already figure it out. We told our program to increment our control variable by <span class="inline-code literal">10</span> on each cycle, until the value gets equal or greater than <span class="inline-code literal">100</span>:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop-increment-factor.png">
-							<picture>
-							  <source srcset="./for-loop-increment-factor.png" media="(min-width: 300px)" />
-							  <img src="./for-loop-increment-factor-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">0</div>
+								<div class="code-line">10</div>
+								<div class="code-line">20</div>
+								<div class="code-line">30</div>
+								<div class="code-line">40</div>
+								<div class="code-line">50</div>
+								<div class="code-line">60</div>
+								<div class="code-line">70</div>
+								<div class="code-line">80</div>
+								<div class="code-line">90</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>We can also use any other mathematical operation, for instance multiplication:</p>
 					<div class="code-block">		
@@ -662,13 +701,26 @@
 						</div>
 					</div>
 					<p>which will make us count in multiplication steps by <span class="inline-code literal">2</span>:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop-increment-operation.png">
-							<picture>
-							  <source srcset="./for-loop-increment-operation.png" media="(min-width: 300px)" />
-							  <img src="./for-loop-increment-operation-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">2</div>
+								<div class="code-line">4</div>
+								<div class="code-line">8</div>
+								<div class="code-line">16</div>
+								<div class="code-line">32</div>
+								<div class="code-line">64</div>
+								<div class="code-line">128</div>
+								<div class="code-line">256</div>
+								<div class="code-line">512</div>
+								<div class="code-line">1024</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>You should also understand the <a href="../../functions/variable-scope/">scope</a> of our control variable (which sections of the code is it visible and accessible). Following example will demonstrate this aspect:</p>
 					<div class="code-block">		
@@ -1373,7 +1425,7 @@
 				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
 				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
 				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
-				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

@@ -277,16 +277,21 @@
 						</div>
 					</div>
 					<p>Rezultatul va fi acesta:</p>
-
-					<div class="caption aligncenter">
-						<a href="./img_5b7e9881c9d04.png">
-							<picture>
-							  <source srcset="./img_5b7e9881c9d04.png" media="(min-width: 300px)" />
-							  <img src="./img_5b7e9881c9d04-300x172.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">Ioana,</div>
+								<div class="code-line">Ion,</div>
+								<div class="code-line">Maria,</div>
+								<div class="code-line">Vasile</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
-
 					<p>Ceea ce a făcut funcția <span class="inline-code"><span class="method">Split</span>()</span> a fost să caute în interiorul șirului nostru pentru toate aparițiile caracterului <span class="inline-code char">' '</span> (spațiu). Apoi, a împărțit șirul în mai multe șiruri de caractere, divizându-l oriunde a fost găsit acest caracter. În cele din urmă, a stocat toate substring-urile divizate în interiorul unui array, pe care îl putem itera pentru a afișa valorile sale, folosind o buclă <a href="../../introducere/bucla-foreach/">foreach</a>.</p>
 					<p>Observați că unele dintre nume au o virgulă după ele. De asemenea, observați că am plasat parametrul pentru funcția <span class="inline-code"><span class="method">Split</span>()</span> între apostrofuri și nu ghilimele. Aceast lucru specifică faptul că furnizăm un parametru de tip <a href="../../introducere/variabila-de-tip-char/">char</a>, nu <a href="../../introducere/variabila-de-tip-string/">string</a>. Și, într-adevăr, funcția <span class="inline-code"><span class="method">Split</span>()</span> acceptă numai tipul <span class="inline-code using">char</span> ca parametru. Dacă încercăm să adăugăm mai mult de un singur caracter, vom primi o eroare, deoarece un <span class="inline-code using">char</span> poate conține doar un singur caracter. De asemenea, dacă încercăm să furnizăm un <span class="inline-code using">string</span> în loc de un <span class="inline-code using">char</span>, vom primi în continuare o eroare, deoarece nu există nici o <a href="../../functii/supraincarcarea-metodelor-si-functiilor-overloading/">supraîncărcare</a> a funcției <span class="inline-code"><span class="method">Split</span>()</span> care ia un <span class="inline-code using">string</span> ca parametru. Deci, cum putem împărți un șir de caractere prin furnizarea mai multor caractere separatoare?</p>
 
@@ -531,13 +536,20 @@
 					</div>
 
 					<p>Iar acum vom obține rezultatul corect:</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b7e9b3ecda12.png">
-							<picture>
-							  <source srcset="./img_5b7e9b3ecda12.png" media="(min-width: 300px)" />
-							  <img src="./img_5b7e9b3ecda12-300x172.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">Ioana</div>
+								<div class="code-line">Ion</div>
+								<div class="code-line">Maria</div>
+								<div class="code-line">Vasile</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Dar această abordare nu elimină string-urile goale din array. Pur și simplu nu le afișează. Deci, putem schimba argumentele pe care le furnizăm funcției <span class="inline-code"><span class="method">Split</span>()</span>, oferindu-i o opțiune specială:</p>
 
@@ -667,7 +679,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Vineri, 21 Aprilie 2017 la ora 06:00 și este categorizată ca <a href="./category/siruri-de-caractere-si-procesarea-de-text/" rel="category tag">Șiruri De Caractere Și Procesarea De Text</a>.
+						Această intrare a fost postată Vineri, 21 Aprilie 2017 la ora 06:00 și este categorizată ca <a href="../../category/siruri-de-caractere-si-procesarea-de-text/" rel="category tag">Șiruri De Caractere Și Procesarea De Text</a>.
 						</small>
 					</div>
 
@@ -785,7 +797,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

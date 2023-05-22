@@ -277,16 +277,21 @@
 						</div>
 					</div>
 					<p>The result will be this:</p>
-
-					<div class="caption aligncenter">
-						<a href="./img_5b7e9287755de.png">
-							<picture>
-							  <source srcset="./img_5b7e9287755de.png" media="(min-width: 300px)" />
-							  <img src="./img_5b7e9287755de-300x172.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">Jane,</div>
+								<div class="code-line">John,</div>
+								<div class="code-line">Marry,</div>
+								<div class="code-line">Bruce</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
-
 					<p>What <span class="inline-code"><span class="method">Split</span>()</span> function did was to look inside our string for all the occurrences of the character <span class="inline-code char">' '</span> (space). Then, it divided our string in multiple strings, breaking it wherever the space character was found. Finally, it stored all these divided string pieces inside an array, which we can iterate to display its values, using a <a href="../../introduction/foreach-loop/">foreach</a> loop.</p>
 					<p>You notice that some of the names have a comma after them. You also notice that I have placed the parameter for the <span class="inline-code"><span class="method">Split</span>()</span> function between single quotation marks, and not double. This specifies that we are providing a <a href="../../introduction/char-variable-type/">char</a> type parameter, not a <a href="../../introduction/string-variable-type/">string</a>. And, indeed, the <span class="inline-code"><span class="method">Split</span>()</span> function only accepts type <span class="inline-code using">char</span> as parameter. If we try to add more than a single character, we will get an error, because a <span class="inline-code using">char</span> can only contain a single character. Also, if we try to supply a <span class="inline-code using">string</span> instead of a <span class="inline-code using">char</span>, we will still get an error, because there is no <a href="../../functions/functions-methods-overloading/">overload</a> of the <span class="inline-code"><span class="method">Split</span>()</span> function that takes a <span class="inline-code using">string</span> as a parameter. So, how can we split a string by providing more than a single separator character?</p>
 					<p>Like this:</p>
@@ -532,13 +537,20 @@
 					</div>
 
 					<p>And now we would get the correct display:</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b7e95f684ce1.png">
-							<picture>
-							  <source srcset="./img_5b7e95f684ce1.png" media="(min-width: 300px)" />
-							  <img src="./img_5b7e95f684ce1-300x172.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">Jane</div>
+								<div class="code-line">John</div>
+								<div class="code-line">Marry</div>
+								<div class="code-line">Bruce</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>But this approach does not remove the empty strings from the array. It just does not print them. So we can change the arguments we are passing to the <span class="inline-code"><span class="method">Split</span>()</span> function, by passing a special option:</p>
 
@@ -787,7 +799,7 @@
 				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
 				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
 				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
-				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

@@ -307,13 +307,31 @@
 						</div>
 					</div>
 					<p>And the output would be this one:</p>
-					<div class="caption aligncenter">
-						<a href="./fibonacci-non-recursive.png">
-							<picture>
-							  <source srcset="./fibonacci-non-recursive.png" media="(min-width: 300px)" />
-							  <img src="./fibonacci-non-recursive-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">1</div>
+								<div class="code-line">2</div>
+								<div class="code-line">3</div>
+								<div class="code-line">5</div>
+								<div class="code-line">8</div>
+								<div class="code-line">13</div>
+								<div class="code-line">21</div>
+								<div class="code-line">34</div>
+								<div class="code-line">55</div>
+								<div class="code-line">89</div>
+								<div class="code-line">144</div>
+								<div class="code-line">233</div>
+								<div class="code-line">377</div>
+								<div class="code-line">610</div>
+								<div class="code-line">987</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>The only problem with the above code is that we need to know how many elements do we want to calculate in the sequence. For the number 1000, there are 15 of such elements. But what if we wanted to calculate it for a much larger number, like 1,000,000? We would need a lot of tests to see how many elements fit in that range. And this is not elegant if we want a dynamic solution, for any number.</p>
 					<p>So.. Introducing you&#8230; pam-pam-paaaam! Recursive functions! Here is a basic example:</p>
@@ -688,14 +706,18 @@
 						</div>
 					</div>
 					<p>and this is how the result will look like:</p>
-
-					<div class="caption aligncenter">
-						<a href="./recursive-factorial.png">
-							<picture>
-							  <source srcset="./recursive-factorial.png" media="(min-width: 300px)" />
-							  <img src="./recursive-factorial-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">10! = 3628800</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>However, like in our Fibonacci example, this is also a bad implementation of recursion, even though when explaining recursive functions, factorial numbers is the preferred exercise in universities. That is why I will also explain to you the alternative, using iterations, which in this particular case is more efficient. The only difference is that iteration is often not as intuitive as recursion.</p>
 					<div class="code-block">		
@@ -1187,13 +1209,34 @@
 					</div>
 					<p>We are going to keep the sequence of values in an array called <span class="inline-code">loops</span>, which would be printed on the console by the method <span class="inline-code"><span class="method">PrintLoops</span>()</span> when needed. The method <span class="inline-code"><span class="method">NestedLoops</span>()</span> takes one parameter, indicating the position in which we are going to place values. In the loop, we place consecutively on the current position each of the possible values (the variable <span class="inline-code">numberOfIterations</span> contains the value of <span class="inline-code param">K</span> entered by the user), after which we call recursively the method <span class="inline-code"><span class="method">NestedLoops</span>()</span> for the next position. The bottom of the recursion is reached when the current position becomes <span class="inline-code param">N</span> (the variable <span class="inline-code">numberOfIterations</span> contains the value of <span class="inline-code param">N</span>, entered by the user). In this moment we have values on all positions and we print the sequence.</p>
 					<p>If we run the application and enter for <span class="inline-code param">N</span> and <span class="inline-code param">K</span> respectively <span class="inline-code literal">2</span> and <span class="inline-code literal">4</span> as follows, we are going to obtain the following result:</p>
-					<div class="caption aligncenter">
-						<a href="./nested-loops-recursion.png">
-							<picture>
-							  <source srcset="./nested-loops-recursion.png" media="(min-width: 300px)" />
-							  <img src="./nested-loops-recursion-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">N = 2</div>
+								<div class="code-line">K = 4</div>
+								<div class="code-line">1 1</div>
+								<div class="code-line">1 2</div>
+								<div class="code-line">1 3</div>
+								<div class="code-line">1 4</div>
+								<div class="code-line">2 1</div>
+								<div class="code-line">2 2</div>
+								<div class="code-line">2 3</div>
+								<div class="code-line">2 4</div>
+								<div class="code-line">3 1</div>
+								<div class="code-line">3 2</div>
+								<div class="code-line">3 3</div>
+								<div class="code-line">3 4</div>
+								<div class="code-line">4 1</div>
+								<div class="code-line">4 2</div>
+								<div class="code-line">4 3</div>
+								<div class="code-line">4 4</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>In the <span class="inline-code"><span class="method">Main</span>()</span> method we enter values for <span class="inline-code param">N</span> and <span class="inline-code param">K</span>, create an array in which we are going to keep the sequence of values, after which we call the method <span class="inline-code"><span class="method">NestedLoops</span>()</span>, starting from the first position. Notice that as a parameter of the array we give <span class="inline-code literal">0</span> because we keep the sequence of values in an array, and as we already know, counting of array elements starts from <span class="inline-code literal">0</span>. The method <span class="inline-code"><span class="method">PrintLoops</span>()</span> iterates all elements of the array and prints them on the console.</p>
 					<p>Now that we saw how nested loops look like using recursion, lets have a look at the second way of implementing the nested loops, iteration. For the implementation of an iterative solution of the nested loops we can use the following algorithm, which finds the next sequence of numbers and prints it at each iteration:</p>
@@ -1502,13 +1545,26 @@
 						</div>
 					</div>
 					<p>The methods <span class="inline-code"><span class="method">Main</span>()</span> and <span class="inline-code"><span class="method">PrintLoops</span>()</span> are the same as in the implementation of the recursive solution. The <span class="inline-code"><span class="method">NestedLoops</span>()</span> method is different. It now implements the algorithm for iterative solution of the problem and for this reason it does not get any parameters, unlike in the recursive version. In the very beginning of this method we call the method <span class="inline-code"><span class="method">InitLoops</span>()</span>, which iterates the elements of the array and places in each position <span class="inline-code literal">1</span>. The steps of the algorithm we perform in an infinite loop, from which we are going to escape in an appropriate moment by ending the execution of the methods via the operator <span class="inline-code if">return</span>. The way we implement step 3 of the algorithm is very interesting. The verification of the values greater than <span class="inline-code param">K</span>, their substitution with <span class="inline-code literal">1</span> and the incrementing with <span class="inline-code literal">1</span> the value on the previous position (after which we make the same verification for it too) we implement by using one <span class="inline-code if">while</span> loop, which we enter only if the value is greater than <span class="inline-code param">K</span>. For this purpose, we first replace the value of the current position with <span class="inline-code literal">1</span>. After that, the position before it becomes current. Next, we increment the value on the new position with <span class="inline-code literal">1</span> and go back to the beginning of the loop. These actions continue until the value on the current position is not less than or equal to <span class="inline-code param">K</span> (the variable <span class="inline-code">numberOfIterations</span> contains the value of <span class="inline-code param">K</span>), which is when we escape the loop. When the value on the first position becomes greater than <span class="inline-code param">K</span> (this is the moment when we have to end the execution), on its place we put <span class="inline-code literal">1</span> and try to increment the value on the previous position. In this moment the value of the variable <span class="inline-code param">currentPosition</span> becomes negative (as the first position of the array is <span class="inline-code literal">0</span>) and we end the execution of the method using the operator <span class="inline-code if">return</span>. This is the end of our task. We can now test it with <span class="inline-code"><span class="param">N</span> = <span class="literal">3</span></span> and <span class="inline-code"><span class="param">K</span> = <span class="literal">2</span></span>, for example:</p>
-					<div class="caption aligncenter">
-						<a href="./nested-loops-interration.png">
-							<picture>
-							  <source srcset="./nested-loops-interration.png" media="(min-width: 300px)" />
-							  <img src="./nested-loops-interration-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">N = 3</div>
+								<div class="code-line">K = 2</div>
+								<div class="code-line">1 1 1</div>
+								<div class="code-line">1 1 2</div>
+								<div class="code-line">1 2 1</div>
+								<div class="code-line">1 2 2</div>
+								<div class="code-line">2 1 1</div>
+								<div class="code-line">2 1 2</div>
+								<div class="code-line">2 2 1</div>
+								<div class="code-line">2 2 2</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>So, in the end, which is better? Iteration or recursion?</p>
 					<p>If the algorithm solving of the problem is recursive, the implementation of recursive solution can be much more readable and elegant than iterative solution to the same problem. Sometimes defining equivalent algorithm is considerably more difficult and it is not easy to be proven that the two algorithms are equivalent. In certain cases by using recursion we can accomplish much simpler, shorter and easy to understand solutions. On the other hand, recursive calls can consume much more resources (CPU time and memory). In certain situations, the recursive solutions can be much more difficult to understand and follow than the relevant iterative solutions. Recursion is powerful programming technique, but we have to think carefully before using it. If used incorrectly, it can lead to inefficient and tough to understand and maintain solutions.</p>
@@ -1684,13 +1740,18 @@
 						</div>
 					</div>
 					<p>Do you notice the difference? While with the initial version if <span class="inline-code"><span class="param">n</span> = <span class="literal">100</span></span> it seems like the computation goes on forever, with the optimized solution we get an answer instantly. As we will learn later, the first solution runs in exponential time while the second is linear:</p>
-					<div class="caption aligncenter">
-						<a href="./fibonacci-recursive-good-practice.png">
-							<picture>
-							  <source srcset="./fibonacci-recursive-good-practice.png" media="(min-width: 300px)" />
-							  <img src="./fibonacci-recursive-good-practice-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">n = 100</div>
+								<div class="code-line">fib(100) = 3736710778780434371</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>We can even improve upon the previous concept of retaining the previous numbers values. It is not hard to notice that we can solve the problem without using recursion, by calculating the Fibonacci numbers consecutively. For this purpose we are going to keep only the last two calculated elements of the sequence and use them to get the next element. Bellow you can see an implementation of the iterative Fibonacci numbers calculation algorithm:</p>
 					<div class="code-block">		
@@ -2225,7 +2286,7 @@
 				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
 				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
 				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
-				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

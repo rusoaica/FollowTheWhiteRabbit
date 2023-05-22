@@ -191,3 +191,43 @@
 	line-height: 15px !important; 
 	font-family: 'MonacoRegular', Monaco, Consolas, monospace;
 }
+
+.terminal-header {
+	height: 25px !important; 
+	background: #000000 !important;
+    border-bottom-width: 1px !important;
+    border-bottom-color: #000000 !important;
+    border-bottom-style: solid !important;
+}
+
+.terminal-title {
+	margin-left: auto;
+	margin-right: 0;
+	display: block;
+	width: 25px;
+	height: 25px;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024"><path d="M777.856 280.192l-33.92-33.952-231.872 231.872-231.84-231.872-33.984 33.888 231.872 231.904-231.84 231.84 33.888 33.984 231.904-231.904 231.84 231.872 33.952-33.888-231.872-231.904z" fill="white"/></svg>');
+}
+
+.terminal-pre {
+	color: #1bc625;
+	font-size: 16px !important; 
+	line-height: 20px !important; 
+	background: #0C0C0C !important;
+}
+
+.terminal-column {
+	padding: 0px;
+}
+
+.terminal-blinkingCursor {
+	vertical-align: bottom;
+	background-color: #00FF00;
+	margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+	display: inline-flex; 
+	width:8px; 
+	height: 17px;
+	animation: blinking 1s steps(1, end) infinite;
+}

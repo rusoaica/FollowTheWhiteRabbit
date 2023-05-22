@@ -305,13 +305,26 @@
 						</div>
 					</div>
 					<p>Ieșirea de pe consolă va fi:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop.png">
-							<picture>
-							  <source srcset="../../introduction/for-loop/for-loop.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/for-loop/for-loop-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">0</div>
+								<div class="code-line">1</div>
+								<div class="code-line">2</div>
+								<div class="code-line">3</div>
+								<div class="code-line">4</div>
+								<div class="code-line">5</div>
+								<div class="code-line">6</div>
+								<div class="code-line">7</div>
+								<div class="code-line">8</div>
+								<div class="code-line">9</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>În exemplul nostru, am declarat o variabilă (variabila noastră de control) numită <span class="inline-code param">numar</span> și am inițializat-o cu valoarea implicită <span class="inline-code literal">0</span>. În continuare, am specificat că dorim ca bucla să fie executată numai în cazul în care valoarea ei este mai mică decât <span class="inline-code literal">10</span>. În cele din urmă, am instruit bucla să incrementeze variabila noastră cu <span class="inline-code literal">1</span> la fiecare ciclu.</p>
 					<p>Deci, am inițializat o variabilă numită <span class="inline-code param">numar</span> la valoarea <span class="inline-code literal">0</span>. Bucla <span class="inline-code if">for</span> a executat instrucțiunile din interiorul blocului și a incrementat valoarea variabilei cu <span class="inline-code literal">1</span>. Mai apoi, a verificat condiția: este variabila mai mică decât <span class="inline-code literal">10</span>? Dacă da, execută instrucțiunile din nou, incrementează variabila din nou, efectuează verificarea valorii din nou, etc., până când verificarea valorii variabilei noastre determină că valoarea acesteia a fost incrementată la <span class="inline-code literal">10</span>, caz în care condiția noastră (variabila să fie mai mică de <span class="inline-code literal">10</span>) va returna <span class="inline-code using">false</span>.</p>
@@ -425,15 +438,28 @@
 						</div>
 					</div>
 					<p>Care va afișa:</p>
-					<div class="caption aligncenter">
-						<a href="./for-loop-decrement.png">
-							<picture>
-							  <source srcset="../../introduction/for-loop/for-loop-decrement.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/for-loop/for-loop-decrement-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">9</div>
+								<div class="code-line">8</div>
+								<div class="code-line">7</div>
+								<div class="code-line">6</div>
+								<div class="code-line">5</div>
+								<div class="code-line">4</div>
+								<div class="code-line">3</div>
+								<div class="code-line">2</div>
+								<div class="code-line">1</div>
+								<div class="code-line">0</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
-					<p>În acest caz, bucla se va efectua în același mod ca și în cazul anterior, cu trei diferențe: în primul rând, am inițializat variabila noastră cu valoarea <span class="inline-code literal">9</span>, nu <span class="inline-code literal">0</span>; sîn al doilea rând, am specificat condiția de terminare a buclei noastre să fie atunci când variabila noastră este mai mare sau egală cu <span class="inline-code literal">0</span>; third, al treilea rând, am instruit bucla să decrementeze valoarea variabilei noastre cu <span class="inline-code literal">1</span> la fiecare ciclu. Practic, programul va înumăra acum descrescător, de la <span class="inline-code literal">9</span> la <span class="inline-code literal">0</span>.</p>
+					<p>În acest caz, bucla se va efectua în același mod ca și în cazul anterior, cu trei diferențe: în primul rând, am inițializat variabila noastră cu valoarea <span class="inline-code literal">9</span>, nu <span class="inline-code literal">0</span>; în al doilea rând, am specificat condiția de terminare a buclei noastre să fie atunci când variabila noastră este mai mare sau egală cu <span class="inline-code literal">0</span>; în al treilea rând, am instruit bucla să decrementeze valoarea variabilei noastre cu <span class="inline-code literal">1</span> la fiecare ciclu. Practic, programul va număra acum descrescător, de la <span class="inline-code literal">9</span> la <span class="inline-code literal">0</span>.</p>
 					<p>Am putea specifica de asemenea, un factor de incrementare diferit:</p>
 					<div class="code-block">		
 						<div class="code-block-header">
@@ -544,13 +570,26 @@
 						</div>
 					</div>
 					<p>Probabil puteți deja înțelege exemplul de mai sus. Am spus programului nostru să incrementeze variabila nostră de control cu <span class="inline-code literal">10</span> la fiecare ciclu, până când valoarea devine egală sau mai mare de <span class="inline-code literal">100</span>:</p>
-					<div class="caption aligncenter">
-						<a href="../../introduction/for-loop/for-loop-increment-factor.png">
-							<picture>
-							  <source srcset="../../introduction/for-loop/for-loop-increment-factor.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/for-loop/for-loop-increment-factor-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">0</div>
+								<div class="code-line">10</div>
+								<div class="code-line">20</div>
+								<div class="code-line">30</div>
+								<div class="code-line">40</div>
+								<div class="code-line">50</div>
+								<div class="code-line">60</div>
+								<div class="code-line">70</div>
+								<div class="code-line">80</div>
+								<div class="code-line">90</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Putem folosi, de asemenea, orice altă operație matematică, de exemplu multiplicare:</p>
 					<div class="code-block">		
@@ -662,13 +701,26 @@
 						</div>
 					</div>
 					<p>care înumără în pași de multiplicare de <span class="inline-code literal">2</span>:</p>
-					<div class="caption aligncenter">
-						<a href="../../introduction/for-loop/for-loop-increment-operation.png">
-							<picture>
-							  <source srcset="../../introduction/for-loop/for-loop-increment-operation.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/for-loop/for-loop-increment-operation-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">2</div>
+								<div class="code-line">4</div>
+								<div class="code-line">8</div>
+								<div class="code-line">16</div>
+								<div class="code-line">32</div>
+								<div class="code-line">64</div>
+								<div class="code-line">128</div>
+								<div class="code-line">256</div>
+								<div class="code-line">512</div>
+								<div class="code-line">1024</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Ar trebui să înțelegeți și <a href="../../functii/domeniul-de-definitie-al-variabilelor/">domeniul de definiție</a> al variabilei noastre de control (cărei secțiuni a codului îi este vizibilă și accesibilă). Exemplul de mai jos va demonstra acest aspect:</p>
 					<div class="code-block">		
@@ -1256,7 +1308,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Sâmbătă, 14 Ianuarie 2017 la ora 08:38 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						Această intrare a fost postată Sâmbătă, 14 Ianuarie 2017 la ora 08:38 și este categorizată ca <a href="../../category/introducere/" rel="category tag">Introducere</a>.
 						</small>
 					</div>
 
@@ -1374,7 +1426,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

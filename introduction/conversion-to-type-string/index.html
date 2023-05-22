@@ -280,13 +280,19 @@
 						</div>
 					</div>
 					<p>Here is the output:</p>
-					<div class="caption aligncenter">
-						<a href="./conversion-to-type-string.png">
-							<picture>
-							  <source srcset="./conversion-to-type-string.png" media="(min-width: 300px)" />
-							  <img src="./conversion-to-type-string-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">The water boiling temperature is 100</div>
+								<div class="code-line">The water boiling temperature is 100</div>
+								<div class="code-line">100</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>You can see that all three methods produce the same result. The difference is that for the first line, the conversion is made automatically. As a general rule, it is considered good practice among programmers to always use <a href="../../introduction/explicit-type-conversion/">explicit type conversion</a>, to avoid mistakes. In the case of implicit conversion, note that the concatenating operator (<span class="inline-code">+</span>) has <strong>the same priority</strong> with the addition sign (<span class="inline-code">+</span>). This means that you might intend to perform an addition on two numbers, then a concatenation, but might get the surprise of concatenating the values as <span class="inline-code using">string</span>, instead. Consider the following example:</p>
 					<div class="code-block">		
@@ -396,14 +402,19 @@
 							</table>
 						</div>
 					</div>
-					<p>Aaaand&#8230; surprise! Not quite the result you would expect, isn&#8217;t it?</p>
-					<div class="caption aligncenter">
-						<a href="./concatenation-error.png">
-							<picture>
-							  <source srcset="./concatenation-error.png" media="(min-width: 300px)" />
-							  <img src="./concatenation-error-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<p>Aaaand&#8230; surprise! Not quite the result you would expect, isn't it?</p>
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">The sum between 3 and 7 is 37</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>This is because when dealing with operators that have the same precedence, the order of operation is from left to right. Which means, in our case, that the first operation is to concatenate the <span class="inline-code using">string</span> <span class="inline-code string">&quot;The sum between 3 and 7 is &quot;</span> with the number <span class="inline-code literal">3</span>, which, as we learned, will be implicitly converted to a <span class="inline-code using">string</span>. This will return also a <span class="inline-code using">string</span>, which, as the next operation, will be concatenated with the number <span class="inline-code literal">7</strong></em></span>, which will also be implicitly converted, in order to successfully concatenate it. That&#8217;s why, implicit conversion can be dangerous, and you should avoid it. Instead, you can force the <a href="../../introduction/operator-precedence/">order of operation</a>, as we discussed in a previous lesson. The following code will produce the correct result:</p>
 					<div class="code-block">		
@@ -648,7 +659,7 @@
 				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
 				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
 				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
-				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

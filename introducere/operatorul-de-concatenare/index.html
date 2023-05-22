@@ -162,7 +162,7 @@
 					<a href="../../category/introducere/" style="font-style: italic; color: #777777;">Introducere</a><span style="color: #00ff00;"> ></span> 
 					<a href="./" style="font-style: italic; color: #777777;">Operatorul de concatenare</a>
 
-					<p>TCu toate că am folosit deja operatorul de concatenare de câteva ori, nu l-am explicat încă. Operatorul de concatenare (<span class="inline-code">+</span>) este folosit pentru a uni două sau mai multe valori de tip <span class="inline-code using">string</span> împreună.</p>
+					<p>Cu toate că am folosit deja operatorul de concatenare de câteva ori, nu l-am explicat încă. Operatorul de concatenare (<span class="inline-code">+</span>) este folosit pentru a uni două sau mai multe valori de tip <span class="inline-code using">string</span> împreună.</p>
 					<p>Ca o notă, nu este necesar ca ambii operanzi să fie de tip <span class="inline-code using">string</span>. Dacă cel puțin unul dintre ei este un șir de caractere, ceilalți <em>vor fi convertiți în string</em>, în scopul de a asigura succesul concatenării.</p>
 					<p>Ar trebui să știți că această conversie se face din mers, de către .NET runtime. Acesta este un lucru minunat, deoarece nu trebuie să ne facem griji despre convertirea fiecărui operand în <span class="inline-code using">string</span>, etc. Cu toate acestea, deși acest lucru s-ar putea să pară o sarcină plictisitoare, ar trebui să vă obișnuiți să convertiți în mod explicit fiecare operand care trebuie convertit, pentru a se evita erorile de <a href="../../introducere/conversia-de-tip-implicita/">conversie implicită</a> (despre care vom discuta în viitor).</p>
 					<p>Iată un exemplu simplu despre folosirea operatorului concatenator, cu sau fără convertirea explicită a operatorilor non-string:</p>
@@ -245,7 +245,7 @@
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare simplă de stringuri</span>
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare simpla de stringuri</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -276,13 +276,13 @@
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare fără conversie explicită</span>
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare fara conversie explicita</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
 													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">string </span>
 													<span class="param">salutare </span>= 
-													<span class="string">&quot;Bună! Data de azi este &quot;</span>;
+													<span class="string">&quot;Buna! Data de azi este &quot;</span>;
 												</div>
 
 												<div class="code-line">
@@ -307,7 +307,7 @@
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare cu conversie explicită</span>
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// concatenare cu conversie explicita</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -361,14 +361,20 @@
 						</div>
 					</div>
 					<p>Consola va arăta</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b2683c417105.png">
-							<picture>
-							  <source srcset="./img_5b2683c417105.png" media="(min-width: 300px)" />
-							  <img src="./img_5b2683c417105-300x239.png" style="width:100%;"/>
-							</picture>
-						</a>	
-					</div>				
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">IonPopescu</div>
+								<div class="code-line">Buna! Data de azi este 6</div>
+								<div class="code-line">Strada Fanteziei, numarul 3</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
+					</div>
 
 					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
 
@@ -386,7 +392,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Vineri, 06 Ianuarie 2017 la ora 01:15 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						Această intrare a fost postată Vineri, 06 Ianuarie 2017 la ora 01:15 și este categorizată ca <a href="../../category/introducere/" rel="category tag">Introducere</a>.
 						</small>
 					</div>
 
@@ -504,7 +510,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

@@ -399,7 +399,7 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string">&nbsp;&nbsp;&nbsp;&nbsp;&quot;în care încercăm să adăugăm o linie nouă în cod&quot;</span><span>;</span>
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string">&nbsp;&nbsp;&nbsp;&nbsp;&quot;in care incercam sa adaugam o linie noua in cod&quot;</span><span>;</span>
 												</div>
 
 												<div class="code-line">
@@ -407,7 +407,7 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Afișează rezultatul la consolă</span>
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Afiseaza rezultatul la consola</span>
 												</div>
 
 												<div class="code-line">
@@ -439,15 +439,19 @@
 					</div>
 
 					<p>Textul de mai sus se va compila cu succes, dar din păcate textul va fi afișat în continuare pe o singură linie:</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b267f15a8318.png">
-							<picture>
-							  <source srcset="./img_5b267f15a8318.png" media="(min-width: 300px)" />
-							  <img src="./img_5b267f15a8318-300x239.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">acesta este un stringin care incercam sa adaugam o linie noua in cod</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
-
 					<p>Modul corect de a adăuga o nouă linie este de fapt folosirea secvenței Escape pentru a adăuga un caracter linie nouă:</p>
 					<div class="code-block">		
 						<div class="code-block-header">
@@ -513,7 +517,7 @@
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">string</span> <span class="param">primulString</span> = <span class="string">&quot;acesta este un string </span><span class="escape">\n</span><span class="string">în care încercăm să adăugăm o linie nouă în cod&quot;</span>;
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="using">string</span> <span class="param">primulString</span> = <span class="string">&quot;acesta este un string </span><span class="escape">\n</span><span class="string">in care incercam sa adaugam o linie noua in cod&quot;</span>;
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -521,7 +525,7 @@
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Afișează rezultatul la consolă</span>
+													<span class="vertical-dash-line"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="comment">// Afiseaza rezultatul la consola</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -551,20 +555,22 @@
 							</table>
 						</div>
 					</div>
-
 					<p>De data aceasta, rezultatul va fi:</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b267f4b55517.png">
-							<picture>
-							  <source srcset="./img_5b267f4b55517.png" media="(min-width: 300px)" />
-							  <img src="./img_5b267f4b55517-300x239.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">acesta este un string</div>
+								<div class="code-line">in care incercam sa adaugam o linie noua in cod</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
-
 					<p>După cum se poate vedea, variabila noastră de tip <span class="inline-code using">string</span> conține secvența Escape <span class="inline-code escape">\n</span>, care spune compilatorului să adăuge un caracter linie nouă la acea locație.</p>
 					<p>Un alt exemplu ideal ar fi utilizarea de ghilimele. Din moment ce compilatorul utilizează ghilimelele pentru a înțelege unde începe și unde se termină valoarea unei variabile <span class="inline-code using">string</span>, adăugând ghilimele în interiorul șirului nostru va face compilatorul să creadă că am încercat să încheiem valoarea șirului:</p>
-
 					<div class="code-block">		
 						<div class="code-block-header">
 							<span class="code-block-title"></span>
@@ -621,15 +627,19 @@
 						</div>
 					</div>
 					<p>care va produce această ieșire:</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b267fa1c4ddf.png">
-							<picture>
-							  <source srcset="./img_5b267fa1c4ddf.png" media="(min-width: 300px)" />
-							  <img src="./img_5b267fa1c4ddf-300x239.png" style="width:100%;"/>
-							</picture>
-						</a>	
-					</div>				
-
+					<div class="code-block">
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">&quot;Buna, draga mea!&quot; spuse el.</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
+					</div>
 					<p class="video-disclaimer">Conceptele explicate în această lecție sunt prezentate și vizual, ca parte a următorului videoclip:</p>
 
 					<div class="youtube-cropped">
@@ -646,7 +656,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Marți, 03 Ianuarie 2017 la ora 22:51 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						Această intrare a fost postată Marți, 03 Ianuarie 2017 la ora 22:51 și este categorizată ca <a href="../../category/introducere/" rel="category tag">Introducere</a>.
 						</small>
 					</div>
 
@@ -764,7 +774,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

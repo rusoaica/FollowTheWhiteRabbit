@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="rusoaica" />
+		<meta name="keywords" content="class, instantiation, new operator, object oriented programming, objects, OOP, operators" />
+		<meta name="description" content="The process of creating an instance (copy) or a class (blueprint) is called instantiation. In this light, we can say that an object is the instance itself." />
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<meta name="msapplication-TileImage" content="../../common/images/icon270x270.jpg" />
+		<meta name="viewport" content="width=device-width">
+		
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:locale:alternate" content="en_US" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Short introduction to Instantiation in C# - Follow the white rabbit" />
+		<meta property="og:description" content="The process of creating an instance (copy) or a class (blueprint) is called instantiation. In this light, we can say that an object is the instance itself." />
+		<meta property="og:url" content="./objects/instantiation/" />
+		<meta property="og:site_name" content="Follow the white rabbit" />
+		<meta property="article:publisher" content="https://www.facebook.com/theyarewatchingyouneo" />
+		<meta property="article:published_time" content="2017-04-26T14:15:08+00:00" />
+		<meta property="article:modified_time" content="2017-04-26T14:15:08+00:00" />
+		<meta property="og:image" content="./img_607d35446ecb2.png" />
+
+		<link rel="stylesheet" href="../../common/styles/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/terms.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="../../common/styles/csharp.css" type="text/css" media="screen" />
+		
+		<link rel="alternate" href="../../objects/instantiation/" hreflang="en" />
+		<link rel="alternate" href="../../obiecte/instantierea/" hreflang="ro" />
+		
+		<link rel="icon" href="../../common/images/icon32x32.jpg" sizes="32x32" />
+		<link rel="icon" href="../../common/images/icon192x192.jpg" sizes="192x192" />
+		<link rel="apple-touch-icon" href="../../common/images/icon180x180.jpg" />
+
+		<title>
+			Short introduction to Instantiation in C# - Follow the white rabbit
+		</title>
+	</head>
+	<body>
+		<input type="checkbox" id="hamburger-input" class="burger-shower" />
+        <label id="hamburger-menu" for="hamburger-input">
+			<img src="../../common/images/tools.png" style="width: 40px; height: 38px; margin-left: 3px; margin-top: 3px;"/>
+			<nav id="mobile-menu">
+				<div id="mobile-menu-content">
+					<div class="mobile-menu-heading"> 
+						Read this in
+					</div>
+					<ul>
+						<li>
+							<a lang="en-US" hreflang="en-US" href="../../objects/instantiation/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">English</span>
+							</a>
+						</li>
+						<li>
+							<a lang="ro-RO" hreflang="ro-RO" href="../../obiecte/instantierea/">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+								<span style="margin-left:0.3em;">Română</span>
+							</a>
+						</li>
+					</ul>					
+					<div class="mobile-menu-heading"> 
+						Table of contents
+					</div>
+					<ul>
+						<li>
+							<a href="../../">
+								<span>Contents</span>
+							</a>
+						</li>
+					</ul>
+					<div class="mobile-menu-heading"> 
+						Chapters
+					</div>
+					<ul>
+						<li>
+							<a href="../../category/uncategorized/">
+								<span>Uncategorized</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/introduction/">
+								<span>Introduction</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/arrays/">
+								<span>Arrays</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/functions/">
+								<span>Functions</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/strings-and-text-processing/">
+								<span>Strings And Text Processing</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/objects/">
+								<span>Objects</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/graphical-user-interface/">
+								<span>Graphical User Interface</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/data-structures/">
+								<span>Data Structures</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/debugging-and-error-handling/">
+								<span>Debugging And Error Handling</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/first-practical-application/">
+								<span>First Practical Application</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/object-oriented-programming/">
+								<span>Object Oriented Programming</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/delegates-lambda-expressions-events/">
+								<span>Delegates, Lambda Expressions, Events</span>
+							</a>
+						</li>
+						<li>
+							<a href="../../category/linq/">
+								<span>LINQ</span>
+							</a>
+						</li>
+					</ul>		
+				</div>
+			</nav>
+        </label>         
+        <div id="page">
+			<div id="header">
+				<div id="header-content-background">
+					<div id="header-content">
+						Follow the white rabbit...<i class="blinkingCursor"></i>
+					</div>
+				</div>
+				<div id="header-separator">
+					Instantiation
+				</div>
+				<hr class="border-shine" style="margin-top: -32px;">
+			</div>
+			
+			<hr class="border-lit">
+			<div class="flex-container">
+				<div id="content">
+					<a href="../../" style="font-style: italic; color: #777777;">Table of contents</a><span style="color: #00ff00;"> >></span> 
+					<a href="../../category/objects/" style="font-style: italic; color: #777777;">Objects</a><span style="color: #00ff00;"> ></span> 
+					<a href="./" style="font-style: italic; color: #777777;">Instantiation</a>
+
+					<p>I have explained a few times already that when we are dealing with objects, most of the times we are not working with the original class itself &#8211; the blueprint, but we are actually creating copies of it called <span class="programming-term">instances</span>. The process of creating an instance (copy) of a class (blueprint) is called <span class="programming-term">instantiation</span>. In this light, we can say that an object is the instance itself.</p>
+					<p>Like I explained in a few occasions already, we can imagine this process of classes and their instantiation by making a similarity with the real world. In the previous lessons, we have used our <span class="inline-code class-name">Oven</span> class to demonstrate the purpose of creating an <span class="inline-code class-name">Oven</span> object. In real life, this would be the <span class="generic-term">blueprint</span>, the prototype of the oven. In practice, we are not going to make a new blueprint or prototype each time we are going to sell an oven. Instead, we will use that blueprint to create many <span class="generic-term">copies</span> of it, which can be sold. The copies can be customized, for example, a set of ovens can have their color white, while others can be gray. The original unique blueprint doesn&#8217;t specify  a color for the oven, it only specifies that the oven <strong>can have</strong> a color.</p>
+					<p>Similarly, when we create a class, we are actually creating a blueprint. When we will want to use that class, it is very rarely that we will actually use the class itself. Instead, we will create copies of it called instances. These instances can be customized, and they are independent one of another.</p>
+					<p>In official programming manuals, you will encounter two terms: the <span class="programming-term">state</span> of an object and its <span class="programming-term">behavior</span>. While the state of the object is specific for each object itself (for example, our <span class="inline-code class-name">Oven</span>&#8216;s object color, or model, which can be individualized for each item), the behavior is common for all instances of that class (all <span class="inline-code class-name">Oven</span> objects have a <span class="inline-code"><span class="method">TurnOn</span>()</span> or <span class="inline-code"><span class="method">TurnOff</span>()</span> method).</p>
+					<p>But, enough talking. Lets actually see how we are instantiating a class, though we have done this a few times already.</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>So, the way we are instantiating a class is by using the name of the class to be instantiated, followed by the name we want to give to our new object (copy). If you look carefully, this is no different than doing this:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">int</span> <span class="param">myInt</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Starts to looks familiar? We learned by now that the way we are <a href="../../introduction/declaring-and-initializing-variables/">declaring</a> a variable is by specifying its <a href="../../introduction/variable-types/">type</a>, followed by its name. So, we can see that instantiation is nothing else but the creation of a variable, of a custom type. Instead of creating a primitive type (types defined by default in C#), we are actually creating a new type. In conclusion, we are <strong>declaring a new variable of type</strong> <span class="inline-code class-name">Oven</span>.</p>
+					<p>So far, so good. But we have learned that in order to use a variable we have declared, we first need to initialize it with a value. We cannot do this:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">int</span> <span class="param">myInt</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">myInt</span>);
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>just like we cannot do this:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">myOven</span>.Height);
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>because the compiler will complain about <span class="error-term">Use of of unassigned variable</span>.</p>
+					<p>We know that we can <a href="../../introduction/declaring-and-initializing-variables/">initialize</a> a variable this way:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">int</span> <span class="param">myInt</span> = <span class="literal">4</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">myInt</span>);
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>But, in the case of our <span class="inline-code class-name">Oven</span> variable, we can&#8217;t specify a default value, because there is no default value specified for our custom type. Instead, we need to make a call to the <a href="../../objects/constructors/">constructor</a> of the class, of which we talked in the previous lesson.</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span> = <span class="using">new</span> <span class="class-name">Oven</span>();
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>The only new thing in the above code is the usage of the <span class="inline-code using">new</span> operator. What you don&#8217;t know is the fact that every type has a constructor, even the primitive ones. This example works perfectly:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">int</span> <span class="param">myInt</span> = <span class="using">new int</span>();
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>in which case, <span class="inline-code param">myInt</span> is initialized to the default value of the <span class="inline-code using">int</span> type. This is equivalent to</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">int</span> <span class="param">myInt</span> = <span class="literal">0</span>;
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>The above speculations don&#8217;t have much value, they are only used to prove and dissect a concept in detail. In short, in order to create and use a variable, we need to declare and initialize it. This is also true for objects, with a few differences:</p>
+					<ul>
+						<li>objects declaration and initialization is also called <span class="programming-term">instantiation</span>.</li>
+						<li>objects can only be initialized by calling their constructor.</li>
+						<li>calling the constructor of an object always requires the <span class="inline-code using">new</span> operator before the call.</li>
+						<li>all primitive types (<span class="inline-code using">int</span>, <span class="inline-code using">float</span>, <span class="inline-code using">bool</span>, etc) except <span class="inline-code using">string</span> are <span class="programming-term">value types</span>. Objects are always <span class="programming-term">reference types</span>.</li>
+					</ul>
+					<p>Since we created our first class example using a <a href="../../objects/classes/">separated</a> file for it, I need to specify that in order to declare and use our class object, we need a different place to do that, not do it inside that class itself. Instead, we are declaring and initializing it inside the <span class="inline-code"><span class="method">Main</span>()</span> method of our program. This is how our class file should look like:</p>
+					<div class="caption aligncenter">
+						<a href="./oven-class.png">
+							<picture>
+							  <source srcset="./oven-class.png" media="(min-width: 300px)" />
+							  <img src="./oven-class-300x226.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>and this is where we instantiate it:</p>
+					<div class="caption aligncenter">
+						<a href="./class-instantiating.png">
+							<picture>
+							  <source srcset="./class-instantiating.png" media="(min-width: 300px)" />
+							  <img src="./class-instantiating-300x226.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>Of course, if we declared a constructor with parameters, we specify them in the instantiation call:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span> = <span class="using">new</span> <span class="class-name">Oven</span>(<span class="string">&quot;EKK6450AOX&quot;</span>, <span class="string">&quot;white&quot;</span>, <span class="literal">40</span>, <span class="literal">85</span>, <span class="literal">60</span>, <span class="literal">60</span>);
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>After we instantiated it, we can start accessing the properties and methods of our object. You will notice them in Intellisense, as soon as you start typing:</p>
+					<div class="caption aligncenter">
+						<a href="./accessing-class-members.png">
+							<picture>
+							  <source srcset="./accessing-class-members.png" media="(min-width: 300px)" />
+							  <img src="./accessing-class-members-300x155.png" style="width:100%;"/>
+							</picture>
+						</a>	
+					</div>
+					<p>And we can assign values or perform actions on it:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span> = <span class="using">new</span> <span class="class-name">Oven</span>();
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="param">myOven</span>.Color = <span class="string">&quot;white&quot;</span>;
+												</div>
+												<div class="code-line">
+													<span class="param">myOven</span>.Weight = <span class="literal">40</span>;
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="param">myOven</span>.<span class="method">Start</span>();
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>Final note, when creating an object with the operator <span class="inline-code using">new</span>, two things happen: memory is set aside for this object and its data members are initialized. This means that:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="class-name">Oven</span> <span class="param">myOven</span> = <span class="using">new</span> <span class="class-name">Oven</span>();
+												</div>
+												<div class="code-line code-line-highlight">
+													<span class="class-name">Console</span>.<span class="method">WriteLine</span>(<span class="param">myOven</span>.Weight);
+												</div>
+												<div class="code-line">
+													<span class="param">myOven</span>.<span class="method">Start</span>();
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>will not give us a compiler error, even if we did not specifically initialized our <span class="inline-code">Weight</span> property with any value. Instead, the console will display the default value for the type of the the <span class="inline-code">Weight</span> property, in this case, <span class="inline-code literal">0</span>, because <span class="inline-code literal">0</span> is the default value of type <span class="inline-code using">int</span>.</p>
+
+					<p>&nbsp;</p>
+
+					<div id="content-footer">
+						<p>Tags: <span style="color: rgb(190, 105, 104);">
+							class, instantiation, new operator, object oriented programming, objects, OOP, operators
+						</span>
+						</p>
+						<small>
+						This entry was posted on Wednesday, April 26th, 2017 at 16:15 and is filed under <a href="../../category/objects/" rel="category tag">Objects</a>.
+						</small>
+					</div>
+
+					<div class="navigation">
+						<div class="alignleft">« <a href="../../objects/constructors/" rel="prev">Constructors</a></div>
+						<div class="alignright"><a href="../../objects/access-modifiers/" rel="next">Access modifiers</a> »</div>
+					</div>
+				</div>
+				<nav id="sidebar">
+					<div id="sidebar-content">
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Read this in
+						</div>
+						<ul>
+							<li>
+								<a lang="en-US" hreflang="en-US" href="../../objects/instantiation/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAmVBMVEViZsViZMJiYrf9gnL8eWrlYkjgYkjZYkj8/PujwPybvPz4+PetraBEgfo+fvo3efkydfkqcvj8Y2T8UlL8Q0P8MzP9k4Hz8/Lu7u4DdPj9/VrKysI9fPoDc/EAZ7z7IiLHYkjp6ekCcOTk5OIASbfY/v21takAJrT5Dg6sYkjc3Nn94t2RkYD+y8KeYkjs/v7l5fz0dF22YkjWvcOLAAAAgElEQVR4AR2KNULFQBgGZ5J13KGGKvc/Cw1uPe62eb9+Jr1EUBFHSgxxjP2Eca6AfUSfVlUfBvm1Ui1bqafctqMndNkXpb01h5TLx4b6TIXgwOCHfjv+/Pz+5vPRw7txGWT2h6yO0/GaYltIp5PT1dEpLNPL/SdWjYjAAZtvRPgHJX4Xio+DSrkAAAAASUVORK5CYII=" alt="English" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">English</span>
+								</a>
+							</li>
+							<li>
+								<a lang="ro-RO" hreflang="ro-RO" href="../../obiecte/instantierea/" style="background: transparent;">
+									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAMAAABBPP0LAAAAbFBMVEUAJsgAFMT13wDyAgLqAAB4muX8/G3581z5Vlb3RkZagt78/Ef5+T/08Tn1NTX1KSlQe9709Ez5+TX36S71GxvkAABHdNv4+CvzDw8AA7lqjuFBcNn29h/05Rg6adnfAAAAAK3nvQDrwgDkqgALguDCAAAAX0lEQVR4ARXHtWEDQBAEwNmn4BMz9V+eIzsTS8c7EWqR2mQgkJDTYHIZ5cRRg7XJWjG9tLIypqmVV7k0aN8f1vTw3OXaNft5mwyyG7NTxi/5+WPFSdYpPA+fSG60/4074PMLPA8bHzoAAAAASUVORK5CYII=" alt="Română" width="16" height="11" style="width: 16px; height: 11px;">
+									<span style="margin-left:0.3em;">Română</span>
+								</a>
+							</li>
+						</ul>					
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Table of contents
+						</div>
+						<ul>
+							<li>
+								<a href="../../">
+									<span>Contents</span>
+								</a>
+							</li>
+						</ul>
+						<div class="mobile-menu-heading" style="font-size:20px;height:25px;"> 
+							Chapters
+						</div>
+						<ul>
+							<li>
+								<a href="../../category/uncategorized/">
+									<span>Uncategorized</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/introduction/">
+									<span>Introduction</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/arrays/">
+									<span>Arrays</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/functions/">
+									<span>Functions</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/strings-and-text-processing/">
+									<span>Strings And Text Processing</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/objects/">
+									<span>Objects</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/graphical-user-interface/">
+									<span>Graphical User Interface</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/data-structures/">
+									<span>Data Structures</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/debugging-and-error-handling/">
+									<span>Debugging And Error Handling</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/first-practical-application/">
+									<span>First Practical Application</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/object-oriented-programming/">
+									<span>Object Oriented Programming</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/delegates-lambda-expressions-events/">
+									<span>Delegates, Lambda Expressions, Events</span>
+								</a>
+							</li>
+							<li>
+								<a href="../../category/linq/">
+									<span>LINQ</span>
+								</a>
+							</li>
+						</ul>	
+					</div>
+				</nav>
+			</div>				
+            <div id="footer">
+                <div id="footer-content">This website <span style="color: #6DCBFE;">DOES NOT</span> use JavaScript. Because some people prefer it disabled, and it respects their choice. It <span style="color: #6DCBFE;">DOES NOT</span> use cookies, of any kind and you don't have to click through countless agreements. It has no reason to, 
+				and, no, there is no such thing as "mandatory cookies" or "legitimate interest" to "function properly". This website <span style="color: #6DCBFE;">DOES NOT</span> display ads. Neither does it sell anything. You don't have 
+				to register, subscribe, purchase or donate anything. Not everything is about greed and more profit. This website is <strong style="color: #ff0000;">strongly</strong> against social media. It <span style="color: #6DCBFE;">DOES NOT</span> embed any Facebook, Google, 
+				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
+				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
+				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"/>
+    </body>
+</html>

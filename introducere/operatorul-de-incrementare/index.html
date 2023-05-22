@@ -324,13 +324,19 @@
 						</div>
 					</div>
 					<p>Ieșirea va fi următoarea:</p>
-					<div class="caption aligncenter">
-						<a href="./incrementing-operator.png">
-							<picture>
-							  <source srcset="../../introduction/incrementing-operator/incrementing-operator.png" media="(min-width: 300px)" />
-							  <img src="../../introduction/incrementing-operator/incrementing-operator-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">1</div>
+								<div class="code-line">2</div>
+								<div class="code-line">3</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>După cum se vede, am declarat și inițializat o variabilă de tip <span class="inline-code using">int</span>, cu valoarea <span class="inline-code literal">1</span>. După aceea, variabila este incrementată în ambele exemple cu <span class="inline-code literal">1</span>.</p>
 					<p>Diferența dintre <span class="inline-code"><span class="param">variabila</span>++</span> și <span class="inline-code"><span class="param">variabila</span> += <span class="literal">1</span></span> este aceea că în primul caz, variabila este întotdeauna incrementată cu <span class="inline-code literal">1</span>. În al doilea caz, putem incrementa cu orice valoare dorim, ca în exemplul următor:</p>
@@ -516,7 +522,7 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea initială a variabilei este &quot;</span> + <span class="param">variabila</span><span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea initiala a variabilei este &quot;</span> + <span class="param">variabila</span><span>);
 												</div>
 
 												<div class="code-line">
@@ -524,11 +530,11 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei utilizând postfix este &quot;</span> + <span class="param">variabila</span>++<span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei utilizand postfix este &quot;</span> + <span class="param">variabila</span>++<span>);
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei după incrementare este &quot;</span> + <span class="param">variabila</span><span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei dupa incrementare este &quot;</span> + <span class="param">variabila</span><span>);
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -538,11 +544,11 @@
 												<div class="code-line">
 													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">variabila</span> = 
 													<span class="literal">1</span>; 
-													<span class="comment">// resetează valoarea la 1 și testează incrementarea prefix</span>
+													<span class="comment">// resetează valoarea la 1 si testeaza incrementarea prefix</span>
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea inițială a variabilei este &quot;</span> + <span class="param">variabila</span><span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea initiala a variabilei este &quot;</span> + <span class="param">variabila</span><span>);
 												</div>
 
 												<div class="code-line">
@@ -550,11 +556,11 @@
 												</div>
 
 												<div class="code-line code-line-highlight">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei utilizând prefix este &quot;</span> + ++<span class="param">variabila</span><span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei utilizand prefix este &quot;</span> + ++<span class="param">variabila</span><span>);
 												</div>
 
 												<div class="code-line">
-													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei după incrementare este &quot;</span> + <span class="param">variabila</span><span>);
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="class-name">Console</span><span>.</span><span class="method">WriteLine</span><span>(</span><span class="string">&quot;Valoarea variabilei dupa incrementare este &quot;</span> + <span class="param">variabila</span><span>);
 												</div>
 
 												<div class="code-line code-line-highlight">
@@ -585,13 +591,22 @@
 						</div>
 					</div>
 					<p>Iar ieșirea va fi</p>
-					<div class="caption aligncenter">
-						<a href="./img_5b2682ab7eb9f.png">
-							<picture>
-							  <source srcset="./img_5b2682ab7eb9f.png" media="(min-width: 300px)" />
-							  <img src="./img_5b2682ab7eb9f-300x239.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">Valoarea initiala a variabilei este 1</div>
+								<div class="code-line">Valoarea variabilei utilizand postfix este 1</div>
+								<div class="code-line">Valoarea variabilei dupa incrementare este 2</div>
+								<div class="code-line">Valoarea initiala a variabilei este 1</div>
+								<div class="code-line">Valoarea variabilei utilizand prefix este 2</div>
+								<div class="code-line">Valoarea variabilei dupa incrementare este 2</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Acum se poate observa că atunci când utilizați operatorul de incrementare postfix, C# folosește valoarea variabilei în primul rând, afișând <span class="inline-code literal">1</span>, apoi o incrementează, afișând <span class="inline-code literal">2</span>. Pe de altă parte, utilizând operatorul de incrementare prefix, C# incrementează variabila în primul rând, afișând <span class="inline-code literal">2</span>, apoi folosește și afișează valoarea deja incrementată.</p>				
 
@@ -611,7 +626,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Joi, 05 Ianuarie 2017 la ora 23:50 și este categorizată ca <a href="./category/introducere/" rel="category tag">Introducere</a>.
+						Această intrare a fost postată Joi, 05 Ianuarie 2017 la ora 23:50 și este categorizată ca <a href="../../category/introducere/" rel="category tag">Introducere</a>.
 						</small>
 					</div>
 
@@ -729,7 +744,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

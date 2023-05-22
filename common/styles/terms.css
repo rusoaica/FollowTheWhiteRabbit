@@ -16,6 +16,12 @@
 	color: #FF0000;
 }
 
+.field {
+	font-weight: bold;
+	font-style: italic;
+	color: #6ECF9E;
+}
+
 .property {
 	font-weight: bold;
 	font-style: italic;

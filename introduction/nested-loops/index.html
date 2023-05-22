@@ -283,13 +283,36 @@
 						</div>
 					</div>
 					<p>Running this code, the console will display:</p>
-					<div class="caption aligncenter">
-						<a href="./nested-loops.png">
-							<picture>
-							  <source srcset="./nested-loops.png" media="(min-width: 300px)" />
-							  <img src="./nested-loops-300x152.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">X=0 Y=0</div>
+								<div class="code-line">X=0 Y=1</div>
+								<div class="code-line">X=0 Y=2</div>
+								<div class="code-line">X=0 Y=3</div>
+								<div class="code-line">X=0 Y=4</div>
+								<div class="code-line">X=0 Y=5</div>
+								<div class="code-line">X=0 Y=6</div>
+								<div class="code-line">X=0 Y=7</div>
+								<div class="code-line">X=0 Y=8</div>
+								<div class="code-line">X=0 Y=9</div>
+								<div class="code-line">X=1 Y=0</div>
+								<div class="code-line">X=1 Y=1</div>
+								<div class="code-line">X=1 Y=2</div>
+								<div class="code-line">X=1 Y=3</div>
+								<div class="code-line">X=1 Y=4</div>
+								<div class="code-line">X=1 Y=5</div>
+								<div class="code-line">X=1 Y=6</div>
+								<div class="code-line">X=1 Y=7</div>
+								<div class="code-line">X=1 Y=8</div>
+								<div class="code-line">X=1 Y=9</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Analyzing the code, we can see that we have an out loop, initializing an integer variable called <span class="inline-code param">x</span>. This loop will increment our integer while its value is still less than <span class="inline-code literal">2</span>; inside this loop, we have another loop, also declaring an integer, this time called <span class="inline-code param">y</span>. As in our previous loop, this one will also increment its integer, but only while its value is less than <span class="inline-code literal">10</span>. From the output, we can observe that the first loop only incremented its integer two times, while the inner loop has incremented it 20 times! I say 20 times, because, when the first loop started its first iteration, the inner loop ran 10 times, the interval from <span class="inline-code literal">0</span> to <span class="inline-code literal">9</span> (remember, our integer would be incremented while its still less than <span class="inline-code literal">10</span>), then it ended its execution, and the outer loop started its second cycle, in which the inner loop will again increment its integer 10 times.</p>
 					<p>In conclusion, an inner loop will run ALL its cycles, for EVERY cycle of the outer loop.</p>
@@ -427,7 +450,7 @@
 				Twitter or any other company's code inside it. It <span style="color: #6DCBFE;">DOES NOT</span> track users, harvests data or collects statistics. 
 				The materials and information on this website can be used freely, except for the explicitly specified cases. You do have to specify the source though, in any other case other than personal use.
 				The comments unrelated to the posts will be considered spam and deleted. I reserve the right of not answering or approving the comments. For comments, questions or suggestions, email me at <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Thank you!</br>
-				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, content and articles &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>

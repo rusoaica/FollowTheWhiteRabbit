@@ -307,16 +307,34 @@
 						</div>
 					</div>
 					<p>Iar rezultatul ar fi acesta:</p>
-					<div class="caption aligncenter">
-						<a href="../../functions/recursive-functions/fibonacci-non-recursive.png">
-							<picture>
-							  <source srcset="../../functions/recursive-functions/fibonacci-non-recursive.png" media="(min-width: 300px)" />
-							  <img src="../../functions/recursive-functions/fibonacci-non-recursive-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">1</div>
+								<div class="code-line">2</div>
+								<div class="code-line">3</div>
+								<div class="code-line">5</div>
+								<div class="code-line">8</div>
+								<div class="code-line">13</div>
+								<div class="code-line">21</div>
+								<div class="code-line">34</div>
+								<div class="code-line">55</div>
+								<div class="code-line">89</div>
+								<div class="code-line">144</div>
+								<div class="code-line">233</div>
+								<div class="code-line">377</div>
+								<div class="code-line">610</div>
+								<div class="code-line">987</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Singura problemă cu codul de mai sus este că trebuie să știm în prealabil câte elemente dorim să calculăm în secvență. Pentru numărul 1000, există 15 astfel de elemente. Dar dacă am fi vrut să-l calculăm pentru un număr mult mai mare, cum ar fi 1.000.000? Am avea nevoie de o mulțime de teste pentru a vedea câte elemente se încadrează în acel interval. Și acest lucru nu este elegant dacă dorim o soluție dinamică, pentru orice număr.</p>
-					<p>Deci .. Vă prezint &#8230; pam-pam-paaaam! Funcții recursive! Iată un exemplu de bază:</p>
+					<p>Deci... Vă prezint... pam-pam-paaaam! Funcții recursive! Iată un exemplu de bază:</p>
 
 					<div class="code-block">		
 						<div class="code-block-header">
@@ -688,14 +706,18 @@
 						</div>
 					</div>
 					<p>și acesta este rezultatul:</p>
-
-					<div class="caption aligncenter">
-						<a href="../../functions/recursive-functions/recursive-factorial.png">
-							<picture>
-							  <source srcset="../../functions/recursive-functions/recursive-factorial.png" media="(min-width: 300px)" />
-							  <img src="../../functions/recursive-functions/recursive-factorial-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">10! = 3628800</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Cu toate acestea, ca și în exemplul nostru Fibonacci, aceasta este, de asemenea, o implementare proastă a recursivității, chiar dacă la explicarea funcțiilor recursive, numerele factoriale sunt exercițiile preferate în universități. De aceea vă voi explica alternativa, utilizând iterații, care în acest caz sunt mai eficiente. Singura diferență este că iterația nu este la fel de intuitivă ca recursiunea.</p>
 					<div class="code-block">		
@@ -1187,13 +1209,34 @@
 					</div>
 					<p>Vom păstra secvența de valori într-un array numit <span class="inline-code">bucle</span>, care vor fi imprimate pe consolă prin metoda <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> atunci când este necesar. Metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> ia un parametru ce indică poziția în care vom plasa valorile. În buclă plasăm consecutiv pe poziția curentă fiecare dintre valorile posibile (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">K</span>, introdusă de utilizator), după care apelăm recursiv metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> pentru următoarea poziție. Fundul recursiunii este atins atunci când poziția curentă devine <span class="inline-code param">N</span> (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">N</span>, entered by the user). introdusă de utilizator). În acest moment avem valori pe toate pozițiile și tipărim secvența.</p>
 					<p>Dacă rulați aplicația și introduceți <span class="inline-code param">N</span> și <span class="inline-code param">K</span>, respectiv <span class="inline-code literal">2</span> și <span class="inline-code literal">4</span>, vom obține următorul rezultat:</p>
-					<div class="caption aligncenter">
-						<a href="../../functions/recursive-functions/nested-loops-recursion.png">
-							<picture>
-							  <source srcset="../../functions/recursive-functions/nested-loops-recursion.png" media="(min-width: 300px)" />
-							  <img src="../../functions/recursive-functions/nested-loops-recursion-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">N = 2</div>
+								<div class="code-line">K = 4</div>
+								<div class="code-line">1 1</div>
+								<div class="code-line">1 2</div>
+								<div class="code-line">1 3</div>
+								<div class="code-line">1 4</div>
+								<div class="code-line">2 1</div>
+								<div class="code-line">2 2</div>
+								<div class="code-line">2 3</div>
+								<div class="code-line">2 4</div>
+								<div class="code-line">3 1</div>
+								<div class="code-line">3 2</div>
+								<div class="code-line">3 3</div>
+								<div class="code-line">3 4</div>
+								<div class="code-line">4 1</div>
+								<div class="code-line">4 2</div>
+								<div class="code-line">4 3</div>
+								<div class="code-line">4 4</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>În metoda <span class="inline-code"><span class="method">Main</span>()</span> introducem valori pentru <span class="inline-code param">N</span> și <span class="inline-code param">K</span>, creăm un array în care vom păstra succesiunea valorilor, după care apelăm metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span>, pornind de la prima poziție. Observați că setăm <span class="inline-code literal">0</span> ca parametru al array-ului, deoarece păstrăm secvența de valori într-un array și după cum deja știm, numărarea elementelor de array începe de la <span class="inline-code literal">0</span>. Metoda <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> iterează toate elementele array-ului și le imprimă pe consolă.</p>
 					<p>Acum, că am văzut cum arată buclele imbricate folosind recurivitatea, să aruncăm o privire asupra celui de-al doilea mod de a implementa buclele imbricate, iterația. Pentru implementarea unei soluții iterative a buclelor imbricate, putem folosi următorul algoritm care găsește următoarea secvență de numere și o imprimă la fiecare iterație:</p>
@@ -1502,13 +1545,26 @@
 						</div>
 					</div>
 					<p>Metodele <span class="inline-code"><span class="method">Main</span>()</span> și <span class="inline-code"><span class="method">AfiseazaBucle</span>()</span> sunt aceleași ca și în implementarea soluției recursive. Metoda <span class="inline-code"><span class="method">BucleImbricate</span>()</span> este diferită. Implementează acum algoritmul pentru rezolvarea iterativă a problemei, și din acest motiv nu primește parametri, spre deosebire de versiunea recursivă. La începutul acestei metode numim metoda <span class="inline-code"><span class="method">InitiazaBucle</span>()</span> care iterează elementele array-ului și pune în fiecare poziție <span class="inline-code literal">1</span>. Efectuăm pașii algoritmului într-o buclă infinită, din care vom scăpa la momentul potrivit, încheind executărea metodelor prin folosirea operatorului <span class="inline-code if">return</span>. Modul în care implementăm pasul 3 al algoritmului este foarte interesant. Implementăm verificarea valorilor mai mari decât <span class="inline-code param">K</span>, înlocuirea lor cu <span class="inline-code literal">1</span> și incrementarea cu <span class="inline-code literal">1</span> a valorii pe poziția anterioară (după care facem aceeași verificare și pentru ea) utilizând o buclă <span class="inline-code if">while</span> în care intrăm numai dacă valoarea este mai mare decât <span class="inline-code param">K</span>. Pentru acest scop, vom înlocui mai întâi valoarea poziției curente cu <span class="inline-code literal">1</span>. După aceea, poziția de dinainte devine poziția curentă. Apoi vom incrementa valoarea pe noua poziție cu <span class="inline-code literal">1</span> și vom reveni la începutul buclei. Aceste acțiuni continuă până când valoarea de pe poziția curentă nu este mai mică sau egală cu <span class="inline-code param">K</span> (variabila <span class="inline-code">numarIteratii</span> conține valoarea lui <span class="inline-code param">K</span>), moment când vom ieși din buclă. Atunci când valoarea primei poziții devine mai mare decât <span class="inline-code param">K</span> (acesta este momentul în care trebuie să terminăm execuția), în locul ei punem <span class="inline-code literal">1</span> și încercăm să incrementăm valoarea pe poziția anterioară. În acest moment valoarea variabilei <span class="inline-code param">pozitieCurenta</span> devine negativă (deoarece prima poziție a array-ului este <span class="inline-code literal">0</span>) și terminăm execuția metodei folosind operatorul <span class="inline-code if">return</span>. Acesta este sfârșitul sarcinii noastre. Acum o putem testa cu <span class="inline-code"><span class="param">N</span> = <span class="literal">3</span></span> și <span class="inline-code"><span class="param">K</span> = <span class="literal">2</span></span>, de exemplu:</p>
-					<div class="caption aligncenter">
-						<a href="../../functions/recursive-functions/nested-loops-interration.png">
-							<picture>
-							  <source srcset="../../functions/recursive-functions/nested-loops-interration.png" media="(min-width: 300px)" />
-							  <img src="../../functions/recursive-functions/nested-loops-interration-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">N = 3</div>
+								<div class="code-line">K = 2</div>
+								<div class="code-line">1 1 1</div>
+								<div class="code-line">1 1 2</div>
+								<div class="code-line">1 2 1</div>
+								<div class="code-line">1 2 2</div>
+								<div class="code-line">2 1 1</div>
+								<div class="code-line">2 1 2</div>
+								<div class="code-line">2 2 1</div>
+								<div class="code-line">2 2 2</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Deci, în cele din urmă, care este mai bună? Iterația sau recursivitatea?</p>
 					<p>Dacă algoritmul de rezolvare a problemei este recursiv, implementarea soluției recursive poate fi mult mai lizibilă și mai elegantă decât soluția iterativă a aceleași probleme. Uneori definirea unui algoritm echivalent este mult mai dificilă și nu este ușor să se demonstreze că cei doi algoritmi sunt echivalenți. În anumite cazuri, folosind recursivitatea, putem realiza soluții mult mai simple, mai scurte și ușor de înțeles. Pe de altă parte, apelurile recursive pot consuma mult mai multe resurse (timp CPU și memorie). În anumite situații, soluțiile recursive pot fi mult mai greu de înțeles și de urmat decât soluțiile iterative relevante. Recursivitatea este o tehnică de programare puternică, dar trebuie să ne gândim cu atenție înainte de a o folosi. Dacă este folosită în mod incorect, poate duce la soluții ineficiente și greu de înțeles și de întreținut.</p>
@@ -1684,13 +1740,18 @@
 						</div>
 					</div>
 					<p>Observați diferența? În timp ce în versiunea inițială, dacă <span class="inline-code"><span class="param">n</span> = <span class="literal">100</span></span> se părea că execuția continuă pentru eternitate, soluția optimizată obține un răspuns instantaneu. După cum vom învăța mai târziu, prima soluție rulează în timp exponențial, în timp ce a doua este liniară:</p>
-					<div class="caption aligncenter">
-						<a href="../../functions/recursive-functions/fibonacci-recursive-good-practice.png">
-							<picture>
-							  <source srcset="../../functions/recursive-functions/fibonacci-recursive-good-practice.png" media="(min-width: 300px)" />
-							  <img src="../../functions/recursive-functions/fibonacci-recursive-good-practice-300x190.png" style="width:100%;"/>
-							</picture>
-						</a>	
+					<div class="code-block">		
+						<div class="terminal-header">
+							<div class="terminal-title"></div>
+						</div>
+						<div class="code-block-body">
+							<div class="code-pre terminal-pre">
+								<div class="code-line">n = 100</div>
+								<div class="code-line">fib(100) = 3736710778780434371</div>
+								<div class="code-line"><i class="terminal-blinkingCursor"></i></div>
+								<div class="code-line">&nbsp;</div>
+							</div>
+						</div>
 					</div>
 					<p>Putem chiar să îmbunătățim conceptul precedent de păstrare a valorilor anterioare ale numerelor. Nu este greu de observat că putem rezolva problema fără a folosi recursivitatea, calculând consecutiv numerele Fibonacci. În acest scop, vom păstra numai ultimele două elemente calculate ale secvenței și le vom folosi pentru a obține următorul element. Mai jos puteți vedea o implementare a algoritmului iterativ de calcul al numerelor Fibonacci:</p>
 					<div class="code-block">		
@@ -2064,7 +2125,7 @@
 						</span>
 						</p>
 						<small>
-						Această intrare a fost postată Joi, 20 Aprilie 2017 la ora 20:16 și este categorizată ca <a href="./category/functii/" rel="category tag">Funcții</a>.
+						Această intrare a fost postată Joi, 20 Aprilie 2017 la ora 20:16 și este categorizată ca <a href="../../category/functii/" rel="category tag">Funcții</a>.
 						</small>
 					</div>
 					<div class="comment-thread">
@@ -2239,7 +2300,7 @@
 				Twitter sau codul oricărei alte companii în interiorul său. <span style="color: #6DCBFE;">NU</span> urmărește utilizatorii, arhivează date sau colectează statistici. 
 				Materialele și informațiile de pe acest site pot fi folosite în mod liber, cu excepția cazurilor specificate în mod explicit. Trebuie, totuși, să specificați sursa, în cazul folosirii în orice alt context, altul decât uz personal.
 				Comentariile fără legatură cu postările vor fi considerate spam și șterse. Îmi rezerv dreptul de a nu răspunde sau aproba comentariile. Pentru comentarii, întrebări sau sugestii, trimiteți email la <a href="mailto:rusoaica@gmail.com">rusoaica@gmail.com</a>. Mulțumesc!</br>
-				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2022</span>
+				<span style="color: #6DCBFE;">Design, conținut și articole &copy;rusoaica 2012-2023</span>
                 </div>
             </div>
         </div>
