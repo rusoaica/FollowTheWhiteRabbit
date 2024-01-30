@@ -161,6 +161,7 @@
 					<a href="../../" style="font-style: italic; color: #777777;">Table of contents</a><span style="color: #00ff00;"> >></span> 
 					<a href="../../category/introduction/" style="font-style: italic; color: #777777;">Introduction</a><span style="color: #00ff00;"> ></span> 
 					<a href="./" style="font-style: italic; color: #777777;">Conditional statement Switch</a>
+					<br /><img class="high-importance" title="High importance article" /><span style="color: #6DCBFE;">High importance article</span>
 
 					<p>As we will see, conditional statement <span class="inline-code if">switch</span> works very much like the <a href="../../introduction/conditional-statement-if-else/">If-Else If-Else</a> statement, with only a syntax difference. It executes an instruction based on the calculated value of a condition. The format of the <span class="inline-code if">switch</span> statement is the following:</p>
 					<div class="code-block">		
@@ -748,7 +749,127 @@
 					</div>
 					<p>There are times when the number of possible cases is limited and we check them all. In such case, it is still advisable to place a <span class="inline-code if">default</span> check, in which you can print an error message, for instance.</p>
 					<p>It is considered a good practice to place the <span class="inline-code if">default</span> case at the end of all the other cases.</p>
+					<p>In C# 8.0, a shorter and more expressive way to handle multiple cases and return values based on conditions was introduced: <span class="programming-term">switch expressions</span>. They provide a concise syntax to assign values based on a condition. Here's how switch expressions work:</p>
+					<div class="code-block">		
+						<div class="code-block-header">
+							<span class="code-block-title"></span>
+						</div>
+						<div class="code-block-body">
+							<table class="code-block-body-table">
+								<tbody>
+									<tr>
+										<td class="line-numbers">
+											<div class="line-numbers-content">
+												<div>1</div>
+												<div class="line-numbers-highlight">2</div>
+												<div>3</div>
+												<div class="line-numbers-highlight">4</div>
+												<div>5</div>
+												<div class="line-numbers-highlight">6</div>
+												<div>7</div>
+												<div class="line-numbers-highlight">8</div>
+												<div>9</div>
+												<div class="line-numbers-highlight">10</div>
+												<div>11</div>
+												<div class="line-numbers-highlight">12</div>
+												<div>13</div>
+												<div class="line-numbers-highlight">14</div>
+												<div>15</div>
+												<div class="line-numbers-highlight">16</div>
+												<div>17</div>
+												<div class="line-numbers-highlight">18</div>
+												<div>19</div>
+											</div>
+										</td>
+										<td>
+											<div class="code-pre">
+												<div class="code-line">
+													<span class="using">using</span>
+													<span> System;</span>
+												</div>
 
+												<div class="code-line code-line-highlight">&nbsp;</div>
+
+
+												<div class="code-line">
+													<span class="using">namespace </span>
+													<span>HelloWorld</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span>{</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span><span class="using">&nbsp;&nbsp;&nbsp;&nbsp;class </span>
+													<span class="class-name">Program</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">static void </span><span class="method">Main</span>(<span class="using">string</span>[]<span class="param"> args</span>)
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="using">var</span> <span class="param">result</span> = <span class="param">condition</span> <span class="if">switch </span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;{
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">value1</span> => <span class="method">instructions</span>,
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">value2</span> => <span class="method">instructions</span>,
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="literal">value3</span> => <span class="method">instructions</span>,
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">// ...</span>
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="param">_</span> => <span class="method">default instructions</span>
+												</div>
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;};
+												</div>
+
+												<div class="code-line">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+
+												<div class="code-line code-line-highlight">
+													<span class="vertical-dash-line"></span>&nbsp;&nbsp;&nbsp;&nbsp;}
+												</div>
+
+												<div class="code-line">
+													<span>}</span>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<p>The switch expression starts with the condition, followed by the <span class="inline-code if">switch</span> keyword. Each value is associated with an expression using the <span class="inline-code">=></span> operator. When the condition matches a value, the corresponding expression is evaluated and assigned to the <span class="inline-code param">result</span> variable. If none of the cases match, <span class="inline-code param">_</span> (<a href="../../introduction/discard-variable">discard variable</a>) represents the <span class="inline-code if">default</span> case, and the default instructions are assigned. By using the underscore, you indicate that you don't need to handle or assign a specific value. It acts as a catch-all for any values that don't match the explicitly defined cases. This can be useful when you only want to handle specific cases and provide a default behavior for all other cases.</p>
+					<p>Switch expressions offer a more compact and readable alternative to if-else statements for simple conditions. They are especially useful when assigning values based on multiple conditions, but they may not be suitable for complex logic.</p>
 					<p class="video-disclaimer">The concepts explained in this lesson are also shown visually as part of the following video:</p>
 					
 					<div class="youtube-cropped">

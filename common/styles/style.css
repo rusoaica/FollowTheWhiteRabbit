@@ -987,17 +987,38 @@ details.comment:not([open]) .comment-heading::after {
 
 .youtube-button {
 	display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -210px;
-  fill: #212121;
-  fill-opacity: .8;
-  transition: fill-opacity 0.20s;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -210px;
+	fill: #212121;
+	fill-opacity: .8;
+	transition: fill-opacity 0.20s;
 }
 
 .youtube-button:hover {
 	fill: #ff0000;
-  fill-opacity: 1;
+	fill-opacity: 1;
+}
+
+.high-importance {
+	content: url('../images/red.png');
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
+}
+
+.medium-importance {
+	content: url('../images/yellow.png');
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
+}
+
+.low-importance {
+	content: url('../images/green.png');
+	width: 12px;
+	height: 12px;
+	margin-right: 5px;
 }
 
 /* For phones */
